@@ -11,6 +11,7 @@ const Timeline = () => {
                 <Title>Timeline</Title>
                 {timeline.map(item => (
                     <TimelineItem
+                        key={item.id}
                         year={item.year}
                         title={item.title}
                         duration={item.duration}
