@@ -1,5 +1,6 @@
 export default [
     {
+        id: 0,
         year: 'Today',
         title: 'Full Stack developer',
         duration: '6 years',
@@ -12,6 +13,7 @@ export default [
             '- Implementation of ads within mobile applications'
     },
     {
+        id: 1,
         year: 'Today',
         title: 'Full Stack developer',
         duration: '6 years',
@@ -24,6 +26,7 @@ export default [
             '- Implementation of ads within mobile applications'
     },
     {
+        id: 2,
         year: 'Today',
         title: 'Full Stack developer',
         duration: '6 years',
@@ -36,6 +39,7 @@ export default [
             '- Implementation of ads within mobile applications'
     },
     {
+        id: 3,
         year: 'Today',
         title: 'Full Stack developer',
         duration: '6 years',
