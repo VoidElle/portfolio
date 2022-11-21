@@ -16,6 +16,7 @@ const Timeline = () => {
                         title={item.title}
                         duration={item.duration}
                         details={item.details}
+                        chips={item.chips}
                     />
                 ))}
             </div>
