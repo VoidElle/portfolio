@@ -4,7 +4,7 @@ export default [
         year: '2022',
         title: 'Techedge SpA - Junior Consultant',
         duration: 'Actual',
-        details: 'Sviluppo di nuove funzionalità per applicazioni applicazioni di tipo Enterprise, per clienti business, utilizzando PHP e Symfony, a livello Backend e Frontend.',
+        details: 'Development of new features for Enterprise applications, for business customers, using PHP and Symfony, at Backend and Frontend level.',
         chips: ["PHP", "Symfony", "REST", "PostgreSQL", "SQL", "Twig", "HTML", "CSS", "Javascript", "AWS"]
     },
     {
@@ -12,7 +12,7 @@ export default [
         year: '2020',
         title: 'Infinity Solutions - Full Stack developer',
         duration: '2 years',
-        details: 'Architettura, sviluppo e manutenzione di applicazioni ibride per dispositivi mobili e web, includendo lo sviluppo di REST API per la comunicazione con database di tipo NoSQL MongoDB. Mansioni che includevano anche la manutenzione e lo sviluppo di nuove funzionalità del database.',
+        details: 'Architecture, development and maintenance of hybrid applications for mobile and web devices, including the development of APIs for communication with NoSQL databases. Duties that also included maintenance and development of new database features.',
         chips: ["Dart", "Flutter", "REST", "Javascript", "Typescript", "MongoDB", "HTML", "CSS", "Javascript"]
     },
     {
@@ -20,15 +20,20 @@ export default [
         year: '2019',
         title: 'Cisco Networking Academy',
         duration: '3 years',
-        details: 'Durante gli studi all\'Istituto tecnico "ITIS Galileo Galilei", per la materia "Sistemi e Reti" è stata effettuata una collaborazione tra la scuola e l\'azienda Cisco per proporre i loro corsi durante gli anni di specializzazione.',
-        chips: ["Dart", "Flutter", "REST", "Javascript", "Typescript", "MongoDB", "HTML", "CSS", "Javascript"]
+        details: 'During the studies at the Technical Institute "ITIS Galileo Galilei", for the subject "Systems and Networks" a collaboration was carried out between the school and the Cisco company to offer their courses during the years of specialization.',
+        chips: [
+            "Ethernet", "IPv4 and IPv6",
+            "Network and Security Fundamentals", "Switching", "Access Security and Connectivity",
+            "Redundancy", "Routing", "Dynamic Routing", "NAT", "Network Automation Basics", "QoS",
+            "Security Threat Mitigation", "SDN", "Virtualization", "WAN"
+        ]
     },
     {
         id: 3,
         year: '2017',
         title: 'ITIS Galileo Galilei',
         duration: '5 years',
-        details: 'Percorso formativo specializzato in tecnologie informatiche e telecomunicazioni.',
+        details: 'Training course specialized in information technology and telecommunications.',
         chips: ["C", "C++", "Java", "Javascript", "PHP", "SQL", "HTML", "CSS", "MySQL", "MariaDB", "Git", "Github", "Docker", "AWS"]
     }
 ]
