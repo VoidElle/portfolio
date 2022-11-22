@@ -23,9 +23,9 @@ export default [
         details: 'During the studies at the Technical Institute "ITIS Galileo Galilei", for the subject "Systems and Networks" a collaboration was carried out between the school and the Cisco company to offer their courses during the years of specialization.',
         chips: [
             "Ethernet", "IPv4 and IPv6",
-            "Network and Security Fundamentals", "Switching", "Access Security and Connectivity",
-            "Redundancy", "Routing", "Dynamic Routing", "NAT", "Network Automation Basics", "QoS",
-            "Security Threat Mitigation", "SDN", "Virtualization", "WAN"
+            "Network and Security", "Switching", "Access Security and Connectivity",
+            "Redundancy", "Static and Dynamic Routing", "NAT", "Network Automation", "QoS",
+            "SDN", "Virtualization", "WAN"
         ]
     },
     {
