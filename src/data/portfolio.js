@@ -5,7 +5,7 @@ export default [
         id: 0,
         title: "Portfolio",
         imgUrl: portfolioImage,
-        stack: ["HTML", "CSS", "Javascript"],
+        stack: ["HTML", "CSS", "Javascript", "React"],
         link: "https://www.lucadelcorona.com/"
     }
 ]
