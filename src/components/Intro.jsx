@@ -7,8 +7,6 @@ const Intro = () => {
             <p className="text-base md:text-xl mb-3 font-medium">Full Stack developer</p>
             <p className="text-1xl max-w-xl mb-6">
                 Passionate and curious developer, specialized in the design and implementation of mobile applications and software with various utilities.
-                Excellent knowledge of the English language, spoken and written.
-                Familiar with Agile development models.
             </p>
         </div>
     );
