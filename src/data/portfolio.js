@@ -7,7 +7,7 @@ export default [
         title: "Portfolio",
         imgUrl: portfolioImage,
         stack: ["React", "Javascript", "TailwindCSS"],
-        link: "https://www.lucadelcorona.com/"
+        link: "https://github.com/VoidElle/Portfolio"
     },
     {
         id: 1,
