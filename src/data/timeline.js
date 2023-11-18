@@ -2,17 +2,21 @@ export default [
     {
         id: 0,
         year: '2022',
-        title: 'Techedge SpA - Junior Consultant',
+        title: 'Avvale SpA - Consultant',
         duration: 'Actual',
-        details: 'Development of new features for Enterprise applications, for business customers, using PHP and Symfony, at Backend and Frontend level.',
-        chips: ["PHP", "Symfony", "REST", "PostgreSQL", "SQL", "Twig", "HTML", "CSS", "Javascript", "AWS"]
+        details: [
+            "I specialize in creating tailored solutions for large companies. My experience includes building mobile applications using Java, Dart, and Flutter, developing user-friendly web interfaces with Twig, crafting RESTful APIs using PHP and Symfony, and managing PostgreSQL databases for seamless operations."
+        ],
+        chips: ["Flutter", "Dart", "Java", "Android", "PHP", "Symfony", "REST", "PostgreSQL", "SQL", "Twig", "HTML", "CSS", "Javascript", "AWS"]
     },
     {
         id: 1,
         year: '2020',
         title: 'Infinity Solutions - Full Stack developer',
         duration: '2 years',
-        details: 'Architecture, development and maintenance of hybrid applications for mobile and web devices, including the development of APIs for communication with NoSQL databases. Duties that also included maintenance and development of new database features.',
+        details: [
+            "I specialize in making hybrid mobile apps and microservices come to life. In this journey, I've designed user-friendly interfaces, developed cross-platform apps using Flutter and Dart, created smooth experiences with RESTful APIs using Node.js and Express, managed MongoDB databases, and integrated ads into mobile applications."
+        ],
         chips: ["Dart", "Flutter", "REST", "Javascript", "Typescript", "MongoDB", "HTML", "CSS", "Javascript"]
     },
     {
@@ -20,7 +24,9 @@ export default [
         year: '2019',
         title: 'Cisco Networking Academy',
         duration: '3 years',
-        details: 'During the studies at the Technical Institute "ITIS Galileo Galilei", for the subject "Systems and Networks" a collaboration was carried out between the school and the Cisco company to offer their courses during the years of specialization.',
+        details: [
+            "During my time at the \"ITIS Galileo Galilei\" Technical Institute, I had the opportunity to collaborate with Cisco. This partnership allowed me to take courses during my specialization in \"Systems and Networks,\" covering topics such as CCNAv7: Enterprise Networking, Security, and Automation; CCNAv7: Switching, Routing, and Wireless Essentials; and CCNA R&S: Introduction to Networks. This experience significantly enhanced my skills in corporate networks, IT security, and technologies like automation and wireless networks."
+        ],
         chips: [
             "Ethernet", "IPv4 and IPv6",
             "Network and Security", "Switching", "Access Security and Connectivity",
@@ -33,7 +39,10 @@ export default [
         year: '2017',
         title: 'ITIS Galileo Galilei',
         duration: '5 years',
-        details: 'Training course specialized in information technology and telecommunications.',
+        details: [
+            "I achieved an Advanced Training Program in Information Technologies and Telecommunications, I explored a range of programming languages, including C, C++, Java, Javascript, PHP, and SQL. I delved into web technologies like HTML and CSS, and gained hands-on experience in developing RESTful APIs using XML and JSON formats. My advanced skills in relational database management focused on MySQL and MariaDB.\n" +
+            "I also deepened my understanding of Agile software development, particularly SCRUM, and became proficient in using tools like Git and Github for version control. Additionally, I utilized Docker for creating isolated environments and employed AWS EC2 for application deployment."
+        ],
         chips: ["C", "C++", "Java", "Javascript", "PHP", "SQL", "HTML", "CSS", "MySQL", "MariaDB", "Git", "Github", "Docker", "AWS"]
     }
 ]

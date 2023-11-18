@@ -6,9 +6,9 @@ const PortfolioItem = ({ title, imgUrl, stack, link }) => {
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="border-2 border-stone-900 dark:border-white rounded-md overflow-hidden"
+            className=" border-stone-900 dark:border-white rounded-md"
         >
-            <div className="border-2 border-stone-900 rounded-md overflow-hidden">
+            <div className="border-2 border-stone-900 dark:border-white rounded-md overflow-hidden">
                 <img
                     src={imgUrl}
                     alt="portfolio"

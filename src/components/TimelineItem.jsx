@@ -16,10 +16,12 @@ const TimelineItem = ({ year, title, duration, details, chips }) => {
                         {duration}
                     </div>
                 </div>
-                <p className="my-2 text-base font-normal text-stone-500 dark:text-stone-400">
-                    {details}
-                </p>
-                <p className="flex flex-wrap gap-2 flex-row items-center justify-start text-xs md:text-sm dark:text-white">
+                <ul className={"list-none list-outside"}>
+                    {details.map(detail => (
+                        <li className="my-0.5 text-base font-normal text-stone-500 dark:text-stone-400">{detail}</li>
+                    ))}
+                </ul>
+                <p className="my-5 flex flex-wrap gap-2 flex-row items-center justify-start text-xs md:text-sm dark:text-white">
                     {chips.map(item => (
                         <span key={item} className="inline-block px-2 py-1 font-semibold border-2 border-stone-900 dark:border-white rounded-md">
                             {item}
