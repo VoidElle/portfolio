@@ -7,12 +7,12 @@ import styles from "./CodeBlock.module.scss";
 
 import { Flex, Button, IconButton, Scroller, Row, StyleOverlay } from "@/once-ui/components";
 
-import Prism from "@/once-ui/modules/code/prismjs";
-import "prismjs/plugins/line-highlight/prism-line-highlight";
-import "prismjs/components/prism-jsx";
-import "prismjs/components/prism-css";
-import "prismjs/components/prism-typescript";
-import "prismjs/components/prism-tsx";
+// import Prism from "@/once-ui/modules/code/prismjs";
+// import "prismjs/plugins/line-highlight/prism-line-highlight";
+// import "prismjs/components/prism-jsx";
+// import "prismjs/components/prism-css";
+// import "prismjs/components/prism-typescript";
+// import "prismjs/components/prism-tsx";
 import classNames from "classnames";
 import { SpacingToken } from "@/once-ui/types";
 
@@ -69,7 +69,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
 
   useEffect(() => {
     if (codeRef.current && codeInstances.length > 0) {
-      Prism.highlightAll();
+      // Prism.highlightAll();
     }
   }, [code, codeInstances.length]);
 
