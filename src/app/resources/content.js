@@ -7,7 +7,7 @@ const person = {
     return `${this.firstName} ${this.lastName}`;
   },
   role: "Mobile developer",
-  avatar: "/images/avatar.jpg",
+  avatar: "/images/avatar.jpeg",
   location: "Europe/Rome", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English", "Italian"], // optional: Leave the array empty if you don't want to display languages
 };
@@ -29,12 +29,12 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "https://github.com/VoidElle",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/luca-del-corona/",
   },
   {
     name: "X",
@@ -44,7 +44,7 @@ const social = [
   {
     name: "Email",
     icon: "email",
-    link: "mailto:example@gmail.com",
+    link: "mailto:lucadelc@gmail.com",
   },
 ];
 
@@ -81,9 +81,8 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        I am a highly motivated and results-driven Software Developer with experience in the software development and consulting industry.
+        Currently working in hybrid mobile applications development.
       </>
     ),
   },
@@ -92,42 +91,36 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Avvale SPA",
+        timeframe: "Sept 2022 - Present",
+        role: "Mobile developer - Consultant",
         achievements: [
-          <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
-          </>,
+          <>Built cross-platform mobile applications using Dart, Flutter, Typescript and React Native</>,
+          <>Built native Android applications using Java and Kotlin</>,
+          <>Integrated AWS SDKs: S3, Amplify, AppSync, Cognito</>,
+          <>Integrated Firebase SDKs: Firestore, Crashlytics, Analytics, Remote config</>,
+          <>Onboarding and training of new hires in Flutter</>,
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
-          {
+          /*{
             src: "/images/projects/project-01/cover-01.jpg",
             alt: "Once UI Project",
             width: 16,
             height: 9,
-          },
+          },*/
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Infinity Solutions Commercial Srl",
+        timeframe: "Jan 2020 - Jul 2022",
+        role: "Full stack developer",
         achievements: [
-          <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
+          <>Designed UI/UX interfaces for mobile applications</>,
+          <>Developed cross-platform hybrid applications using Flutter and Dart</>,
+          <>Created RESTful APIs using Node.js and Express</>,
+          <>Designed, managed and maintained MongoDB databases</>,
+          <>Implemented ads within mobile application environments</>,
         ],
         images: [],
       },
@@ -138,17 +131,37 @@ const about = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Cisco Networking Academy",
+        description: <>
+          I had the privilege of participating in a special collaboration between my High School and the Cisco company,
+          which offered us the opportunity to follow some of their courses during the years of specialization in the subject "Systems and Networks".<br /><br />
+
+          The courses I have taken include:<br />
+          - CCNAv7: Enterprise Networking, Security, and Automation<br />
+          - CCNAv7: Switching, Routing, and Wireless Essentials<br />
+          - CCNA R&S: Introduction to Networks<br /><br />
+
+          Thanks to this initiative, I acquired significant skills in the field of corporate networks and IT security,
+          delving into crucial issues related to networks and their security, automation and wireless technologies.
+        </>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "ITI Galileo Galilei",
+        description: <>Advanced Training Program in Information Technologies and Telecommunications
+          During this journey, I thoroughly explored the following areas:<br /><br />
+
+          - Wide range of programming languages, including C, C++, Java, Javascript, PHP and SQL<br />
+          - Essential web technologies, including HTML and CSS<br />
+          - Development of RESTful APIs using formats such as XML and JSON<br />
+          - Advanced skills in relational database management, with a focus on MySQL and MariaDB<br />
+          - Deepening of Agile software development methods, with particular emphasis on SCRUM<br />
+          - Using tools and services like Git and Github for version control, Docker for creating isolated environments, and AWS EC2 for application deployment<br />
+        </>,
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
+    display: false, // set to false to hide this section
     title: "Technical skills",
     skills: [
       {
