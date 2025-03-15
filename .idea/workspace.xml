@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f740d1a-9a20-419d-b582-9efe0aca602f" name="Changes" comment="chore: Updated texts">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="5f740d1a-9a20-419d-b582-9efe0aca602f" name="Changes" comment="chore: Removed prismjs" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +78,7 @@
       <workItem from="1741945939961" duration="381000" />
       <workItem from="1741965293021" duration="109000" />
       <workItem from="1741974458546" duration="1702000" />
-      <workItem from="1742035050695" duration="4826000" />
+      <workItem from="1742035050695" duration="5240000" />
     </task>
     <task id="LOCAL-00001" summary="chore: Implemented magic-portfolio">
       <option name="closed" value="true" />
@@ -106,7 +104,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742039577700</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="chore: Removed prismjs">
+      <option name="closed" value="true" />
+      <created>1742039992778</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1742039992778</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +143,7 @@
     <MESSAGE value="chore: Implemented magic-portfolio" />
     <MESSAGE value="chore: Changed config + Removed Prism (Was having problems)" />
     <MESSAGE value="chore: Updated texts" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: Updated texts" />
+    <MESSAGE value="chore: Removed prismjs" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: Removed prismjs" />
   </component>
 </project>
