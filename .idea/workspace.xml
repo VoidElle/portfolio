@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f740d1a-9a20-419d-b582-9efe0aca602f" name="Changes" comment="chore: Removed prismjs" />
+    <list default="true" id="5f740d1a-9a20-419d-b582-9efe0aca602f" name="Changes" comment="chore: Added eslint">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/work/projects/automate-design-handovers-with-a-figma-to-code-pipeline.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/projects/avvale-recharge-around.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/work/projects/building-once-ui-a-customizable-design-system.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/projects/avvale-bene-assicurazioni-company-app.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/work/projects/simple-portfolio-builder.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/projects/avvale-e-solutions-charging-app.mdx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,22 +32,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JavaScript Debug.localhost:3000.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;magic-portfolio-porting&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/lucadelc/Desktop/portfolio&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/lucadelc/Desktop/portfolio/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.localhost:3000.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "magic-portfolio-porting",
+    "last_opened_file_path": "/Users/lucadelc/Desktop/Development/Personal/portfolio/src/app/work/projects",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/Users/lucadelc/Desktop/portfolio/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/images" />
@@ -78,7 +83,8 @@
       <workItem from="1741945939961" duration="381000" />
       <workItem from="1741965293021" duration="109000" />
       <workItem from="1741974458546" duration="1702000" />
-      <workItem from="1742035050695" duration="5240000" />
+      <workItem from="1742035050695" duration="7009000" />
+      <workItem from="1742162790225" duration="1077000" />
     </task>
     <task id="LOCAL-00001" summary="chore: Implemented magic-portfolio">
       <option name="closed" value="true" />
@@ -112,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742039992778</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="chore: Added eslint">
+      <option name="closed" value="true" />
+      <created>1742040500547</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1742040500547</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +158,7 @@
     <MESSAGE value="chore: Changed config + Removed Prism (Was having problems)" />
     <MESSAGE value="chore: Updated texts" />
     <MESSAGE value="chore: Removed prismjs" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: Removed prismjs" />
+    <MESSAGE value="chore: Added eslint" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: Added eslint" />
   </component>
 </project>
