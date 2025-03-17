@@ -81,7 +81,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        I am a highly motivated and results-driven Software Developer with experience in the software development and consulting industry.
+        I am a highly motivated and results-driven Software Developer with experience in the software development and consulting industry.<br />
         Currently working in hybrid mobile applications development.
       </>
     ),
@@ -133,30 +133,30 @@ const about = {
       {
         name: "Cisco Networking Academy",
         description: <>
-          I had the privilege of participating in a special collaboration between my High School and the Cisco company,
-          which offered us the opportunity to follow some of their courses during the years of specialization in the subject "Systems and Networks".<br /><br />
-
-          The courses I have taken include:<br />
-          - CCNAv7: Enterprise Networking, Security, and Automation<br />
-          - CCNAv7: Switching, Routing, and Wireless Essentials<br />
-          - CCNA R&S: Introduction to Networks<br /><br />
-
-          Thanks to this initiative, I acquired significant skills in the field of corporate networks and IT security,
-          delving into crucial issues related to networks and their security, automation and wireless technologies.
+          A special collaboration between my high school and Cisco allowed me to specialize in Systems and Networks, gaining expertise in corporate networking and IT security.<br /><br />
+          Courses completed:
         </>,
+        achievements: [
+            <>CCNAv7: Enterprise Networking, Security, and Automation</>,
+            <>CCNAv7: Switching, Routing, and Wireless Essentials</>,
+            <>CCNA R&S: Introduction to Networks</>,
+        ],
       },
       {
         name: "ITI Galileo Galilei",
-        description: <>Advanced Training Program in Information Technologies and Telecommunications
-          During this journey, I thoroughly explored the following areas:<br /><br />
-
-          - Wide range of programming languages, including C, C++, Java, Javascript, PHP and SQL<br />
-          - Essential web technologies, including HTML and CSS<br />
-          - Development of RESTful APIs using formats such as XML and JSON<br />
-          - Advanced skills in relational database management, with a focus on MySQL and MariaDB<br />
-          - Deepening of Agile software development methods, with particular emphasis on SCRUM<br />
-          - Using tools and services like Git and Github for version control, Docker for creating isolated environments, and AWS EC2 for application deployment<br />
+        description: <>
+          Advanced Training Program in Information Technologies & Telecommunications<br /><br />
+          Core topics explored:<br />
         </>,
+        achievements: [
+            <>Programming languages: C, C++, Java, JavaScript, PHP, and SQL</>,
+            <>Web technologies: HTML and CSS</>,
+            <>RESTful API development using XML and JSON</>,
+            <>Database management: MySQL and MariaDB</>,
+            <>SCRUM Agile software development</>,
+            <>Version control with Git, GitHub, Gitlab, Bitbucket</>,
+            <>Application deployment with AWS EC2 and Docker</>
+        ]
       },
     ],
   },

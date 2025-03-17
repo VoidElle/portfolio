@@ -228,7 +228,7 @@ export default function About() {
                     <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
                       {experience.role}
                     </Text>
-                    <Column as="ul" gap="16">
+                    <Column as="ul">
                       {experience.achievements.map((achievement: JSX.Element, index: number) => (
                         <Text
                           as="li"
@@ -282,9 +282,20 @@ export default function About() {
                     <Text id={institution.name} variant="heading-strong-l">
                       {institution.name}
                     </Text>
-                    <Text variant="heading-default-xs" onBackground="neutral-weak">
+                    <Text variant="body-default-m">
                       {institution.description}
                     </Text>
+                    <Column as="ul" marginTop="8">
+                      {institution.achievements.map((achievement: JSX.Element, index: number) => (
+                          <Text
+                              as="li"
+                              variant="body-default-m"
+                              key={`${institution.name}-${index}`}
+                          >
+                            {achievement}
+                          </Text>
+                      ))}
+                    </Column>
                   </Column>
                 ))}
               </Column>
