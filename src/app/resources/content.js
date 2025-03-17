@@ -55,7 +55,7 @@ const home = {
   headline: <>Mobile developer</>,
   subline: (
     <>
-      I'm Luca, Mobile developer at <InlineCode>Avvale</InlineCode>, where i make
+      I'm Luca, currently working at <InlineCode>Avvale</InlineCode>, where i make
       <br />native Android and cross platform mobile applications.
     </>
   ),

@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f740d1a-9a20-419d-b582-9efe0aca602f" name="Changes" comment="chore: Implemented chips to projects">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/blog/[slug]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/blog/[slug]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/utils/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/[slug]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/[slug]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/projects/avvale-bene-assicurazioni-company-app.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/projects/avvale-bene-assicurazioni.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/projects/avvale-e-solutions-charging-app.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/projects/avvale-e-solutions-charging-app.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/projects/avvale-eni-live-europe.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/projects/avvale-eni-live-europe.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/projects/avvale-recharge-around.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/projects/avvale-recharge-around.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/projects/avvale-yubiq.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/projects/avvale-yubiq.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/resources/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/resources/content.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/work/projects/personal-tapit.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/projects/personal-tapit.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProjectCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProjectCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/work/Projects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/work/Projects.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +87,7 @@
       <workItem from="1741974458546" duration="1702000" />
       <workItem from="1742035050695" duration="7009000" />
       <workItem from="1742162790225" duration="3477000" />
-      <workItem from="1742233359965" duration="7442000" />
+      <workItem from="1742233359965" duration="7772000" />
     </task>
     <task id="LOCAL-00001" summary="chore: Implemented magic-portfolio">
       <option name="closed" value="true" />
