@@ -26,6 +26,7 @@ export function Projects({ range }: ProjectsProps) {
           href={`work/${post.slug}`}
           images={post.metadata.images}
           title={post.metadata.title}
+          chips={post.metadata.chips}
           description={post.metadata.summary}
           content={post.content}
           avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}

@@ -24,12 +24,14 @@ export function generateMetadata({ params: { slug } }: BlogParams) {
   let post = getPosts(["src", "app", "blog", "posts"]).find((post) => post.slug === slug);
 
   if (!post) {
+    // @ts-ignore
     return;
   }
 
   let {
     title,
     publishedAt: publishedTime,
+    chips,
     summary: description,
     images,
     image,
@@ -39,6 +41,8 @@ export function generateMetadata({ params: { slug } }: BlogParams) {
 
   return {
     title,
+    // @ts-ignore
+    chips,
     description,
     openGraph: {
       title,

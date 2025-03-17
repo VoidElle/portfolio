@@ -1,13 +1,13 @@
 "use client";
 
 import {
-  AvatarGroup,
-  Carousel,
-  Column,
-  Flex,
-  Heading,
-  SmartLink,
-  Text,
+    AvatarGroup, Badge,
+    Carousel,
+    Column,
+    Flex,
+    Heading,
+    SmartLink,
+    Text,
 } from "@/once-ui/components";
 
 interface ProjectCardProps {
@@ -15,6 +15,7 @@ interface ProjectCardProps {
   priority?: boolean;
   images: string[];
   title: string;
+  chips: string[];
   content: string;
   description: string;
   avatars: { src: string }[];
@@ -25,6 +26,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   href,
   images = [],
   title,
+  chips,
   content,
   description,
   avatars,
@@ -47,13 +49,22 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         paddingBottom="24"
         gap="l"
       >
-        {title && (
-          <Flex flex={5}>
-            <Heading as="h2" wrap="balance" variant="heading-strong-xl">
-              {title}
-            </Heading>
+
+          <Flex flex={5} direction={"column"} gap="s">
+              {title && (
+                  <Heading as="h2" wrap="balance" variant="heading-strong-xl">
+                      {title}
+                  </Heading>
+              )}
+              <Flex gap={"s"} paddingTop={"s"}>
+                  {chips.length > 0 && (
+                      chips.map((chip: string) => (
+                          <Badge align={"center"} title={chip} arrow={false} effect={false} />
+                      ))
+                  )}
+              </Flex>
           </Flex>
-        )}
+
         {(avatars?.length > 0 || description?.trim() || content?.trim()) && (
           <Column flex={7} gap="16">
             {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}

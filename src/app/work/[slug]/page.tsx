@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx";
 import { getPosts } from "@/app/utils/utils";
-import { AvatarGroup, Button, Column, Flex, Heading, SmartImage, Text } from "@/once-ui/components";
+import {AvatarGroup, Badge, Button, Column, Flex, Heading, Row, SmartImage, Text} from "@/once-ui/components";
 import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
 import { formatDate } from "@/app/utils/formatDate";
@@ -21,14 +21,17 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
 }
 
 export function generateMetadata({ params: { slug } }: WorkParams) {
+
   let post = getPosts(["src", "app", "work", "projects"]).find((post) => post.slug === slug);
 
   if (!post) {
+    // @ts-ignore
     return;
   }
 
   let {
     title,
+    chips,
     publishedAt: publishedTime,
     summary: description,
     images,
@@ -39,6 +42,8 @@ export function generateMetadata({ params: { slug } }: WorkParams) {
 
   return {
     title,
+    // @ts-ignore
+    chips,
     description,
     images,
     team,
@@ -104,6 +109,13 @@ export default function Project({ params }: WorkParams) {
           Projects
         </Button>
         <Heading variant="display-strong-s">{post.metadata.title}</Heading>
+        <Flex gap="12" vertical="center">
+          {post.metadata.chips.length > 0 && (
+              post.metadata.chips.map((chip: string) => (
+                  <Badge title={chip} arrow={false} effect={false} />
+              ))
+          )}
+        </Flex>
       </Column>
       {post.metadata.images.length > 0 && (
         <SmartImage

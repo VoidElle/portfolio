@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f740d1a-9a20-419d-b582-9efe0aca602f" name="Changes" comment="chore: Updated names">
+    <list default="true" id="5f740d1a-9a20-419d-b582-9efe0aca602f" name="Changes" comment="chore: Implemented chips to projects">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/about/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/about/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/resources/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/resources/content.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/blog/[slug]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/blog/[slug]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/utils/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/work/[slug]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/[slug]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/work/projects/avvale-bene-assicurazioni-company-app.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/projects/avvale-bene-assicurazioni.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/work/projects/avvale-e-solutions-charging-app.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/projects/avvale-e-solutions-charging-app.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/work/projects/avvale-eni-live-europe.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/projects/avvale-eni-live-europe.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/work/projects/avvale-recharge-around.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/projects/avvale-recharge-around.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/work/projects/avvale-yubiq.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/projects/avvale-yubiq.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/work/projects/personal-tapit.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/projects/personal-tapit.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProjectCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProjectCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/work/Projects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/work/Projects.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,22 +40,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JavaScript Debug.localhost:3000.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;magic-portfolio-porting&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/lucadelc/Desktop/Development/Personal/portfolio/src/app/work/projects&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/lucadelc/Desktop/Development/Personal/portfolio/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.localhost:3000.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "magic-portfolio-porting",
+    "last_opened_file_path": "/Users/lucadelc/Desktop/Development/Personal/portfolio/src/app/work/projects",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "ts.external.directory.path": "/Users/lucadelc/Desktop/Development/Personal/portfolio/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app/work/projects" />
@@ -87,7 +97,7 @@
       <workItem from="1741974458546" duration="1702000" />
       <workItem from="1742035050695" duration="7009000" />
       <workItem from="1742162790225" duration="3477000" />
-      <workItem from="1742233359965" duration="2711000" />
+      <workItem from="1742233359965" duration="7442000" />
     </task>
     <task id="LOCAL-00001" summary="chore: Implemented magic-portfolio">
       <option name="closed" value="true" />
@@ -145,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742233383199</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="chore: Aligned about section with personal style">
+      <option name="closed" value="true" />
+      <created>1742236269868</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1742236269868</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +198,8 @@
     <MESSAGE value="chore: Added eslint" />
     <MESSAGE value="chore: Initialized projects" />
     <MESSAGE value="chore: Updated names" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: Updated names" />
+    <MESSAGE value="chore: Aligned about section with personal style" />
+    <MESSAGE value="chore: Implemented chips to projects" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: Implemented chips to projects" />
   </component>
 </project>
