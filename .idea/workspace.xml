@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f740d1a-9a20-419d-b582-9efe0aca602f" name="Changes" comment="chore: Added eslint">
+    <list default="true" id="5f740d1a-9a20-419d-b582-9efe0aca602f" name="Changes" comment="chore: Initialized projects">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/projects/automate-design-handovers-with-a-figma-to-code-pipeline.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/projects/avvale-recharge-around.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/projects/building-once-ui-a-customizable-design-system.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/projects/avvale-bene-assicurazioni-company-app.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/projects/simple-portfolio-builder.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/projects/avvale-e-solutions-charging-app.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/work/projects/avvale-bene-assicurazioni-company-app.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/projects/avvale-bene-assicurazioni-company-app.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/work/projects/avvale-e-solutions-charging-app.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/projects/avvale-e-solutions-charging-app.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/work/projects/avvale-recharge-around.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/projects/avvale-recharge-around.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/work/projects/personal-tapit.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/projects/personal-tapit.mdx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,11 +45,14 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/Users/lucadelc/Desktop/portfolio/node_modules/typescript/lib",
+    "ts.external.directory.path": "/Users/lucadelc/Desktop/Development/Personal/portfolio/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/work/projects" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$" />
@@ -84,7 +88,7 @@
       <workItem from="1741965293021" duration="109000" />
       <workItem from="1741974458546" duration="1702000" />
       <workItem from="1742035050695" duration="7009000" />
-      <workItem from="1742162790225" duration="1077000" />
+      <workItem from="1742162790225" duration="3477000" />
     </task>
     <task id="LOCAL-00001" summary="chore: Implemented magic-portfolio">
       <option name="closed" value="true" />
@@ -126,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742040500547</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="chore: Initialized projects">
+      <option name="closed" value="true" />
+      <created>1742164185127</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742164185127</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +171,7 @@
     <MESSAGE value="chore: Updated texts" />
     <MESSAGE value="chore: Removed prismjs" />
     <MESSAGE value="chore: Added eslint" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: Added eslint" />
+    <MESSAGE value="chore: Initialized projects" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: Initialized projects" />
   </component>
 </project>
