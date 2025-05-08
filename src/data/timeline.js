@@ -5,9 +5,21 @@ export default [
         title: 'Avvale SpA - Consultant',
         duration: 'Actual',
         details: [
-            "I specialize in creating tailored solutions for large companies. My experience includes building mobile applications using Java, Dart, and Flutter, developing user-friendly web interfaces with Twig, crafting RESTful APIs using PHP and Symfony, and managing PostgreSQL databases for seamless operations."
+            "Technical consulting for large clients, including activities in analysis, design, and development of customized solutions. Experience in developing cross-platform mobile applications (Flutter, React Native with Dart and TypeScript) and native Android apps (Java, Kotlin). Integration of cloud services such as AWS (S3, Amplify, AppSync, Cognito) and Firebase (Firestore, Crashlytics, Analytics, Remote Config). Management and maintenance of relational and NoSQL databases (PostgreSQL, MongoDB)."
         ],
-        chips: ["Flutter", "Dart", "Java", "Android", "PHP", "Symfony", "REST", "PostgreSQL", "SQL", "Twig", "HTML", "CSS", "Javascript", "AWS"]
+        chips: [
+            "Flutter",
+            "Dart",
+            "React Native",
+            "TypeScript",
+            "Java",
+            "Kotlin",
+            "Android",
+            "AWS",
+            "Firebase",
+            "PostgreSQL",
+            "MongoDB"
+        ]
     },
     {
         id: 1,
@@ -15,9 +27,18 @@ export default [
         title: 'Infinity Solutions - Full Stack developer',
         duration: '2 years',
         details: [
-            "I specialize in making hybrid mobile apps and microservices come to life. In this journey, I've designed user-friendly interfaces, developed cross-platform apps using Flutter and Dart, created smooth experiences with RESTful APIs using Node.js and Express, managed MongoDB databases, and integrated ads into mobile applications."
+            "Experience focused on the design, development, and maintenance of hybrid mobile applications and microservices. I have worked on UI/UX interface design and the development of cross-platform applications using Flutter and Dart. Additionally, I have contributed to the creation of RESTful APIs with Node.js and Express, managed and maintained MongoDB databases, and integrated advertising systems in mobile environments."
         ],
-        chips: ["Dart", "Flutter", "REST", "Javascript", "Typescript", "MongoDB", "HTML", "CSS", "Javascript"]
+        chips: [
+            "Microservices",
+            "UI/UX Design",
+            "Flutter",
+            "Dart",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "AdMob"
+        ]
     },
     {
         id: 2,
@@ -25,13 +46,29 @@ export default [
         title: 'Cisco Networking Academy',
         duration: '3 years',
         details: [
-            "During my time at the \"ITIS Galileo Galilei\" Technical Institute, I had the opportunity to collaborate with Cisco. This partnership allowed me to take courses during my specialization in \"Systems and Networks,\" covering topics such as CCNAv7: Enterprise Networking, Security, and Automation; CCNAv7: Switching, Routing, and Wireless Essentials; and CCNA R&S: Introduction to Networks. This experience significantly enhanced my skills in corporate networks, IT security, and technologies like automation and wireless networks."
+            "During the Cisco course, I deepened my understanding of enterprise networks, focusing on static/dynamic routing, IPv4/IPv6, subnetting, and switching. I studied IP services, QoS, connectivity, and redundancy (first-hop, high availability). I gained skills in access security, automation, virtualization, and wireless LANs. Finally, I explored software-driven architectures for scalable and resilient networks."
         ],
         chips: [
-            "Ethernet", "IPv4 and IPv6",
-            "Network and Security", "Switching", "Access Security and Connectivity",
-            "Redundancy", "Static and Dynamic Routing", "NAT", "Network Automation", "QoS",
-            "SDN", "Virtualization", "WAN"
+            "Enterprise Networks",
+            "Static Routing",
+            "Dynamic Routing",
+            "IPv4",
+            "IPv6",
+            "Subnetting",
+            "Switching",
+            "IP Services",
+            "QoS",
+            "Connectivity",
+            "Redundancy",
+            "First-Hop Redundancy",
+            "High Availability",
+            "Access Security",
+            "Automation",
+            "Virtualization",
+            "Wireless LANs",
+            "Software-Driven Architectures",
+            "Scalable Networks",
+            "Resilient Networks"
         ]
     },
     {
@@ -40,9 +77,28 @@ export default [
         title: 'ITIS Galileo Galilei',
         duration: '5 years',
         details: [
-            "I achieved an Advanced Training Program in Information Technologies and Telecommunications, I explored a range of programming languages, including C, C++, Java, Javascript, PHP, and SQL. I delved into web technologies like HTML and CSS, and gained hands-on experience in developing RESTful APIs using XML and JSON formats. My advanced skills in relational database management focused on MySQL and MariaDB.\n" +
-            "I also deepened my understanding of Agile software development, particularly SCRUM, and became proficient in using tools like Git and Github for version control. Additionally, I utilized Docker for creating isolated environments and employed AWS EC2 for application deployment."
+            "In-depth knowledge of programming languages such as C, C++, Java, JavaScript, PHP, and SQL. Proficient in essential web technologies, including HTML and CSS. Experience in developing RESTful APIs using XML and JSON formats. Advanced skills in managing relational databases, with a focus on MySQL and MariaDB. Solid understanding of Agile software development methodologies, with particular emphasis on SCRUM. Familiar with tools and services such as Git and GitHub for version control, Docker for creating isolated environments, and AWS EC2 for deploying applications."
         ],
-        chips: ["C", "C++", "Java", "Javascript", "PHP", "SQL", "HTML", "CSS", "MySQL", "MariaDB", "Git", "Github", "Docker", "AWS"]
+        chips: [
+            "C",
+            "C++",
+            "Java",
+            "JavaScript",
+            "PHP",
+            "SQL",
+            "HTML",
+            "CSS",
+            "RESTful APIs",
+            "XML",
+            "JSON",
+            "MySQL",
+            "MariaDB",
+            "Agile",
+            "SCRUM",
+            "Git",
+            "GitHub",
+            "Docker",
+            "AWS EC2"
+        ]
     }
 ]
