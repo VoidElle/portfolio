@@ -8,7 +8,7 @@ const PortfolioItem = ({ title, imgUrl, stack, link }) => {
             rel="noopener noreferrer"
             className=" border-stone-900 dark:border-white rounded-md"
         >
-            <div className="border-2 border-stone-900 dark:border-white rounded-md overflow-hidden">
+            <div className="h-full border-2 border-stone-900 dark:border-white rounded-md overflow-hidden">
                 <img
                     src={imgUrl}
                     alt="portfolio"
