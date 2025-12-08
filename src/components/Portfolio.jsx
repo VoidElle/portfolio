@@ -12,7 +12,7 @@ const Portfolio = () => {
                     {
                         portfolio.map(project => (
                             <PortfolioItem
-                                key={project.id}
+                                key={`portfolio-${project.id}`}
                                 imgUrl={project.imgUrl}
                                 title={project.title}
                                 stack={project.stack}
