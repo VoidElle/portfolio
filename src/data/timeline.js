@@ -2,7 +2,7 @@ export default [
     {
         id: 0,
         year: '2022',
-        title: 'Avvale SpA - Consultant',
+        title: 'Avvale SpA - Software Engineer',
         duration: 'Actual',
         details: [
             "Technical consulting for large clients, including activities in analysis, design, and development of customized solutions. Experience in developing cross-platform mobile applications (Flutter, React Native with Dart and TypeScript) and native Android apps (Java, Kotlin). Integration of cloud services such as AWS (S3, Amplify, AppSync, Cognito) and Firebase (Firestore, Crashlytics, Analytics, Remote Config). Management and maintenance of relational and NoSQL databases (PostgreSQL, MongoDB)."
