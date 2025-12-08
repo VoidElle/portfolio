@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TimelineItem = ({ year, title, duration, details, chips }) => {
+const TimelineItem = ({ id, year, title, duration, details, chips }) => {
     return (
         <ol className="flex flex-col md:flex-row relative border-l border-stone border-stone-200 dark:border-stone-700">
             <li className="mb-10 ml-4">
@@ -18,12 +18,12 @@ const TimelineItem = ({ year, title, duration, details, chips }) => {
                 </div>
                 <ul className={"list-none list-outside"}>
                     {details.map(detail => (
-                        <li className="my-0.5 text-base font-normal text-stone-500 dark:text-stone-400">{detail}</li>
+                        <li key={`timeline-${id}-detail-${detail}`} className="my-0.5 text-base font-normal text-stone-500 dark:text-stone-400">{detail}</li>
                     ))}
                 </ul>
                 <p className="my-5 flex flex-wrap gap-2 flex-row items-center justify-start text-xs md:text-sm dark:text-white">
                     {chips.map(item => (
-                        <span key={item} className="inline-block px-2 py-1 font-semibold border-2 border-stone-900 dark:border-white rounded-md">
+                        <span key={`timeline-${id}-chip-${item}`} className="inline-block px-2 py-1 font-semibold border-2 border-stone-900 dark:border-white rounded-md">
                             {item}
                         </span>
                     ))}
