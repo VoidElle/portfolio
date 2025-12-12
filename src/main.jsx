@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/next"
+
 import App from './App';
 
 import './styles/tailwind.css';
-import {SpeedInsights} from "@vercel/speed-insights/react";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
       <SpeedInsights />
-        <App />
+      <Analytics/>
+      <App />
   </React.StrictMode>
 )

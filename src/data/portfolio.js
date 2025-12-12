@@ -32,7 +32,7 @@ export default [
         id: 3,
         title: "Alphonse Club",
         imgUrl: alphonseClubImage,
-        stack: ["Next.js", "React", "Typescript", "Supabase", "Clerk"],
+        stack: ["Next.js", "React", "Typescript", "Tailwind CSS", "Supabase", "Clerk"],
         link: "https://www.alphonseclub.com/"
     },
     {
@@ -53,7 +53,7 @@ export default [
         id: 0,
         title: "Portfolio",
         imgUrl: portfolioImage,
-        stack: ["React", "Javascript", "TailwindCSS"],
+        stack: ["React", "Javascript", "Tailwind CSS"],
         link: "https://github.com/VoidElle/Portfolio"
     },
 ]
