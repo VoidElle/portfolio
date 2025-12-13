@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import Intro from "./components/Intro.jsx";
-import Portfolio from "./components/Portfolio.jsx";
-import Timeline from "./components/Timeline.jsx";
-import Contact from "./components/Contact.jsx";
-import Footer from "./components/Footer.jsx";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import PrivacyPolicy from "./pages/tapit/PrivacyPolicy.jsx";
-import CookiePolicy from "./pages/tapit/CookiePolicy.jsx";
+import Intro from "./components/Intro";
+import Portfolio from "./components/Portfolio";
+import Timeline from "./components/Timeline";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import PrivacyPolicy from "./pages/tapit/PrivacyPolicy";
+import CookiePolicy from "./pages/tapit/CookiePolicy";
+
+type Theme = 'dark' | 'light';
 
 function App() {
-
-    const [theme, setTheme] = useState(null);
+    const [theme, setTheme] = useState<Theme | null>(null);
 
     useEffect(() => {
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -22,7 +23,7 @@ function App() {
     }, []);
 
     const handleThemeSwitch = () => {
-        setTheme(theme === 'dark'? 'light' : 'dark');
+        setTheme(theme === 'dark' ? 'light' : 'dark');
     };
 
     useEffect(() => {
@@ -71,38 +72,35 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/">
-
                     <Route index element={
                         <>
                             <button
                                 type="button"
                                 onClick={handleThemeSwitch}
-                                className="absolute lg:fixed p-2 z-10 right-20 top-4 bg-violet-300 dark:bg-orange-300 text-lg p-1 rounded-md"
+                                className="absolute lg:fixed p-2 z-10 right-20 top-4 bg-violet-300 dark:bg-orange-300 text-lg rounded-md"
                             >
                                 {theme === 'dark' ? sun : moon}
                             </button>
                             <div
                                 className="bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-300 min-h-screen font-inter">
                                 <div className="max-w-5xl w-11/12 mx-auto">
-                                    <Intro/>
-                                    <Portfolio/>
-                                    <Timeline/>
-                                    <Contact/>
-                                    <Footer/>
+                                    <Intro />
+                                    <Portfolio />
+                                    <Timeline />
+                                    <Contact />
+                                    <Footer />
                                 </div>
                             </div>
                         </>
-                    }/>
+                    } />
 
                     <Route path="tapit">
                         <Route path="privacy-policy" element={<PrivacyPolicy />} />
                         <Route path="cookie-policy" element={<CookiePolicy />} />
                     </Route>
-
                 </Route>
             </Routes>
         </BrowserRouter>
-
     );
 }
 
