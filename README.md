@@ -1,5 +1,7 @@
 # Personal Portfolio
 
+![Banner](./public/banner.jpg)
+
 A modern, responsive portfolio website showcasing my journey as an Android Native & Cross-Platform Developer. Built with cutting-edge web technologies and designed with a focus on performance and user experience.
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
