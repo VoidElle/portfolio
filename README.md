@@ -1,4 +1,4 @@
-# 🚀 Personal Portfolio
+# Personal Portfolio
 
 A modern, responsive portfolio website showcasing my journey as an Android Native & Cross-Platform Developer. Built with cutting-edge web technologies and designed with a focus on performance and user experience.
 
