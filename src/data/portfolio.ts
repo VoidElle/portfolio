@@ -5,8 +5,16 @@ import alphonseClubImage from "../assets/projects/alphonseClub.jpg";
 import hassioOpenPico from "../assets/projects/hassioOpenPico.png";
 import openPicoApp from "../assets/projects/openPicoApp.png";
 import openPicoLocalApi from "../assets/projects/openPicoLocalApi.png";
+import blackTheoryImage from "../assets/projects/blackTheory.png";
 
 export default [
+    {
+        id: 7,
+        title: "Black Theory",
+        imgUrl: blackTheoryImage,
+        stack: ["Flutter", "Dart", "Android", "iOS"],
+        link: "https://github.com/VoidElle/black-theory"
+    },
     {
         id: 6,
         title: "Open Pico App",
