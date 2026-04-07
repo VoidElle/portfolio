@@ -1,52 +1,86 @@
 export default [
     {
         id: 0,
-        year: '2022',
-        title: 'Avvale SpA - Software Engineer',
+        year: '2024',
+        title: 'Avvale - Software Engineer',
         duration: 'Actual',
         details: [
-            "Technical consulting for large clients, including activities in analysis, design, and development of customized solutions. Experience in developing cross-platform mobile applications (Flutter, React Native with Dart and TypeScript) and native Android apps (Java, Kotlin). Integration of cloud services such as AWS (S3, Amplify, AppSync, Cognito) and Firebase (Firestore, Crashlytics, Analytics, Remote Config). Management and maintenance of relational and NoSQL databases (PostgreSQL, MongoDB)."
+            "Specialized consultancy for large clients, focused on designing and creating custom solutions, including:",
+            "- Building cross-platform mobile applications using Dart, Flutter, TypeScript, React Native and Expo.",
+            "- Building native Android applications using Java, Kotlin and Jetpack Compose.",
+            "- Integration of AWS SDKs: S3, Amplify, AppSync, Cognito.",
+            "- Integration of Firebase SDKs: Firestore, Crashlytics, Remote Config.",
+            "- Integration of tracking SDKs: Datadog, Google Analytics.",
+            "- Integration of anti-tampering and integrity check SDKs.",
+            "- Working within Agile, Kanban, and Waterfall methodologies."
         ],
         chips: [
             "Flutter",
             "Dart",
             "React Native",
+            "Expo",
             "TypeScript",
             "Java",
             "Kotlin",
+            "Jetpack Compose",
             "Android",
             "AWS",
             "Firebase",
+            "Datadog",
+            "Agile",
+            "Kanban"
+        ]
+    },
+    {
+        id: 1,
+        year: '2022',
+        title: 'Avvale - Junior Consultant',
+        duration: '1 year 5 months',
+        details: [
+            "- RESTful API development using PHP and Symfony.",
+            "- Development of web interfaces using PHP and Twig.",
+            "- Management and maintenance of PostgreSQL and MongoDB databases."
+        ],
+        chips: [
+            "PHP",
+            "Symfony",
+            "Twig",
+            "RESTful APIs",
             "PostgreSQL",
             "MongoDB"
         ]
     },
     {
-        id: 1,
+        id: 2,
         year: '2020',
-        title: 'Infinity Solutions - Full Stack developer',
-        duration: '2 years',
+        title: 'Infinity Solutions - Full Stack Developer',
+        duration: '2 years 7 months',
         details: [
-            "Experience focused on the design, development, and maintenance of hybrid mobile applications and microservices. I have worked on UI/UX interface design and the development of cross-platform applications using Flutter and Dart. Additionally, I have contributed to the creation of RESTful APIs with Node.js and Express, managed and maintained MongoDB databases, and integrated advertising systems in mobile environments."
+            "Experience focused on the design, development and maintenance of hybrid mobile applications and microservices, including:",
+            "- Design of UI/UX interfaces for mobile applications.",
+            "- Developing cross-platform hybrid applications using Flutter and Dart.",
+            "- Creating RESTful APIs using Node.js and Express.",
+            "- Design, management and maintenance of the MongoDB database.",
+            "- Implementation of ads within mobile application environments."
         ],
         chips: [
-            "Microservices",
-            "UI/UX Design",
             "Flutter",
             "Dart",
             "Node.js",
             "Express",
             "MongoDB",
+            "UI/UX Design",
+            "Microservices",
             "AdMob"
         ]
     },
     {
-        id: 2,
+        id: 3,
         year: '2019',
         title: 'Cisco Networking Academy',
         duration: '3 years',
         details: [
-            "During the Cisco course, I deepened my understanding of enterprise networks, focusing on static/dynamic routing, IPv4/IPv6, subnetting, and switching. I studied IP services, QoS, connectivity, and redundancy (first-hop, high availability). I gained skills in access security, automation, virtualization, and wireless LANs. Finally, I explored software-driven architectures for scalable and resilient networks."
+            "Computer systems and telecommunications networks. Deepened understanding of enterprise networks, focusing on static/dynamic routing, IPv4/IPv6, subnetting and switching. Studied IP services, QoS, connectivity, redundancy, access security, automation, virtualization, wireless LANs, and software-driven architectures for scalable and resilient networks."
         ],
         chips: [
             "Enterprise Networks",
@@ -56,28 +90,19 @@ export default [
             "IPv6",
             "Subnetting",
             "Switching",
-            "IP Services",
             "QoS",
-            "Connectivity",
-            "Redundancy",
-            "First-Hop Redundancy",
-            "High Availability",
-            "Access Security",
             "Automation",
             "Virtualization",
-            "Wireless LANs",
-            "Software-Driven Architectures",
-            "Scalable Networks",
-            "Resilient Networks"
+            "Wireless LANs"
         ]
     },
     {
-        id: 3,
+        id: 4,
         year: '2017',
-        title: 'ITIS Galileo Galilei',
+        title: 'ITI Galileo Galilei',
         duration: '5 years',
         details: [
-            "In-depth knowledge of programming languages such as C, C++, Java, JavaScript, PHP, and SQL. Proficient in essential web technologies, including HTML and CSS. Experience in developing RESTful APIs using XML and JSON formats. Advanced skills in managing relational databases, with a focus on MySQL and MariaDB. Solid understanding of Agile software development methodologies, with particular emphasis on SCRUM. Familiar with tools and services such as Git and GitHub for version control, Docker for creating isolated environments, and AWS EC2 for deploying applications."
+            "Computer Science Diploma. In-depth knowledge of programming languages such as C, C++, Java, JavaScript, PHP, and SQL. Proficient in essential web technologies, including HTML and CSS. Experience in developing RESTful APIs. Advanced skills in managing relational databases with MySQL and MariaDB. Solid understanding of Agile and SCRUM methodologies. Familiar with Git, GitHub, Docker, and AWS EC2."
         ],
         chips: [
             "C",
@@ -88,15 +113,11 @@ export default [
             "SQL",
             "HTML",
             "CSS",
-            "RESTful APIs",
-            "XML",
-            "JSON",
             "MySQL",
             "MariaDB",
             "Agile",
             "SCRUM",
             "Git",
-            "GitHub",
             "Docker",
             "AWS EC2"
         ]
