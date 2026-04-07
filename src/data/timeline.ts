@@ -2,6 +2,7 @@ export default [
     {
         id: 0,
         year: '2024',
+        type: 'work',
         title: 'Avvale - Software Engineer',
         duration: 'Actual',
         details: [
@@ -34,6 +35,7 @@ export default [
     {
         id: 1,
         year: '2022',
+        type: 'work',
         title: 'Avvale - Junior Consultant',
         duration: '1 year 5 months',
         details: [
@@ -53,6 +55,7 @@ export default [
     {
         id: 2,
         year: '2020',
+        type: 'work',
         title: 'Infinity Solutions - Full Stack Developer',
         duration: '2 years 7 months',
         details: [
@@ -77,6 +80,7 @@ export default [
     {
         id: 3,
         year: '2019',
+        type: 'education',
         title: 'Cisco Networking Academy',
         duration: '3 years',
         details: [
@@ -99,6 +103,7 @@ export default [
     {
         id: 4,
         year: '2017',
+        type: 'education',
         title: 'ITI Galileo Galilei',
         duration: '5 years',
         details: [

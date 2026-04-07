@@ -14,6 +14,7 @@ const Timeline: React.FC = () => {
                         id={item.id}
                         key={`timeline-${item.id}`}
                         year={item.year}
+                        type={item.type as 'work' | 'education'}
                         title={item.title}
                         duration={item.duration}
                         details={item.details}
