@@ -118,22 +118,22 @@ Implemented entirely in `App.tsx` with a single `theme` state (`'dark' | 'light'
 
 ## External Integrations
 
-| Service | Where | Purpose |
-|---|---|---|
-| Vercel Analytics | `src/main.tsx` | Page-view analytics |
-| Vercel Speed Insights | `src/main.tsx` | Performance monitoring |
-| Getform | `src/components/Contact.tsx` (form `action` URL) | Contact form submissions |
+| Service               | Where                                            | Purpose                  |
+|-----------------------|--------------------------------------------------|--------------------------|
+| Vercel Analytics      | `src/main.tsx`                                   | Page-view analytics      |
+| Vercel Speed Insights | `src/main.tsx`                                   | Performance monitoring   |
+| Getform               | `src/components/Contact.tsx` (form `action` URL) | Contact form submissions |
 
 The Getform endpoint URL is hardcoded in `Contact.tsx`. Do not commit a different endpoint.
 
 ## Key Files at a Glance
 
-| File | Role |
-|---|---|
-| `src/App.tsx` | Routing + dark-mode logic |
-| `src/data/portfolio.ts` | All project entries |
-| `src/data/timeline.ts` | All experience/education entries |
-| `src/components/Title.tsx` | Shared section-heading component |
-| `vercel.json` | SPA rewrite rule for Vercel |
-| `src/styles/tailwind.css` | Tailwind entry point (imported once in `main.tsx`) |
+| File                       | Role                                               |
+|----------------------------|----------------------------------------------------|
+| `src/App.tsx`              | Routing + dark-mode logic                          |
+| `src/data/portfolio.ts`    | All project entries                                |
+| `src/data/timeline.ts`     | All experience/education entries                   |
+| `src/components/Title.tsx` | Shared section-heading component                   |
+| `vercel.json`              | SPA rewrite rule for Vercel                        |
+| `src/styles/tailwind.css`  | Tailwind entry point (imported once in `main.tsx`) |
 
