@@ -6,8 +6,6 @@ import Timeline from "./components/Timeline";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import PrivacyPolicy from "./pages/tapit/PrivacyPolicy";
-import CookiePolicy from "./pages/tapit/CookiePolicy";
 
 type Theme = 'dark' | 'light';
 
@@ -93,11 +91,6 @@ function App() {
                             </div>
                         </>
                     } />
-
-                    <Route path="tapit">
-                        <Route path="privacy-policy" element={<PrivacyPolicy />} />
-                        <Route path="cookie-policy" element={<CookiePolicy />} />
-                    </Route>
                 </Route>
             </Routes>
         </BrowserRouter>
