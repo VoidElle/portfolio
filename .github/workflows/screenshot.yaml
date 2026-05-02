@@ -1,0 +1,48 @@
+name: Update banner screenshot
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  screenshot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ hashFiles('package-lock.json') }}
+          restore-keys: playwright-
+
+      - name: Install Playwright
+        run: |
+          npm install playwright
+          npx playwright install chromium --with-deps
+
+      - name: Wait for Vercel deploy
+        run: |
+          for i in $(seq 1 20); do
+            STATUS=$(curl -o /dev/null -sw "%{http_code}" https://www.lucadelcorona.com)
+            echo "Attempt $i: HTTP $STATUS"
+            [ "$STATUS" = "200" ] && sleep 15 && break
+            sleep 15
+          done
+
+      - name: Take screenshot
+        run: node scripts/screenshot.mjs
+
+      - name: Commit banner
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/banner.jpg
+          git diff --cached --quiet || git commit -m "chore: update banner screenshot [skip ci]"
+          git push
