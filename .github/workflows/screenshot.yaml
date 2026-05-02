@@ -30,11 +30,14 @@ jobs:
           npm install playwright
           npx playwright install chromium --with-deps
 
-      - name: Build & serve
+      - name: Build
+        run: npm run build
+
+      - name: Serve
         run: npx vite preview --port 4173 &
 
       - name: Wait for server
-        run: npx wait-on http://localhost:4173
+        run: npx wait-on http://localhost:4173 --timeout 60000
 
       - name: Take screenshot
         run: node scripts/screenshot.mjs
