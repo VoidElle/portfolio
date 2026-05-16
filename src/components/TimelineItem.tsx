@@ -1,4 +1,5 @@
 import React from 'react';
+import { useInView } from '../hooks/useInView';
 
 interface Props {
     id: string | number;
@@ -8,6 +9,7 @@ interface Props {
     duration: string;
     details: string[];
     chips: string[];
+    animDelay?: number;
 }
 
 const BriefcaseIcon = () => (
@@ -22,9 +24,17 @@ const GraduationCapIcon = () => (
     </svg>
 );
 
-const TimelineItem: React.FC<Props> = ({ id, year, type, title, duration, details, chips }) => {
+const TimelineItem: React.FC<Props> = ({ id, year, type, title, duration, details, chips, animDelay = 0 }) => {
+    const [ref, inView] = useInView<HTMLOListElement>();
+
     return (
-        <ol className="flex flex-col md:flex-row relative border-l border-stone border-stone-200 dark:border-stone-700">
+        <ol
+            ref={ref}
+            className={`flex flex-col md:flex-row relative border-l border-stone border-stone-200 dark:border-stone-700 ${
+                inView ? 'animate-slide-in-left' : 'opacity-0'
+            }`}
+            style={inView ? { animationDelay: `${animDelay}ms` } : undefined}
+        >
             <li className="mb-10 ml-8">
                 <div className="absolute -left-4 mt-0 flex items-center justify-center w-8 h-8 rounded-full bg-stone-200 dark:bg-stone-700 border-2 border-white dark:border-stone-900 text-stone-700 dark:text-stone-200">
                     {type === 'work' ? <BriefcaseIcon /> : <GraduationCapIcon />}

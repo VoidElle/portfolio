@@ -1,16 +1,19 @@
 import React from 'react';
 import Title from "./Title";
 import { useContactForm } from "../hooks/useContactForm";
+import { useInView } from "../hooks/useInView";
 
 const Contact: React.FC = () => {
     const { loading, handleSubmit } = useContactForm();
+    const [ref, inView] = useInView<HTMLFormElement>();
 
     return (
         <div className="flex flex-col mb-10 mx-auto">
             <div className="flex justify-center items-center">
                 <form
+                    ref={ref}
                     onSubmit={handleSubmit}
-                    className="flex flex-col w-full md:w-7/12"
+                    className={`flex flex-col w-full md:w-7/12 ${inView ? 'animate-fade-up' : 'opacity-0'}`}
                 >
                     <Title>Contact Me</Title>
                     <input

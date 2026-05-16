@@ -9,7 +9,7 @@ const Timeline: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-center my-20">
             <div className="w-full md:w-7/12">
                 <Title>Timeline</Title>
-                {timeline.map((item) => (
+                {timeline.map((item, index) => (
                     <TimelineItem
                         id={item.id}
                         key={`timeline-${item.id}`}
@@ -19,6 +19,7 @@ const Timeline: React.FC = () => {
                         duration={item.duration}
                         details={item.details}
                         chips={item.chips}
+                        animDelay={index * 100}
                     />
                 ))}
             </div>
