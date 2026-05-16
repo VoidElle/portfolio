@@ -16,21 +16,27 @@ const Contact: React.FC = () => {
                     className={`flex flex-col w-full md:w-7/12 ${inView ? 'animate-fade-up' : 'opacity-0'}`}
                 >
                     <Title>Contact Me</Title>
+                    <label htmlFor="contact-name" className="text-sm font-medium mb-1">Name</label>
                     <input
+                        id="contact-name"
                         type="text"
                         name="name"
-                        placeholder="Name"
+                        placeholder="Your name"
                         className="p-2 bg-transparent border-2 rounded-md focus:outline-none"
                     />
+                    <label htmlFor="contact-email" className="text-sm font-medium mt-3 mb-1">Email</label>
                     <input
-                        type="text"
+                        id="contact-email"
+                        type="email"
                         name="email"
-                        placeholder="Email"
-                        className="my-2 p-2 bg-transparent border-2 rounded-md focus:outline-none"
+                        placeholder="your@email.com"
+                        className="p-2 bg-transparent border-2 rounded-md focus:outline-none"
                     />
+                    <label htmlFor="contact-message" className="text-sm font-medium mt-3 mb-1">Message</label>
                     <textarea
+                        id="contact-message"
                         name="message"
-                        placeholder="Message"
+                        placeholder="What's on your mind?"
                         rows={10}
                         className="p-2 mb-4 bg-transparent border-2 rounded-md focus:outline-none"
                     />

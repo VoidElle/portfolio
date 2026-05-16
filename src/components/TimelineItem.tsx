@@ -30,9 +30,7 @@ const TimelineItem: React.FC<Props> = ({ id, year, type, title, duration, detail
     return (
         <ol
             ref={ref}
-            className={`flex flex-col md:flex-row relative border-l border-stone border-stone-200 dark:border-stone-700 ${
-                inView ? 'animate-slide-in-left' : 'opacity-0'
-            }`}
+            className={`flex flex-col md:flex-row relative border-l border-stone border-stone-200 dark:border-stone-700 ${inView ? 'animate-slide-in-left' : 'opacity-0'}`}
             style={inView ? { animationDelay: `${animDelay}ms` } : undefined}
         >
             <li className="mb-10 ml-8">

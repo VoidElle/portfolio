@@ -43,12 +43,12 @@ function App() {
                             <button
                                 type="button"
                                 onClick={handleThemeSwitch}
-                                className="absolute lg:fixed p-2 z-10 right-20 top-4 bg-violet-300 dark:bg-orange-300 text-lg rounded-md"
+                                aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+                                className="absolute lg:fixed p-2 z-30 right-20 top-4 bg-violet-300 dark:bg-orange-300 text-lg rounded-md"
                             >
                                 {theme === 'dark' ? <SunIcon className="w-6 h-6" /> : <MoonIcon className="w-6 h-6" />}
                             </button>
-                            <div
-                                className="bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-300 min-h-screen font-inter">
+                            <div className="bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-300 min-h-screen font-inter">
                                 <div className="max-w-5xl w-11/12 mx-auto">
                                     <Intro />
                                     <Portfolio />
