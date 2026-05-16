@@ -29,8 +29,10 @@ function App() {
     useEffect(() => {
         if (theme === 'dark') {
             document.documentElement.classList.add('dark');
+            document.documentElement.style.backgroundColor = '#1c1917';
         } else {
             document.documentElement.classList.remove('dark');
+            document.documentElement.style.backgroundColor = '#ffffff';
         }
     }, [theme]);
 
