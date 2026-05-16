@@ -22,8 +22,13 @@
     to   { opacity: 1; transform: translateX(0); }
 }
 
-html {
+html, body {
     scroll-behavior: smooth;
+    @apply bg-white;
+}
+
+html.dark, html.dark body {
+    @apply bg-stone-900;
 }
 
 @variant dark (&:where(.dark, .dark *));

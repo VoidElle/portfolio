@@ -7,7 +7,7 @@ import Title from "./Title";
 const Timeline: React.FC = () => {
     return (
         <div className="flex flex-col md:flex-row justify-center my-20">
-            <div className="w-full md:w-7/12">
+            <div className="w-full md:w-7/12 pl-6 md:pl-0">
                 <Title>Timeline</Title>
                 {timeline.map((item, index) => (
                     <TimelineItem

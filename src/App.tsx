@@ -44,7 +44,7 @@ function App() {
                                 type="button"
                                 onClick={handleThemeSwitch}
                                 aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-                                className="absolute lg:fixed p-2 z-30 right-20 top-4 bg-violet-300 dark:bg-orange-300 text-lg rounded-md"
+                            className="absolute lg:fixed p-2 z-30 right-4 top-4 bg-violet-300 dark:bg-orange-300 text-lg rounded-md"
                             >
                                 {theme === 'dark' ? <SunIcon className="w-6 h-6" /> : <MoonIcon className="w-6 h-6" />}
                             </button>
