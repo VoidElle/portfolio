@@ -1,0 +1,84 @@
+{
+    "intro": {
+        "subtitle": "Mobile Engineer - Android, Flutter & React Native",
+        "bio": "Developer with solid experience building cross-platform and native mobile applications. Passionate about what happens behind the screen: APIs, IoT integrations, and real-world systems. I take a hands-on approach with a strong focus on quality and continuous growth."
+    },
+    "portfolio": {
+        "title": "Portfolio",
+        "projects": {
+            "7": { "description": "Home assistant integration for Tecnosystemi Pico and Polaris IOT devices" },
+            "6": { "description": "API library to interface with Tecnosystemi Pico devices locally in Python" },
+            "5": { "description": "API library to interface with Tecnosystemi Polaris 5X HVAC systems locally in Python" },
+            "4": { "description": "POC for a security vulnerability in GreenTheory (gym) access systems" },
+            "3": { "description": "Hybrid mobile application to manage Tecnosystemi Pico devices" },
+            "2": { "description": "Full-stack CRM for a private social club" },
+            "1": { "description": "Hybrid mobile application for Wealth management / personal finance / Net Worth tracking" },
+            "0": { "description": "Personal portfolio built with React and Tailwind CSS" }
+        }
+    },
+    "timeline": {
+        "title": "Timeline",
+        "current": "Actual",
+        "entries": {
+            "0": {
+                "details": [
+                    "Specialized consultancy for large clients, designing and building custom mobile solutions.",
+                    "- Cross-platform apps with Flutter/Dart, React Native/Expo/TypeScript.",
+                    "- Native Android with Kotlin, Java, Jetpack Compose.",
+                    "- AWS (S3, Amplify, AppSync, Cognito), Firebase, Datadog integrations.",
+                    "- Agile, Kanban and Waterfall methodologies."
+                ]
+            },
+            "1": {
+                "details": [
+                    "- RESTful API and web interface development with PHP, Symfony and Twig.",
+                    "- Management and maintenance of PostgreSQL and MongoDB databases."
+                ]
+            },
+            "2": {
+                "details": [
+                    "Design, development and maintenance of hybrid mobile apps and microservices.",
+                    "- Cross-platform apps with Flutter and Dart, UI/UX design included.",
+                    "- RESTful APIs with Node.js and Express, MongoDB management.",
+                    "- AdMob integration within mobile environments."
+                ]
+            },
+            "3": {
+                "details": [
+                    "Computer systems and telecommunications networks.",
+                    "- Enterprise networking: static/dynamic routing, IPv4/IPv6, subnetting, switching.",
+                    "- IP services, QoS, redundancy, access security, automation, virtualization, wireless LANs."
+                ]
+            },
+            "4": {
+                "details": [
+                    "Computer Science Diploma.",
+                    "- Languages: C, C++, Java, JavaScript, PHP, SQL. Web: HTML, CSS, RESTful APIs.",
+                    "- Databases: MySQL, MariaDB. Methodologies: Agile, SCRUM.",
+                    "- Tools: Git, GitHub, Docker, AWS EC2."
+                ]
+            }
+        }
+    },
+    "contact": {
+        "title": "Contact Me",
+        "name": {
+            "label": "Name",
+            "placeholder": "Your name"
+        },
+        "email": {
+            "label": "Email",
+            "placeholder": "your@email.com",
+            "error": "Enter a valid email address."
+        },
+        "message": {
+            "label": "Message",
+            "placeholder": "What's on your mind?"
+        },
+        "send": "Send",
+        "sending": "Sending..."
+    },
+    "footer": {
+        "rights": "All rights reserved."
+    }
+}

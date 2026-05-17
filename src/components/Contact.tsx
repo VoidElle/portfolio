@@ -2,10 +2,12 @@ import React from 'react';
 import Title from "./Title";
 import { useContactForm } from "../hooks/useContactForm";
 import { useInView } from "../hooks/useInView";
+import { useLang } from '../context/LangContext';
 
 const Contact: React.FC = () => {
     const { loading, isValid, isEmailValid, fields, handleChange, handleSubmit } = useContactForm();
     const [ref, inView] = useInView<HTMLFormElement>();
+    const { t } = useLang();
 
     return (
         <div className="flex flex-col mb-10 mx-auto">
@@ -15,33 +17,33 @@ const Contact: React.FC = () => {
                     onSubmit={handleSubmit}
                     className={`flex flex-col w-full md:w-7/12 ${inView ? 'animate-fade-up' : 'opacity-0'}`}
                 >
-                    <Title>Contact Me</Title>
-                    <label htmlFor="contact-name" className="text-sm font-medium mb-1">Name</label>
+                    <Title>{t('contact.title')}</Title>
+                    <label htmlFor="contact-name" className="text-sm font-medium mb-1">{t('contact.name.label')}</label>
                     <input
                         id="contact-name"
                         type="text"
                         name="name"
-                        placeholder="Your name"
+                        placeholder={t('contact.name.placeholder')}
                         onChange={handleChange}
                         className="p-2 bg-transparent border-2 rounded-md focus:outline-none"
                     />
-                    <label htmlFor="contact-email" className="text-sm font-medium mt-3 mb-1">Email</label>
+                    <label htmlFor="contact-email" className="text-sm font-medium mt-3 mb-1">{t('contact.email.label')}</label>
                     <input
                         id="contact-email"
                         type="email"
                         name="email"
-                        placeholder="your@email.com"
+                        placeholder={t('contact.email.placeholder')}
                         onChange={handleChange}
                         className={`p-2 bg-transparent border-2 rounded-md focus:outline-none ${fields.email && !isEmailValid ? 'border-red-500 dark:border-red-400' : ''}`}
                     />
                     {fields.email && !isEmailValid && (
-                        <p className="text-xs text-red-500 dark:text-red-400 mt-1">Enter a valid email address.</p>
+                        <p className="text-xs text-red-500 dark:text-red-400 mt-1">{t('contact.email.error')}</p>
                     )}
-                    <label htmlFor="contact-message" className="text-sm font-medium mt-3 mb-1">Message</label>
+                    <label htmlFor="contact-message" className="text-sm font-medium mt-3 mb-1">{t('contact.message.label')}</label>
                     <textarea
                         id="contact-message"
                         name="message"
-                        placeholder="What's on your mind?"
+                        placeholder={t('contact.message.placeholder')}
                         rows={10}
                         onChange={handleChange}
                         className="p-2 mb-4 bg-transparent border-2 rounded-md focus:outline-none"
@@ -57,7 +59,7 @@ const Contact: React.FC = () => {
                                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
                             </svg>
                         )}
-                        {loading ? "Sending..." : "Send"}
+                        {loading ? t('contact.sending') : t('contact.send')}
                     </button>
                 </form>
             </div>

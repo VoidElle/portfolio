@@ -1,6 +1,9 @@
 import React from 'react';
+import { useLang } from '../context/LangContext';
 
 const Intro: React.FC = () => {
+    const { t } = useLang();
+
     return (
         <div className="flex items-center justify-center flex-col text-center pt-20 pb-6">
             <h1
@@ -13,13 +16,13 @@ const Intro: React.FC = () => {
                 className="text-base md:text-xl mb-3 font-medium animate-fade-up"
                 style={{ animationDelay: '120ms' }}
             >
-                Mobile Engineer - Android, Flutter & React Native
+                {t('intro.subtitle')}
             </p>
             <p
                 className="text-1xl max-w-xl mb-6 animate-fade-up"
                 style={{ animationDelay: '240ms' }}
             >
-                Developer with solid experience building cross-platform and native mobile applications. Passionate about what happens behind the screen: APIs, IoT integrations, and real-world systems. I take a hands-on approach with a strong focus on quality and continuous growth.
+                {t('intro.bio')}
             </p>
             <div className="flex gap-4 items-center animate-fade-up" style={{ animationDelay: '360ms' }}>
                 <a

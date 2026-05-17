@@ -1,0 +1,84 @@
+{
+    "intro": {
+        "subtitle": "Ingegnere Mobile - Android, Flutter & React Native",
+        "bio": "Sviluppatore con solida esperienza nella creazione di applicazioni mobile cross-platform e native. Appassionato di ciò che accade dietro lo schermo: API, integrazioni IoT e sistemi reali. Approccio pratico con forte attenzione alla qualità e alla crescita continua."
+    },
+    "portfolio": {
+        "title": "Portfolio",
+        "projects": {
+            "7": { "description": "Integrazione per Home Assistant dei dispositivi IoT Tecnosystemi Pico e Polaris" },
+            "6": { "description": "Libreria API per interfacciarsi localmente con i dispositivi Tecnosystemi Pico in Python" },
+            "5": { "description": "Libreria API per interfacciarsi localmente con i sistemi HVAC Tecnosystemi Polaris 5X in Python" },
+            "4": { "description": "POC per una vulnerabilità di sicurezza nei sistemi di accesso GreenTheory (palestra)" },
+            "3": { "description": "Applicazione mobile ibrida per gestire i dispositivi Tecnosystemi Pico" },
+            "2": { "description": "CRM full-stack per un club sociale privato" },
+            "1": { "description": "Applicazione mobile ibrida per la gestione del patrimonio / finanza personale / monitoraggio del patrimonio netto" },
+            "0": { "description": "Portfolio personale realizzato con React e Tailwind CSS" }
+        }
+    },
+    "timeline": {
+        "title": "Timeline",
+        "current": "Attuale",
+        "entries": {
+            "0": {
+                "details": [
+                    "Consulenza specializzata per grandi clienti, progettazione e sviluppo di soluzioni mobile personalizzate.",
+                    "- App cross-platform con Flutter/Dart, React Native/Expo/TypeScript.",
+                    "- Android nativo con Kotlin, Java, Jetpack Compose.",
+                    "- Integrazioni AWS (S3, Amplify, AppSync, Cognito), Firebase, Datadog.",
+                    "- Metodologie Agile, Kanban e Waterfall."
+                ]
+            },
+            "1": {
+                "details": [
+                    "- Sviluppo di API RESTful e interfacce web con PHP, Symfony e Twig.",
+                    "- Gestione e manutenzione di database PostgreSQL e MongoDB."
+                ]
+            },
+            "2": {
+                "details": [
+                    "Progettazione, sviluppo e manutenzione di app mobile ibride e microservizi.",
+                    "- App cross-platform con Flutter e Dart, design UI/UX incluso.",
+                    "- API RESTful con Node.js ed Express, gestione MongoDB.",
+                    "- Integrazione AdMob in ambienti mobile."
+                ]
+            },
+            "3": {
+                "details": [
+                    "Sistemi informatici e reti di telecomunicazione.",
+                    "- Reti enterprise: routing statico/dinamico, IPv4/IPv6, subnetting, switching.",
+                    "- Servizi IP, QoS, ridondanza, sicurezza degli accessi, automazione, virtualizzazione, LAN wireless."
+                ]
+            },
+            "4": {
+                "details": [
+                    "Diploma in Informatica.",
+                    "- Linguaggi: C, C++, Java, JavaScript, PHP, SQL. Web: HTML, CSS, API RESTful.",
+                    "- Database: MySQL, MariaDB. Metodologie: Agile, SCRUM.",
+                    "- Strumenti: Git, GitHub, Docker, AWS EC2."
+                ]
+            }
+        }
+    },
+    "contact": {
+        "title": "Contattami",
+        "name": {
+            "label": "Nome",
+            "placeholder": "Il tuo nome"
+        },
+        "email": {
+            "label": "Email",
+            "placeholder": "tua@email.com",
+            "error": "Inserisci un indirizzo email valido."
+        },
+        "message": {
+            "label": "Messaggio",
+            "placeholder": "A cosa stai pensando?"
+        },
+        "send": "Invia",
+        "sending": "Invio in corso..."
+    },
+    "footer": {
+        "rights": "Tutti i diritti riservati."
+    }
+}
