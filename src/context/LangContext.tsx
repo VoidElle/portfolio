@@ -9,12 +9,14 @@ const translations: Record<Lang, typeof en> = { en, it };
 interface LangContextType {
     lang: Lang;
     setLang: (lang: Lang) => void;
+    transitioning: boolean;
     t: (key: string) => any;
 }
 
 const LangContext = createContext<LangContextType>({
     lang: 'en',
     setLang: () => {},
+    transitioning: false,
     t: (key) => key,
 });
 
@@ -24,10 +26,15 @@ export const LangProvider: React.FC<{ children: React.ReactNode }> = ({ children
         if (stored === 'en' || stored === 'it') return stored;
         return navigator.language.startsWith('it') ? 'it' : 'en';
     });
+    const [transitioning, setTransitioning] = useState(false);
 
     const setLang = (l: Lang) => {
-        setLangState(l);
-        localStorage.setItem('lang', l);
+        setTransitioning(true);
+        setTimeout(() => {
+            setLangState(l);
+            localStorage.setItem('lang', l);
+            setTransitioning(false);
+        }, 200);
     };
 
     const t = (key: string): any => {
@@ -45,7 +52,7 @@ export const LangProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }, [lang]);
 
     return (
-        <LangContext.Provider value={{ lang, setLang, t }}>
+        <LangContext.Provider value={{ lang, setLang, transitioning, t }}>
             {children}
         </LangContext.Provider>
     );

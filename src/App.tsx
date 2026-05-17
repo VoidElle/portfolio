@@ -14,7 +14,7 @@ type Theme = 'dark' | 'light';
 
 function AppInner() {
     const [theme, setTheme] = useState<Theme | null>(null);
-    const { lang, setLang } = useLang();
+    const { lang, setLang, transitioning } = useLang();
 
     useEffect(() => {
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -63,8 +63,11 @@ function AppInner() {
                                     {theme === 'dark' ? <SunIcon className="w-6 h-6" /> : <MoonIcon className="w-6 h-6" />}
                                 </button>
                             </div>
-                            <div className="bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-300 min-h-screen font-inter">
-                                <div className="max-w-5xl w-11/12 mx-auto">
+                            <div className="transition-colors duration-300 bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-300 min-h-screen font-inter">
+                                <div
+                                    className="max-w-5xl w-11/12 mx-auto transition-opacity duration-200"
+                                    style={{ opacity: transitioning ? 0 : 1 }}
+                                >
                                     <Intro />
                                     <Portfolio />
                                     <Timeline />
