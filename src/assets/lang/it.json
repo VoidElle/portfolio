@@ -6,12 +6,13 @@
     "portfolio": {
         "title": "Portfolio",
         "projects": {
+            "8": { "description": "App basata su AI che analizza i tuoi allenamenti e ti aiuta ad allenarti in modo più intelligente" },
             "7": { "description": "Integrazione per Home Assistant dei dispositivi IoT Tecnosystemi Pico e Polaris" },
             "6": { "description": "Libreria API per interfacciarsi localmente con i dispositivi Tecnosystemi Pico in Python" },
             "5": { "description": "Libreria API per interfacciarsi localmente con i sistemi HVAC Tecnosystemi Polaris 5X in Python" },
-            "4": { "description": "POC per una vulnerabilità di sicurezza nei sistemi di accesso GreenTheory (palestra)" },
+            "4": { "description": "POC per una vulnerabilità di sicurezza nei sistemi di accesso GreenTheory" },
             "3": { "description": "Applicazione mobile ibrida per gestire i dispositivi Tecnosystemi Pico" },
-            "2": { "description": "CRM full-stack per un club sociale privato" },
+            "2": { "description": "CRM full-stack per un cocktail bar privato" },
             "1": { "description": "Applicazione mobile ibrida per la gestione del patrimonio / finanza personale / monitoraggio del patrimonio netto" },
             "0": { "description": "Portfolio personale realizzato con React e Tailwind CSS" }
         }

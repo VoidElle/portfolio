@@ -6,10 +6,11 @@
     "portfolio": {
         "title": "Portfolio",
         "projects": {
+            "8": { "description": "AI-powered app that analyzes your workouts and helps you train smarter" },
             "7": { "description": "Home assistant integration for Tecnosystemi Pico and Polaris IOT devices" },
             "6": { "description": "API library to interface with Tecnosystemi Pico devices locally in Python" },
             "5": { "description": "API library to interface with Tecnosystemi Polaris 5X HVAC systems locally in Python" },
-            "4": { "description": "POC for a security vulnerability in GreenTheory (gym) access systems" },
+            "4": { "description": "POC for a security vulnerability in GreenTheory access systems" },
             "3": { "description": "Hybrid mobile application to manage Tecnosystemi Pico devices" },
             "2": { "description": "Full-stack CRM for a private social club" },
             "1": { "description": "Hybrid mobile application for Wealth management / personal finance / Net Worth tracking" },
