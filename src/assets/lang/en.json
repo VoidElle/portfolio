@@ -79,7 +79,8 @@
         "send": "Send",
         "sending": "Sending...",
         "success": "Message sent! I'll get back to you soon.",
-        "error": "Something went wrong. Please try again."
+        "error": "Something went wrong. Please try again.",
+        "or": "or"
     },
     "footer": {
         "rights": "All rights reserved."

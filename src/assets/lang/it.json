@@ -79,7 +79,8 @@
         "send": "Invia",
         "sending": "Invio in corso...",
         "success": "Messaggio inviato! Ti risponderò al più presto.",
-        "error": "Qualcosa è andato storto. Riprova."
+        "error": "Qualcosa è andato storto. Riprova.",
+        "or": "oppure"
     },
     "footer": {
         "rights": "Tutti i diritti riservati."

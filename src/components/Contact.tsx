@@ -84,7 +84,7 @@ const Contact: React.FC = () => {
 
                     <div className="flex items-center gap-3 my-5">
                         <div className="flex-1 h-px bg-subtle" />
-                        <span className="text-xs font-medium text-muted uppercase tracking-widest">or</span>
+                        <span className="text-xs font-medium text-muted uppercase tracking-widest">{t('contact.or')}</span>
                         <div className="flex-1 h-px bg-subtle" />
                     </div>
 
