@@ -30,7 +30,7 @@ const Nav: React.FC<NavProps> = ({ theme, lang, onThemeToggle, onLangToggle, Sun
                             type="button"
                             onClick={onLangToggle}
                             aria-label={lang === 'en' ? 'Passa alla lingua italiana' : 'Switch to English'}
-                            className="px-2.5 py-1 text-xs font-semibold rounded-md border border-subtle text-muted hover:border-accent hover:text-accent transition-colors"
+                            className="h-8 w-8 flex items-center justify-center text-xs font-semibold rounded-md border border-subtle text-fg hover:border-accent hover:text-accent transition-colors"
                         >
                             {lang === 'en' ? 'IT' : 'EN'}
                         </button>
@@ -38,7 +38,7 @@ const Nav: React.FC<NavProps> = ({ theme, lang, onThemeToggle, onLangToggle, Sun
                             type="button"
                             onClick={onThemeToggle}
                             aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-                            className="p-1.5 rounded-md border border-subtle text-muted hover:border-accent hover:text-accent transition-colors"
+                            className="h-8 w-8 flex items-center justify-center rounded-md border border-subtle text-fg hover:border-accent hover:text-accent transition-colors"
                         >
                             {theme === 'dark'
                                 ? <SunIcon className="w-4 h-4" />
