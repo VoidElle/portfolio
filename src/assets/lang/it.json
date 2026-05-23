@@ -77,7 +77,9 @@
             "placeholder": "A cosa stai pensando?"
         },
         "send": "Invia",
-        "sending": "Invio in corso..."
+        "sending": "Invio in corso...",
+        "success": "Messaggio inviato! Ti risponderò al più presto.",
+        "error": "Qualcosa è andato storto. Riprova."
     },
     "footer": {
         "rights": "Tutti i diritti riservati."

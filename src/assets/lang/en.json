@@ -77,7 +77,9 @@
             "placeholder": "What's on your mind?"
         },
         "send": "Send",
-        "sending": "Sending..."
+        "sending": "Sending...",
+        "success": "Message sent! I'll get back to you soon.",
+        "error": "Something went wrong. Please try again."
     },
     "footer": {
         "rights": "All rights reserved."

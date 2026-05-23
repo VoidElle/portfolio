@@ -5,13 +5,21 @@ import { useInView } from "../hooks/useInView";
 import { useLang } from '../context/LangContext';
 
 const Contact: React.FC = () => {
-    const { loading, isValid, isEmailValid, fields, handleChange, handleSubmit } = useContactForm();
+    const { loading, isValid, isEmailValid, submitted, error, fields, handleChange, handleSubmit } = useContactForm();
     const [ref, inView] = useInView<HTMLFormElement>();
     const { t } = useLang();
 
     return (
         <div className="flex flex-col mb-10 mx-auto">
             <div className="flex justify-center items-center">
+                {submitted ? (
+                    <div className="flex flex-col items-center gap-4 py-12 w-full md:w-7/12 text-center animate-fade-up">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <p className="text-lg font-medium">{t('contact.success')}</p>
+                    </div>
+                ) : (
                 <form
                     ref={ref}
                     onSubmit={handleSubmit}
@@ -48,6 +56,9 @@ const Contact: React.FC = () => {
                         onChange={handleChange}
                         className="p-2 mb-4 bg-transparent border-2 rounded-md focus:outline-none"
                     />
+                    {error && (
+                        <p className="text-sm text-red-500 dark:text-red-400 mb-3">{t('contact.error')}</p>
+                    )}
                     <button
                         type="submit"
                         disabled={loading || !isValid}
@@ -62,6 +73,7 @@ const Contact: React.FC = () => {
                         {loading ? t('contact.sending') : t('contact.send')}
                     </button>
                 </form>
+                )}
             </div>
         </div>
     );
