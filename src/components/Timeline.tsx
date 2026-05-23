@@ -10,9 +10,9 @@ const Timeline: React.FC = () => {
 
     return (
         <section id="timeline" className="mb-20">
-            <div className="flex flex-col md:flex-row justify-center">
-                <div className="w-full md:w-8/12 md:pl-0">
-                    <Title>{t('timeline.title')}</Title>
+            <div className="max-w-2xl mx-auto">
+                <Title>{t('timeline.title')}</Title>
+                <div className="pl-4">
                     {timeline.map((item, index) => (
                         <TimelineItem
                             id={item.id}
@@ -26,7 +26,7 @@ const Timeline: React.FC = () => {
                             animDelay={index * 80}
                         />
                     ))}
-                </div>
+                    </div>
             </div>
         </section>
     );

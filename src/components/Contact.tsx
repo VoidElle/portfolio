@@ -12,10 +12,10 @@ const Contact: React.FC = () => {
     const { t } = useLang();
 
     return (
-        <section id="contact" className="mb-10 mx-auto">
-            <div className="flex justify-center items-center">
-                {submitted ? (
-                    <div className="flex flex-col items-center gap-4 py-16 w-full md:w-7/12 text-center animate-fade-up">
+        <section id="contact" className="mb-10">
+            <div className="max-w-2xl mx-auto">
+            {submitted ? (
+                <div className="flex flex-col items-center gap-4 py-16 max-w-xl text-center animate-fade-up">
                         <div className="w-14 h-14 rounded-full border border-green-500/50 flex items-center justify-center bg-green-500/10">
                             <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -27,7 +27,7 @@ const Contact: React.FC = () => {
                 <form
                     ref={ref}
                     onSubmit={handleSubmit}
-                    className={`flex flex-col w-full md:w-7/12 ${inView ? 'animate-fade-up' : 'opacity-0'}`}
+                    className={`flex flex-col max-w-xl ${inView ? 'animate-fade-up' : 'opacity-0'}`}
                 >
                     <Title>{t('contact.title')}</Title>
 
@@ -48,7 +48,7 @@ const Contact: React.FC = () => {
                         name="email"
                         placeholder={t('contact.email.placeholder')}
                         onChange={handleChange}
-                        className={`${inputClass} ${fields.email && !isEmailValid ? '!border-red-500/70' : ''}`}
+                        className={`${inputClass} ${fields.email && !isEmailValid ? 'border-red-500/70!' : ''}`}
                     />
                     {fields.email && !isEmailValid && (
                         <p className="text-xs text-red-500 mt-1">{t('contact.email.error')}</p>
