@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import SunIcon from './assets/sun.svg?react';
 import MoonIcon from './assets/moon.svg?react';
 
+import Nav from "./components/Nav";
 import Intro from "./components/Intro";
 import Portfolio from "./components/Portfolio";
 import Timeline from "./components/Timeline";
@@ -33,9 +34,8 @@ function AppInner() {
     };
 
     useEffect(() => {
-        const themeColor = theme === 'dark' ? '#1c1917' : '#ffffff';
+        const themeColor = theme === 'dark' ? '#0f0e13' : '#fafaf9';
         document.documentElement.classList.toggle('dark', theme === 'dark');
-        document.documentElement.style.backgroundColor = themeColor;
         document.querySelector('meta[name="theme-color"]')?.setAttribute('content', themeColor);
     }, [theme]);
 
@@ -44,38 +44,29 @@ function AppInner() {
             <Routes>
                 <Route path="/">
                     <Route index element={
-                        <>
-                            <div className="absolute lg:fixed z-30 right-4 top-4 flex gap-2">
-                                <button
-                                    type="button"
-                                    onClick={handleLangSwitch}
-                                    aria-label={lang === 'en' ? 'Passa alla lingua italiana' : 'Switch to English'}
-                                    className="px-3 py-2 bg-violet-300 dark:bg-orange-300 text-sm font-bold rounded-md"
-                                >
-                                    {lang === 'en' ? 'IT' : 'EN'}
-                                </button>
-                                <button
-                                    type="button"
-                                    onClick={handleThemeSwitch}
-                                    aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-                                    className="p-2 bg-violet-300 dark:bg-orange-300 text-lg rounded-md"
-                                >
-                                    {theme === 'dark' ? <SunIcon className="w-6 h-6" /> : <MoonIcon className="w-6 h-6" />}
-                                </button>
+                        <div
+                            className="bg-main text-fg font-satoshi min-h-screen transition-colors duration-300"
+                            style={{ background: 'var(--c-bg) radial-gradient(ellipse 60% 40% at 40% 0%, oklch(0.65 0.18 275 / 0.12) 0%, transparent 65%)' }}
+                        >
+                            <Nav
+                                theme={theme}
+                                lang={lang}
+                                onThemeToggle={handleThemeSwitch}
+                                onLangToggle={handleLangSwitch}
+                                SunIcon={SunIcon}
+                                MoonIcon={MoonIcon}
+                            />
+                            <div
+                                className="max-w-5xl w-11/12 mx-auto transition-opacity duration-200"
+                                style={{ opacity: transitioning ? 0 : 1 }}
+                            >
+                                <Intro />
+                                <Portfolio />
+                                <Timeline />
+                                <Contact />
+                                <Footer />
                             </div>
-                            <div className="transition-colors duration-300 bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-300 min-h-screen font-inter">
-                                <div
-                                    className="max-w-5xl w-11/12 mx-auto transition-opacity duration-200"
-                                    style={{ opacity: transitioning ? 0 : 1 }}
-                                >
-                                    <Intro />
-                                    <Portfolio />
-                                    <Timeline />
-                                    <Contact />
-                                    <Footer />
-                                </div>
-                            </div>
-                        </>
+                        </div>
                     } />
                 </Route>
             </Routes>
@@ -91,3 +82,4 @@ function App() {
     );
 }
 export default App;
+

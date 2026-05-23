@@ -7,12 +7,13 @@ interface Props {
 
 const Title: React.FC<Props> = ({ children, id }) => {
     return (
-        <h1
+        <h2
             id={id}
-            className="text-2xl font-bold underline underline-offset-8 decoration-4 mb-5 text-stone-900 dark:text-white"
+            className="text-2xl font-bold text-fg mb-6"
         >
             {children}
-        </h1>
+            <span className="block mt-2 h-px w-10 bg-accent" />
+        </h2>
     );
 };
 

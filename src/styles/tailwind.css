@@ -1,10 +1,40 @@
 @import "tailwindcss" source("../**/*.{tsx,ts}");
 
 @theme {
-    --font-inter: 'inter', serif;
+    --font-satoshi: 'Satoshi', sans-serif;
     --animate-fade-up: fade-up 0.6s ease-out both;
     --animate-fade-in: fade-in 0.5s ease-out both;
     --animate-slide-in-left: slide-in-left 0.6s ease-out both;
+
+    --color-main:    var(--c-bg);
+    --color-surface: var(--c-surface);
+    --color-subtle:  var(--c-border);
+    --color-fg:      var(--c-text);
+    --color-muted:   var(--c-muted);
+    --color-accent:  var(--c-accent);
+    --color-main-blur: var(--c-bg-blur);
+}
+
+/* ── Light tokens ─────────────────────────────── */
+:root {
+    --c-bg:       oklch(0.99 0.003 275);
+    --c-bg-blur:  oklch(0.99 0.003 275 / 0.85);
+    --c-surface:  oklch(0.96 0.006 275);
+    --c-border:   oklch(0.87 0.012 275);
+    --c-text:     oklch(0.12 0.015 275);
+    --c-muted:    oklch(0.48 0.025 275);
+    --c-accent:   oklch(0.52 0.22 275);
+}
+
+/* ── Dark tokens ──────────────────────────────── */
+.dark {
+    --c-bg:       oklch(0.10 0.015 275);
+    --c-bg-blur:  oklch(0.10 0.015 275 / 0.85);
+    --c-surface:  oklch(0.14 0.016 275);
+    --c-border:   oklch(0.23 0.022 275);
+    --c-text:     oklch(0.90 0.010 275);
+    --c-muted:    oklch(0.55 0.025 280);
+    --c-accent:   oklch(0.65 0.18  275);
 }
 
 @keyframes fade-up {
@@ -24,12 +54,10 @@
 
 html, body {
     scroll-behavior: smooth;
+    background-color: var(--c-bg);
+    color: var(--c-text);
     transition: background-color 0.3s ease, color 0.3s ease;
-    @apply bg-white;
-}
-
-html.dark, html.dark body {
-    @apply bg-stone-900;
 }
 
 @variant dark (&:where(.dark, .dark *));
+

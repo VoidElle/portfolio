@@ -19,30 +19,30 @@ const PortfolioItem: React.FC<Props> = ({ title, description, imgUrl, stack, lin
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`block h-full border-stone-900 dark:border-white rounded-md transition-transform duration-300 hover:scale-[1.03] hover:-translate-y-1 hover:shadow-lg ${inView ? 'animate-fade-up' : 'opacity-0'}`}
+                className={`block h-full rounded-xl border border-subtle bg-surface transition-all duration-200 hover:border-accent hover:-translate-y-0.5 hover:shadow-lg ${inView ? 'animate-fade-up' : 'opacity-0'}`}
                 style={inView ? { animationDelay: `${animDelay}ms` } : undefined}
             >
-                <div className="h-full border-2 border-stone-900 dark:border-white rounded-md overflow-hidden">
+                <div className="h-full rounded-xl overflow-hidden">
                     <img
                         src={imgUrl}
                         alt={title}
                         loading="lazy"
-                        className="w-full h-36 md:h-48 object-cover cursor-pointer"
+                        className="w-full h-36 md:h-44 object-cover"
                     />
-                    <div className="w-full p-4">
-                        <h3 className="text-lg md:text-xl dark:text-white mb-1 font-semibold">
+                    <div className="p-4">
+                        <h3 className="text-base font-semibold text-fg mb-1">
                             {title}
                         </h3>
-                        <p className="text-sm text-stone-500 dark:text-stone-400 mb-3">
+                        <p className="text-sm text-muted mb-3 leading-relaxed">
                             {description}
                         </p>
-                        <p className="flex flex-wrap gap-2 flex-row items-center justify-start text-xs md:text-sm dark:text-white">
+                        <div className="flex flex-wrap gap-1.5">
                             {stack.map((item) => (
-                                <span key={item} className="inline-block px-2 py-1 font-semibold border-2 border-stone-900 dark:border-white rounded-md">
+                                <span key={item} className="inline-block px-2 py-0.5 text-xs font-medium border border-subtle rounded-md text-muted bg-main">
                                     {item}
                                 </span>
                             ))}
-                        </p>
+                        </div>
                     </div>
                 </div>
             </a>
@@ -51,3 +51,4 @@ const PortfolioItem: React.FC<Props> = ({ title, description, imgUrl, stack, lin
 };
 
 export default PortfolioItem;
+

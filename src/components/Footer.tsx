@@ -5,11 +5,11 @@ const Footer: React.FC = () => {
     const { t } = useLang();
 
     return (
-        <div className="py-5 text-center">
-            <p className="text-sm mt-2 opacity-50">
+        <footer className="py-6 border-t border-subtle mt-4">
+            <p className="text-sm text-muted text-center">
                 &copy; {new Date().getFullYear()} Luca Del Corona. {t('footer.rights')}
             </p>
-        </div>
+        </footer>
     );
 };
 
