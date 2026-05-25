@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useLang } from '../context/LangContext';
 
 interface NavProps {
@@ -16,9 +17,9 @@ const Nav: React.FC<NavProps> = ({ theme, lang, onThemeToggle, onLangToggle, Sun
     return (
         <nav className="sticky top-0 z-30 bg-main-blur backdrop-blur-md border-b border-subtle">
             <div className="max-w-5xl w-11/12 mx-auto flex items-center justify-between h-12">
-                <a href="/" className="font-semibold text-fg text-sm tracking-tight hover:text-accent transition-colors">
+                <Link to="/" className="font-semibold text-fg text-sm tracking-tight hover:text-accent transition-colors">
                     Luca Del Corona
-                </a>
+                </Link>
                 <div className="flex items-center gap-6">
                     <div className="hidden md:flex gap-5 text-sm font-medium text-muted">
                         <a href="#portfolio" className="hover:text-fg transition-colors">{t('portfolio.title')}</a>

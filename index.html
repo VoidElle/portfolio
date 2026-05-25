@@ -45,8 +45,9 @@
     </script>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://api.fontshare.com">
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+    <link rel="preload" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet"></noscript>
   </head>
   <body>
     <div id="root"></div>

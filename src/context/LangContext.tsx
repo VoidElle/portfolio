@@ -1,10 +1,21 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import en from '../assets/lang/en.json';
-import it from '../assets/lang/it.json';
 
 export type Lang = 'en' | 'it';
 
-const translations: Record<Lang, typeof en> = { en, it };
+type Translations = typeof en;
+
+const translations: Partial<Record<Lang, Translations>> = { en };
+
+async function loadLang(lang: Lang): Promise<Translations> {
+    if (translations[lang]) return translations[lang]!;
+    // Only non-default languages need dynamic loading; 'en' is already bundled
+    if (lang === 'it') {
+        const mod = await import('../assets/lang/it.json');
+        translations['it'] = mod.default as Translations;
+    }
+    return translations[lang]!;
+}
 
 interface LangContextType {
     lang: Lang;
@@ -27,19 +38,29 @@ export const LangProvider: React.FC<{ children: React.ReactNode }> = ({ children
         return navigator.language.startsWith('it') ? 'it' : 'en';
     });
     const [transitioning, setTransitioning] = useState(false);
+    const [loadedLang, setLoadedLang] = useState<Lang>('en');
+
+    // Eagerly preload the initial language (may differ from 'en')
+    useEffect(() => {
+        loadLang(lang).then(() => setLoadedLang(lang));
+    }, []);
 
     const setLang = (l: Lang) => {
         setTransitioning(true);
-        setTimeout(() => {
-            setLangState(l);
-            localStorage.setItem('lang', l);
-            setTransitioning(false);
-        }, 200);
+        loadLang(l).then(() => {
+            setTimeout(() => {
+                setLangState(l);
+                setLoadedLang(l);
+                localStorage.setItem('lang', l);
+                setTransitioning(false);
+            }, 200);
+        });
     };
 
     const t = (key: string): any => {
+        const activeLang = translations[lang] ?? translations[loadedLang] ?? translations['en']!;
         const keys = key.split('.');
-        let val: any = translations[lang];
+        let val: any = activeLang;
         for (const k of keys) {
             if (val == null) return key;
             val = val[k];
