@@ -22,7 +22,7 @@
     --c-surface:  oklch(0.96 0.006 275);
     --c-border:   oklch(0.87 0.012 275);
     --c-text:     oklch(0.12 0.015 275);
-    --c-muted:    oklch(0.48 0.025 275);
+    --c-muted:    oklch(0.38 0.025 275);
     --c-accent:   oklch(0.52 0.22 275);
 }
 
@@ -33,7 +33,7 @@
     --c-surface:  oklch(0.14 0.016 275);
     --c-border:   oklch(0.23 0.022 275);
     --c-text:     oklch(0.90 0.010 275);
-    --c-muted:    oklch(0.55 0.025 280);
+    --c-muted:    oklch(0.68 0.025 280);
     --c-accent:   oklch(0.65 0.18  275);
 }
 
