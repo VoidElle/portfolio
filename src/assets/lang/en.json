@@ -6,6 +6,10 @@
     "portfolio": {
         "title": "Portfolio",
         "projects": {
+            "12": { "description": "Home Assistant integration that monitors the uptime and health of major AI/LLM provider APIs in real time" },
+            "11": { "description": "Home Assistant integration for iAlarm MK alarm panels via a fully local TCP connection, no cloud required" },
+            "10": { "description": "Async Python library to interface with iAlarm MK alarm panels locally over the Meian binary protocol" },
+            "9": { "description": "Desktop app that fetches your previous day's Jira activity and turns it into a clean standup summary" },
             "8": { "description": "AI-powered app that analyzes your workouts and helps you train smarter" },
             "7": { "description": "Home assistant integration for Tecnosystemi Pico and Polaris IOT devices" },
             "6": { "description": "API library to interface with Tecnosystemi Pico devices locally in Python" },

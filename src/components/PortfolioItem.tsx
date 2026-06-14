@@ -5,12 +5,13 @@ interface Props {
     title: string;
     description: string;
     imgUrl: string;
+    imgContain?: boolean;
     stack: string[];
     link: string;
     animDelay?: number;
 }
 
-const PortfolioItem: React.FC<Props> = ({ title, description, imgUrl, stack, link, animDelay = 0 }) => {
+const PortfolioItem: React.FC<Props> = ({ title, description, imgUrl, imgContain = false, stack, link, animDelay = 0 }) => {
     const [ref, inView] = useInView();
 
     return (
@@ -27,7 +28,7 @@ const PortfolioItem: React.FC<Props> = ({ title, description, imgUrl, stack, lin
                         src={imgUrl}
                         alt={title}
                         loading="lazy"
-                        className="w-full h-36 md:h-44 object-cover"
+                        className={`w-full h-36 md:h-44 ${imgContain ? 'object-contain p-4 bg-surface' : 'object-cover'}`}
                     />
                     <div className="p-4">
                         <h3 className="text-base font-semibold text-fg mb-1">

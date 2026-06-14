@@ -7,8 +7,41 @@ import openPicoLocalApi from "../assets/projects/openPicoLocalApi.webp";
 import openPolarisLocalApi from "../assets/projects/openPolarisLocalApi.webp";
 import blackTheoryImage from "../assets/projects/blackTheory.webp";
 import gymnalyzerImage from "../assets/projects/gymnalyzer.webp";
+import hassLlmWatchdogImage from "../assets/projects/hassLlmWatchdog.webp";
+import hassOpenIalarmMkImage from "../assets/projects/hassOpenIalarmMk.webp";
+import openIalarmMkLocalApiImage from "../assets/projects/openIalarmMkLocalApi.webp";
+import whatIDidImage from "../assets/projects/whatIDid.webp";
 
 export default [
+    {
+        id: 12,
+        title: "Hass LLM Watchdog",
+        imgUrl: hassLlmWatchdogImage,
+        imgContain: true,
+        stack: ["Python", "Home Assistant"],
+        link: "https://github.com/VoidElle/hass-llm-watchdog"
+    },
+    {
+        id: 11,
+        title: "Hass Open iAlarm MK",
+        imgUrl: hassOpenIalarmMkImage,
+        stack: ["Python", "Home Assistant"],
+        link: "https://github.com/VoidElle/hass-open-ialarm-mk"
+    },
+    {
+        id: 10,
+        title: "Open iAlarm MK Local API",
+        imgUrl: openIalarmMkLocalApiImage,
+        stack: ["Python", "TCP"],
+        link: "https://github.com/VoidElle/open-ialarm-mk-local-api"
+    },
+    {
+        id: 9,
+        title: "What I Did",
+        imgUrl: whatIDidImage,
+        stack: ["TypeScript", "Tauri"],
+        link: "https://github.com/VoidElle/what-i-did"
+    },
     {
         id: 8,
         title: "Gymnalyzer",

@@ -6,6 +6,10 @@
     "portfolio": {
         "title": "Portfolio",
         "projects": {
+            "12": { "description": "Integrazione per Home Assistant che monitora in tempo reale l'uptime e lo stato delle principali API AI/LLM" },
+            "11": { "description": "Integrazione per Home Assistant per le centrali d'allarme iAlarm MK tramite connessione TCP locale, senza cloud" },
+            "10": { "description": "Libreria Python asincrona per interfacciarsi localmente con le centrali iAlarm MK tramite il protocollo binario Meian" },
+            "9": { "description": "App desktop che recupera l'attività Jira del giorno precedente e la trasforma in un riassunto pronto per lo standup" },
             "8": { "description": "App basata su AI che analizza i tuoi allenamenti e ti aiuta ad allenarti in modo più intelligente" },
             "7": { "description": "Integrazione per Home Assistant dei dispositivi IoT Tecnosystemi Pico e Polaris" },
             "6": { "description": "Libreria API per interfacciarsi localmente con i dispositivi Tecnosystemi Pico in Python" },
