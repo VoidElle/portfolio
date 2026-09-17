@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useLang } from '../context/LangContext';
 
 interface NavProps {
@@ -22,6 +22,8 @@ const NAV_LINKS = [
 
 const Nav: React.FC<NavProps> = ({ theme, lang, onThemeToggle, onLangToggle, SunIcon, MoonIcon }) => {
     const { t } = useLang();
+    const { pathname } = useLocation();
+    const isHome = pathname === '/';
     const [active, setActive] = useState<string>('hero');
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
@@ -64,21 +66,23 @@ const Nav: React.FC<NavProps> = ({ theme, lang, onThemeToggle, onLangToggle, Sun
                         Luca<span className="text-accent">.</span>
                     </Link>
 
-                    <div className="hidden md:flex gap-1">
-                        {NAV_LINKS.map(({ id, key }) => (
-                            <a
-                                key={id}
-                                href={`#${id}`}
-                                className={`px-3.5 py-1.5 rounded-full text-sm font-medium transition-[color,background-color,transform] active:scale-[0.97] ${
-                                    active === id
-                                        ? 'text-fg bg-fg/5'
-                                        : 'text-muted hover:text-fg hover:bg-fg/5'
-                                }`}
-                            >
-                                {t(key)}
-                            </a>
-                        ))}
-                    </div>
+                    {isHome && (
+                        <div className="hidden md:flex gap-1">
+                            {NAV_LINKS.map(({ id, key }) => (
+                                <a
+                                    key={id}
+                                    href={`#${id}`}
+                                    className={`px-3.5 py-1.5 rounded-full text-sm font-medium transition-[color,background-color,transform] active:scale-[0.97] ${
+                                        active === id
+                                            ? 'text-fg bg-fg/5'
+                                            : 'text-muted hover:text-fg hover:bg-fg/5'
+                                    }`}
+                                >
+                                    {t(key)}
+                                </a>
+                            ))}
+                        </div>
+                    )}
 
                     <div className="flex items-center gap-2">
                         <button
@@ -100,19 +104,21 @@ const Nav: React.FC<NavProps> = ({ theme, lang, onThemeToggle, onLangToggle, Sun
                                 : <MoonIcon className="w-4 h-4" />
                             }
                         </button>
-                        <button
-                            type="button"
-                            onClick={() => setMenuOpen(true)}
-                            aria-label="Open menu"
-                            className="md:hidden h-8 w-8 flex items-center justify-center rounded-lg border border-subtle text-fg hover:border-strong hover:text-accent transition-[color,border-color,transform] active:scale-[0.97]"
-                        >
-                            <i className="fas fa-bars" aria-hidden="true" />
-                        </button>
+                        {isHome && (
+                            <button
+                                type="button"
+                                onClick={() => setMenuOpen(true)}
+                                aria-label="Open menu"
+                                className="md:hidden h-8 w-8 flex items-center justify-center rounded-lg border border-subtle text-fg hover:border-strong hover:text-accent transition-[color,border-color,transform] active:scale-[0.97]"
+                            >
+                                <i className="fas fa-bars" aria-hidden="true" />
+                            </button>
+                        )}
                     </div>
                 </div>
             </nav>
 
-            {menuOpen && (
+            {isHome && menuOpen && (
                 <div className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-6 bg-main/95 backdrop-blur-md md:hidden">
                     <button
                         type="button"

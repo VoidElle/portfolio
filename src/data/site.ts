@@ -7,7 +7,7 @@ export interface SocialLink {
 
 export const SITE = {
     name: "Luca Del Corona",
-    avatar: null as string | null,          // path under /public or imported asset; null → gradient initials fallback
+    avatar: "https://avatars.githubusercontent.com/u/26171008?s=200&v=4", // GitHub profile picture (VoidElle); null -> gradient initials fallback
     resumeUrl: null as string | null,       // download link; hide button when null
     email: "info@lucadelcorona.com",
     socials: [
