@@ -12,6 +12,6 @@ export const SITE = {
     email: "info@lucadelcorona.com",
     socials: [
         { id: "github", labelKey: "hero.socials.github", url: "https://github.com/VoidElle", icon: "fab fa-github" },
-        { id: "linkedin", labelKey: "hero.socials.linkedin", url: "", icon: "fab fa-linkedin" }
+        { id: "linkedin", labelKey: "hero.socials.linkedin", url: "https://www.linkedin.com/in/luca-del-corona/", icon: "fab fa-linkedin" }
     ] as SocialLink[]
 };

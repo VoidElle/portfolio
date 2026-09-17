@@ -12,6 +12,7 @@ import hassOpenIalarmMkImage from "../assets/projects/hassOpenIalarmMk.webp";
 import openIalarmMkLocalApiImage from "../assets/projects/openIalarmMkLocalApi.webp";
 import whatIDidImage from "../assets/projects/whatIDid.webp";
 import zigbeeMeshHealthImage from "../assets/projects/zigbeeMeshHealth.png";
+import jiraStandupSkillImage from "../assets/projects/jiraStandupSkill.svg";
 
 export interface Project {
     id: number;
@@ -37,6 +38,8 @@ const portfolio: Project[] = [
     {
         id: 13,
         title: "Jira Standup Skill",
+        imgUrl: jiraStandupSkillImage,
+        imgContain: true,
         stack: ["MCP", "AI"],
         link: "https://github.com/VoidElle/jira-standup-skill",
         caseStudy: "jira-standup-skill"
