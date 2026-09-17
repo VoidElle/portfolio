@@ -28,6 +28,8 @@ const Nav: React.FC<NavProps> = ({ theme, lang, onThemeToggle, onLangToggle, Sun
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
     useEffect(() => {
+        if (!isHome) return;
+
         const sections = document.querySelectorAll('section[id]');
         if (sections.length === 0) return;
 
@@ -44,7 +46,7 @@ const Nav: React.FC<NavProps> = ({ theme, lang, onThemeToggle, onLangToggle, Sun
 
         sections.forEach((section) => observer.observe(section));
         return () => observer.disconnect();
-    }, []);
+    }, [isHome]);
 
     useEffect(() => {
         document.body.style.overflow = menuOpen ? 'hidden' : '';
