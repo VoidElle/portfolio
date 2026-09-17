@@ -113,6 +113,10 @@
         "label": "Traguardi",
         "title": "Riconoscimenti",
         "sub": "Certificazioni, formazione e traguardi lungo il percorso.",
+        "groups": {
+            "education": "Formazione",
+            "certifications": "Certificazioni"
+        },
         "entries": {
             "5": {
                 "details": [

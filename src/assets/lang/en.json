@@ -113,6 +113,10 @@
         "label": "Milestones",
         "title": "Achievements",
         "sub": "Certifications, education, and milestones along the way.",
+        "groups": {
+            "education": "Education",
+            "certifications": "Certifications"
+        },
         "entries": {
             "5": {
                 "details": [
