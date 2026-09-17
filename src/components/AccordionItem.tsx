@@ -19,7 +19,7 @@ const AccordionItem: React.FC<Props> = ({ id, title, subtitle, dotColor, default
                 onClick={() => setOpen((prev) => !prev)}
                 aria-expanded={open}
                 aria-controls={`${id}-body`}
-                className="w-full flex items-center gap-3 p-5 text-left cursor-pointer"
+                className="w-full flex items-center gap-3 p-5 text-left cursor-pointer transition-transform active:scale-[0.97]"
             >
                 <span
                     className="w-2.5 h-2.5 rounded-full shrink-0"
@@ -31,7 +31,7 @@ const AccordionItem: React.FC<Props> = ({ id, title, subtitle, dotColor, default
                     <span className="block text-sm text-muted mt-0.5">{subtitle}</span>
                 </span>
                 <i
-                    className={`fas fa-chevron-down text-muted transition-transform ${open ? 'rotate-180' : ''}`}
+                    className={`fas fa-chevron-down text-muted transition-transform duration-200 ease-out ${open ? 'rotate-180' : ''}`}
                     aria-hidden="true"
                 />
             </button>

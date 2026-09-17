@@ -20,14 +20,12 @@ async function loadLang(lang: Lang): Promise<Translations> {
 interface LangContextType {
     lang: Lang;
     setLang: (lang: Lang) => void;
-    transitioning: boolean;
     t: (key: string) => any;
 }
 
 const LangContext = createContext<LangContextType>({
     lang: 'en',
     setLang: () => {},
-    transitioning: false,
     t: (key) => key,
 });
 
@@ -37,7 +35,6 @@ export const LangProvider: React.FC<{ children: React.ReactNode }> = ({ children
         if (stored === 'en' || stored === 'it') return stored;
         return navigator.language.startsWith('it') ? 'it' : 'en';
     });
-    const [transitioning, setTransitioning] = useState(false);
     const [loadedLang, setLoadedLang] = useState<Lang>('en');
 
     // Eagerly preload the initial language (may differ from 'en')
@@ -46,14 +43,10 @@ export const LangProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }, []);
 
     const setLang = (l: Lang) => {
-        setTransitioning(true);
         loadLang(l).then(() => {
-            setTimeout(() => {
-                setLangState(l);
-                setLoadedLang(l);
-                localStorage.setItem('lang', l);
-                setTransitioning(false);
-            }, 200);
+            setLangState(l);
+            setLoadedLang(l);
+            localStorage.setItem('lang', l);
         });
     };
 
@@ -73,7 +66,7 @@ export const LangProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }, [lang]);
 
     return (
-        <LangContext.Provider value={{ lang, setLang, transitioning, t }}>
+        <LangContext.Provider value={{ lang, setLang, t }}>
             {children}
         </LangContext.Provider>
     );

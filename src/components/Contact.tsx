@@ -50,10 +50,10 @@ const Contact: React.FC = () => {
                             name="email"
                             placeholder={t('contact.email.placeholder')}
                             onChange={handleChange}
-                            className={`${inputClass} ${fields.email && !isEmailValid ? 'border-red-500/70!' : ''}`}
+                            className={`${inputClass} ${fields.email && !isEmailValid ? 'border-danger/70!' : ''}`}
                         />
                         {fields.email && !isEmailValid && (
-                            <p className="text-xs text-red-500 mt-1">{t('contact.email.error')}</p>
+                            <p className="text-xs text-danger mt-1">{t('contact.email.error')}</p>
                         )}
 
                         <label htmlFor="contact-message" className="text-xs font-medium text-muted mb-1.5 mt-4 uppercase tracking-wider">{t('contact.message.label')}</label>
@@ -67,13 +67,13 @@ const Contact: React.FC = () => {
                         />
 
                         {error && (
-                            <p className="text-sm text-red-500 mb-3">{t('contact.error')}</p>
+                            <p className="text-sm text-danger mb-3">{t('contact.error')}</p>
                         )}
 
                         <button
                             type="submit"
                             disabled={loading || !isValid}
-                            className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-2.5 w-max text-sm font-semibold text-accent-contrast bg-gradient-to-br from-[#14de5e] to-[#00f068] hover:opacity-90 disabled:opacity-40 transition"
+                            className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-2.5 w-max text-sm font-semibold text-accent-contrast bg-gradient-to-br from-accent-from to-accent-to hover:opacity-90 disabled:opacity-40 transition-[opacity,transform] ease-out active:scale-[0.97]"
                         >
                             {loading && (
                                 <svg className="animate-spin w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -92,7 +92,7 @@ const Contact: React.FC = () => {
 
                         <a
                             href="mailto:info@lucadelcorona.com"
-                            className="self-start inline-flex items-center gap-2 rounded-full px-4 py-2 border border-subtle text-sm font-medium text-fg hover:border-strong transition-colors"
+                            className="self-start inline-flex items-center gap-2 rounded-full px-4 py-2 border border-subtle text-sm font-medium text-fg hover:border-strong transition-[color,border-color,transform] active:scale-[0.97]"
                         >
                             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />

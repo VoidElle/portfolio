@@ -4,7 +4,7 @@ import timeline from "../data/timeline";
 import AccordionItem from "./AccordionItem";
 import { useLang } from '../context/LangContext';
 
-const DOT_COLORS = ['#22c55e', '#a855f7', '#3b82f6', '#f59e0b'];
+const DOT_COLORS = ['var(--c-swatch-green)', 'var(--c-swatch-purple)', 'var(--c-swatch-blue)', 'var(--c-swatch-amber)'];
 
 const Timeline: React.FC = () => {
     const { t } = useLang();

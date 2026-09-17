@@ -19,7 +19,7 @@ interface Props {
 
 const badgeClass = 'rounded-full border border-subtle text-muted text-xs px-3 py-1 break-words';
 const linkClass =
-    'inline-flex items-center gap-1.5 rounded-full border border-subtle text-muted text-xs px-3 py-1 break-words transition-colors hover:text-fg hover:border-strong';
+    'inline-flex items-center gap-1.5 rounded-full border border-subtle text-muted text-xs px-3 py-1 break-words transition-[color,border-color,transform] active:scale-[0.97] hover:text-fg hover:border-strong';
 
 const CaseStudyHeader: React.FC<Props> = ({
     title,

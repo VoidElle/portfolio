@@ -56,7 +56,7 @@ const Skills: React.FC = () => {
                                 return (
                                     <span
                                         key={item.label}
-                                        className="rounded-full border border-subtle text-muted text-sm px-3 py-1 inline-flex items-center gap-1.5 hover:text-fg hover:border-strong transition-colors"
+                                        className="rounded-full border border-subtle text-muted text-sm px-3 py-1 inline-flex items-center gap-1.5 transition-[color,border-color,transform] active:scale-[0.97] hover:text-fg hover:border-strong"
                                     >
                                         {icon && <i className={icon} aria-hidden="true" />}
                                         {item.label}

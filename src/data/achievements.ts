@@ -13,7 +13,7 @@ export const achievements: Achievement[] = [
         id: 5,
         title: 'CCNA: Switching, Routing & Wireless Essentials',
         subtitle: 'Cisco Networking Academy',
-        dotColor: '#22c55e',
+        dotColor: 'var(--c-swatch-green)',
         detailsKey: 'achievements.entries.5.details',
         chips: [
             "Switching",
@@ -26,7 +26,7 @@ export const achievements: Achievement[] = [
         id: 6,
         title: 'CCNA: Enterprise Networking, Security & Automation',
         subtitle: 'Cisco Networking Academy',
-        dotColor: '#3b82f6',
+        dotColor: 'var(--c-swatch-blue)',
         detailsKey: 'achievements.entries.6.details',
         chips: [
             "Enterprise Networking",
@@ -38,7 +38,7 @@ export const achievements: Achievement[] = [
         id: 7,
         title: 'Claude Partner Badge - Claude Code',
         subtitle: 'Anthropic',
-        dotColor: '#a855f7',
+        dotColor: 'var(--c-swatch-purple)',
         detailsKey: 'achievements.entries.7.details',
         chips: [
             "Claude Code",
@@ -49,7 +49,7 @@ export const achievements: Achievement[] = [
         id: 8,
         title: 'English Proficiency Accelerator',
         subtitle: 'Language Certification',
-        dotColor: '#f59e0b',
+        dotColor: 'var(--c-swatch-amber)',
         detailsKey: 'achievements.entries.8.details',
         chips: [
             "English"
@@ -59,7 +59,7 @@ export const achievements: Achievement[] = [
         id: 9,
         title: 'Flutter & Dart - The Complete Guide [2022 Edition]',
         subtitle: 'Online Course',
-        dotColor: '#14b8a6',
+        dotColor: 'var(--c-swatch-teal)',
         detailsKey: 'achievements.entries.9.details',
         chips: [
             "Flutter",
@@ -71,7 +71,7 @@ export const achievements: Achievement[] = [
         year: '2019',
         title: 'Cisco Networking Academy',
         subtitle: 'Enterprise Networking & Telecommunications',
-        dotColor: '#3b82f6',
+        dotColor: 'var(--c-swatch-blue)',
         detailsKey: 'achievements.entries.3.details',
         chips: [
             "Enterprise Networks",
@@ -92,7 +92,7 @@ export const achievements: Achievement[] = [
         year: '2017',
         title: 'ITI Galileo Galilei',
         subtitle: 'Computer Science Diploma',
-        dotColor: '#a855f7',
+        dotColor: 'var(--c-swatch-purple)',
         detailsKey: 'achievements.entries.4.details',
         chips: [
             "C",

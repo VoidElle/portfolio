@@ -66,7 +66,7 @@ const GithubCalendar: React.FC<GithubCalendarProps> = ({ contributions, years })
                             key={year}
                             type="button"
                             onClick={() => setSelectedYear(year)}
-                            className={`rounded-full border px-3 py-1 text-[0.72rem] transition-colors ${
+                            className={`rounded-full border px-3 py-1 text-[0.72rem] transition-[color,border-color,transform] active:scale-[0.97] ${
                                 active
                                     ? 'bg-accent-soft border-accent text-accent'
                                     : 'border-subtle text-muted hover:border-strong hover:text-fg'
@@ -108,7 +108,7 @@ const GithubCalendar: React.FC<GithubCalendarProps> = ({ contributions, years })
                                             key={day.date}
                                             data-level={level}
                                             title={`${day.date}: ${day.count}`}
-                                            className={`w-2.5 h-2.5 rounded-[2px] shrink-0 ${LEVEL_CLASSES[level]}`}
+                                            className={`w-2.5 h-2.5 rounded-[2px] shrink-0 transition-transform active:scale-[0.97] ${LEVEL_CLASSES[level]}`}
                                         />
                                     );
                                 })}

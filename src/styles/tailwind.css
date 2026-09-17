@@ -8,6 +8,10 @@
     --animate-fade-in: fade-in 0.5s ease-out both;
     --animate-slide-in-left: slide-in-left 0.6s ease-out both;
 
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+    --default-transition-timing-function: var(--ease-out);
+
     --color-main:    var(--c-bg);
     --color-main-blur: var(--c-bg-blur);
     --color-surface: var(--c-surface);
@@ -18,6 +22,27 @@
     --color-accent:  var(--c-accent);
     --color-accent-contrast: var(--c-accent-contrast);
     --color-accent-soft: var(--c-accent-soft);
+    --color-danger: var(--c-danger);
+    --color-accent-from: var(--c-accent-from);
+    --color-accent-to: var(--c-accent-to);
+    --color-overlay: var(--c-overlay);
+    --color-on-media: var(--c-on-media);
+}
+
+@custom-variant hover-hover {
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            @slot;
+        }
+    }
+}
+
+@custom-variant group-hover-hover {
+    @media (hover: hover) and (pointer: fine) {
+        &:is(:where(.group):hover *) {
+            @slot;
+        }
+    }
 }
 
 /* ── Light tokens ─────────────────────────────── */
@@ -35,6 +60,17 @@
     --c-glow-green:      rgb(5 150 105 / 0.10);
     --c-glow-blue:       rgb(0 102 255 / 0.10);
     --c-dot:             rgb(0 0 0 / 0.07);
+    --c-danger:          #ef4444;
+    --c-accent-from:     #14de5e;
+    --c-accent-to:       #00f068;
+    --c-overlay:         #000000;
+    --c-on-media:        #ffffff;
+    --c-swatch-green:    #22c55e;
+    --c-swatch-blue:     #3b82f6;
+    --c-swatch-purple:   #a855f7;
+    --c-swatch-amber:    #f59e0b;
+    --c-swatch-teal:     #14b8a6;
+    --c-swatch-red:      #ef4444;
 }
 
 /* ── Dark tokens ──────────────────────────────── */
@@ -69,6 +105,14 @@
     to   { opacity: 1; transform: translateX(0); }
 }
 
+.cover-intro {
+    background: linear-gradient(135deg, #0d1b0f 0%, #0e2a14 20%, #1a4a25 45%, #2d7d44 65%, #4dab68 80%, #c8e6b0 100%);
+}
+
+.cover-footer {
+    background-image: radial-gradient(circle at 20% 0%, rgba(207,232,189,0.35), transparent 55%), linear-gradient(135deg, #0b1a10, #17452a, #3f9e63, #cfe8bd);
+}
+
 html, body {
     scroll-behavior: smooth;
     font-family: var(--font-body);
@@ -76,7 +120,6 @@ html, body {
     background-image: radial-gradient(circle, var(--c-dot) 1px, transparent 1px);
     background-size: 22px 22px;
     color: var(--c-text);
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body::before,
@@ -126,6 +169,15 @@ section[id] {
 
     html, body {
         scroll-behavior: auto;
+    }
+
+    [class*="hover-hover:"]:hover,
+    [class*="group-hover-hover:"] {
+        transform: none !important;
+    }
+
+    .lc-bar {
+        transform: none !important;
     }
 }
 

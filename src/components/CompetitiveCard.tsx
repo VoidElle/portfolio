@@ -31,7 +31,7 @@ const CompetitiveCard: React.FC = () => {
                             href={profile.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-accent/35 text-accent hover:bg-accent-soft text-xs font-semibold px-3 py-1 transition-colors"
+                            className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-accent/35 text-accent hover:bg-accent-soft text-xs font-semibold px-3 py-1 transition-[color,background-color,border-color,transform] active:scale-[0.97]"
                         >
                             {t('stats.viewProfile')}
                         </a>

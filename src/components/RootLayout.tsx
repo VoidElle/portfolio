@@ -27,7 +27,7 @@ function ScrollToTop() {
 
 function RootLayout() {
     const [theme, setTheme] = useState<Theme | null>(null);
-    const { lang, setLang, transitioning } = useLang();
+    const { lang, setLang } = useLang();
 
     useEffect(() => {
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -52,7 +52,7 @@ function RootLayout() {
     }, [theme]);
 
     return (
-        <div className="text-fg font-body min-h-screen transition-colors duration-300">
+        <div className="text-fg font-body min-h-screen">
             <ScrollToTop />
             <Nav
                 theme={theme}
@@ -64,7 +64,7 @@ function RootLayout() {
             />
             <div className="relative z-[1] max-w-[860px] w-11/12 mx-auto">
                 <main>
-                    <Outlet context={{ transitioning }} />
+                    <Outlet />
                 </main>
             </div>
         </div>

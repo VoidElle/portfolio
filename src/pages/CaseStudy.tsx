@@ -135,7 +135,7 @@ const CaseStudy = () => {
                                     href={link.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 rounded-full border border-subtle text-sm text-muted px-4 py-2 transition-colors hover:text-fg hover:border-strong"
+                                    className="inline-flex items-center gap-2 rounded-full border border-subtle text-sm text-muted px-4 py-2 transition-[color,border-color,transform] active:scale-[0.97] hover:text-fg hover:border-strong"
                                 >
                                     <i className={link.icon} aria-hidden="true" />
                                     {link.label}

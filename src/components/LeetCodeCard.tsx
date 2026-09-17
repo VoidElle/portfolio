@@ -5,9 +5,9 @@ import { useLeetCode } from '../hooks/useLeetCode';
 import { useLang } from '../context/LangContext';
 
 const DIFFICULTIES = [
-    { key: 'easy', color: '#22c55e' },
-    { key: 'medium', color: '#f59e0b' },
-    { key: 'hard', color: '#ef4444' },
+    { key: 'easy', color: 'var(--c-swatch-green)' },
+    { key: 'medium', color: 'var(--c-swatch-amber)' },
+    { key: 'hard', color: 'var(--c-swatch-red)' },
 ] as const;
 
 const LeetCodeCard: React.FC = () => {
@@ -38,7 +38,7 @@ const LeetCodeCard: React.FC = () => {
                         href={LEETCODE_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="ml-auto text-muted hover:text-fg transition-colors"
+                        className="ml-auto text-muted hover:text-fg transition-[color,transform] active:scale-[0.97]"
                         aria-label={t('stats.viewProfile')}
                     >
                         <i className="fas fa-external-link-alt" aria-hidden="true" />
@@ -64,8 +64,8 @@ const LeetCodeCard: React.FC = () => {
                     {DIFFICULTIES.map(({ key, color }) => (
                         <div
                             key={key}
-                            className="h-full transition-[width] duration-1000"
-                            style={{ width: `${pct(counts[key])}%`, backgroundColor: color }}
+                            className="h-full origin-left transition-transform duration-200 ease-out lc-bar"
+                            style={{ width: `${pct(counts[key])}%`, transform: `scaleX(${data ? 1 : 0})`, backgroundColor: color }}
                         />
                     ))}
                 </div>
