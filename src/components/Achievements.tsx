@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { achievements, type Achievement } from '../data/achievements';
+import { getTechIcon } from '../data/techIcons';
 import AccordionItem from './AccordionItem';
 import { useInView } from '../hooks/useInView';
 import { useLang } from '../context/LangContext';
@@ -63,8 +64,9 @@ const Achievements: React.FC = () => {
                                             {item.chips.map((chip) => (
                                                 <span
                                                     key={`ach-${item.id}-chip-${chip}`}
-                                                    className="rounded-full border border-subtle text-muted text-xs px-3 py-1"
+                                                    className="inline-flex items-center gap-1.5 rounded-full border border-subtle text-muted text-xs px-3 py-1"
                                                 >
+                                                    <i className={`${getTechIcon(chip)} shrink-0`} aria-hidden="true" />
                                                     {chip}
                                                 </span>
                                             ))}

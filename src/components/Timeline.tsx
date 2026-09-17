@@ -1,6 +1,7 @@
 import React from 'react';
 
 import timeline from "../data/timeline";
+import { getTechIcon } from '../data/techIcons';
 import AccordionItem from "./AccordionItem";
 import { useLang } from '../context/LangContext';
 
@@ -54,8 +55,9 @@ const Timeline: React.FC = () => {
                                     {item.chips.map((chip) => (
                                         <span
                                             key={`timeline-${item.id}-chip-${chip}`}
-                                            className="rounded-full border border-subtle text-muted text-xs px-3 py-1"
+                                            className="inline-flex items-center gap-1.5 rounded-full border border-subtle text-muted text-xs px-3 py-1"
                                         >
+                                            <i className={`${getTechIcon(chip)} shrink-0`} aria-hidden="true" />
                                             {chip}
                                         </span>
                                     ))}

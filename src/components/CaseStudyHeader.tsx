@@ -1,4 +1,5 @@
 import React from 'react';
+import { getTechIcon } from '../data/techIcons';
 
 export interface CaseStudyLink {
     href: string;
@@ -46,7 +47,12 @@ const CaseStudyHeader: React.FC<Props> = ({
                 )}
                 <div className="flex flex-wrap gap-2">
                     {role && <span className={badgeClass}>{role}</span>}
-                    {stack.length > 0 && <span className={badgeClass}>{stack.join(' · ')}</span>}
+                    {stack.map((item) => (
+                        <span key={item} className={`inline-flex items-center gap-1.5 ${badgeClass}`}>
+                            <i className={`${getTechIcon(item)} shrink-0`} aria-hidden="true" />
+                            {item}
+                        </span>
+                    ))}
                     {links.map((link) => (
                         <a
                             key={`${link.href}-${link.label}`}

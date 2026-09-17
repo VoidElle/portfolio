@@ -3,7 +3,7 @@ export const TECH_ICONS: Record<string, string> = {
     "Home Assistant": "fas fa-house",
     TypeScript: "devicon-typescript-plain colored",
     Tauri: "devicon-tauri-plain colored",
-    "Next.js": "devicon-nextjs-original",
+    "Next.js": "devicon-nextjs-plain",
     "Tailwind CSS": "devicon-tailwindcss-original colored",
     Prisma: "devicon-prisma-original colored",
     PostgreSQL: "devicon-postgresql-plain colored",
@@ -39,5 +39,45 @@ export const TECH_ICONS: Record<string, string> = {
     MongoDB: "devicon-mongodb-plain colored",
     MySQL: "devicon-mysql-plain colored",
     MariaDB: "devicon-mariadb-plain colored",
-    Datadog: "fas fa-chart-line"
+    Datadog: "fas fa-chart-line",
+    MCP: "fas fa-plug",
+    AI: "fas fa-brain",
+    Zigbee2MQTT: "fas fa-tower-broadcast",
+    Vite: "fas fa-bolt",
+    "Google Analytics": "fas fa-chart-column",
+    "Anti-tampering": "fas fa-shield-halved",
+    Agile: "fas fa-arrows-rotate",
+    Kanban: "fas fa-table-columns",
+    SCRUM: "fas fa-arrows-rotate",
+    Twig: "fas fa-leaf",
+    "RESTful APIs": "fas fa-cloud",
+    "UI/UX Design": "fas fa-pen-ruler",
+    Microservices: "fas fa-cubes",
+    AdMob: "fas fa-rectangle-ad",
+    "AWS EC2": "fab fa-aws",
+    "Enterprise Networks": "fas fa-network-wired",
+    "Enterprise Networking": "fas fa-network-wired",
+    "Static Routing": "fas fa-route",
+    "Dynamic Routing": "fas fa-route",
+    Routing: "fas fa-route",
+    IPv4: "fas fa-globe",
+    IPv6: "fas fa-globe",
+    Subnetting: "fas fa-diagram-project",
+    Switching: "fas fa-network-wired",
+    QoS: "fas fa-gauge-high",
+    Automation: "fas fa-gears",
+    Virtualization: "fas fa-server",
+    "Wireless LANs": "fas fa-wifi",
+    Wireless: "fas fa-wifi",
+    WLAN: "fas fa-wifi",
+    Security: "fas fa-shield-halved",
+    English: "fas fa-language",
+    "Claude Code": "fas fa-terminal"
 };
+
+const normalizedIcons = Object.fromEntries(
+    Object.entries(TECH_ICONS).map(([label, icon]) => [label.toLowerCase(), icon])
+);
+
+export const getTechIcon = (label: string): string =>
+    normalizedIcons[label.trim().toLowerCase()] ?? 'fas fa-code';

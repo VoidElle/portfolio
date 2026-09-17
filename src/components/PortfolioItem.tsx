@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useInView } from '../hooks/useInView';
 import { useLang } from '../context/LangContext';
-import { TECH_ICONS } from '../data/techIcons';
+import { getTechIcon } from '../data/techIcons';
 
 interface Props {
     title: string;
@@ -92,7 +92,7 @@ const PortfolioItem: React.FC<Props> = ({ title, description, imgUrl, imgContain
                             key={item}
                             className="inline-flex items-center gap-1 rounded border border-subtle text-[0.64rem] text-muted px-2 py-0.5"
                         >
-                            {TECH_ICONS[item] && <i className={TECH_ICONS[item]} aria-hidden="true" />}
+                            <i className={`${getTechIcon(item)} shrink-0`} aria-hidden="true" />
                             {item}
                         </span>
                     ))}

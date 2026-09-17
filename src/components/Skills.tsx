@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { skills, coreSkills } from '../data/skills';
-import { TECH_ICONS } from '../data/techIcons';
+import { getTechIcon } from '../data/techIcons';
 import { useInView } from '../hooks/useInView';
 import { useLang } from '../context/LangContext';
 
@@ -26,7 +26,7 @@ const Skills: React.FC = () => {
                     {t('skills.core')}
                 </span>
                 {coreSkills.map((label) => {
-                    const icon = TECH_ICONS[label];
+                    const icon = getTechIcon(label);
                     return (
                         <span
                             key={`core-${label}`}
@@ -52,7 +52,7 @@ const Skills: React.FC = () => {
                         </div>
                         <div className="flex flex-wrap gap-1.5 mt-4">
                             {group.items.map((item) => {
-                                const icon = item.icon ?? TECH_ICONS[item.label];
+                                const icon = item.icon ?? getTechIcon(item.label);
                                 return (
                                     <span
                                         key={item.label}
