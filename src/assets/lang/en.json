@@ -1,11 +1,37 @@
 {
+    "nav": {
+        "home": "Home",
+        "projects": "Projects",
+        "skills": "Skills",
+        "stats": "Stats",
+        "achievements": "Achievements",
+        "contact": "Contact"
+    },
     "intro": {
         "subtitle": "Software Engineer - Android, Flutter & React Native",
         "bio": "Software Engineer with solid experience building cross-platform and native mobile applications, backend services, and real-world integrations. Passionate about what happens behind the screen: APIs, IoT integrations, and distributed systems. I take a hands-on approach with a strong focus on quality and continuous growth."
     },
+    "hero": {
+        "resume": "Resume / CV",
+        "meOnInternet": "Me on Internet!",
+        "socials": {
+            "github": "GitHub",
+            "linkedin": "LinkedIn"
+        }
+    },
+    "projects": {
+        "label": "Featured Work",
+        "title": "Things I've built",
+        "sub": "A selection of projects I've built.",
+        "code": "Code",
+        "live": "Live",
+        "caseStudy": "Case Study"
+    },
     "portfolio": {
         "title": "Portfolio",
         "projects": {
+            "14": { "description": "Passive LQI and routing-health monitor for Zigbee2MQTT that flags degrading devices before they fail, without extra radio traffic" },
+            "13": { "description": "AI skill that turns yesterday's Jira activity into a ready-to-paste standup summary via MCP" },
             "12": { "description": "Home Assistant integration that monitors the uptime and health of major AI/LLM provider APIs in real time" },
             "11": { "description": "Home Assistant integration for iAlarm MK alarm panels via a fully local TCP connection, no cloud required" },
             "10": { "description": "Async Python library to interface with iAlarm MK alarm panels locally over the Meian binary protocol" },
@@ -21,8 +47,38 @@
             "0": { "description": "Personal portfolio built with React and Tailwind CSS" }
         }
     },
+    "skills": {
+        "label": "What I Know",
+        "title": "Technical Skills",
+        "sub": "The languages, frameworks, and tools I build with.",
+        "core": "Core",
+        "groups": {
+            "languages": "Languages",
+            "frameworks": "Frameworks",
+            "tools": "Tools"
+        }
+    },
+    "stats": {
+        "label": "Engineering Impact",
+        "title": "Coding Stats",
+        "sub": "Live metrics from my coding profiles.",
+        "loading": "Loading...",
+        "unavailable": "Unable to load contributions.",
+        "total": "TOTAL",
+        "streak": "STREAK",
+        "github": "GitHub",
+        "leetcode": "LeetCode",
+        "competitive": "Competitive",
+        "problemsSolved": "Problems Solved",
+        "easy": "Easy",
+        "medium": "Med",
+        "hard": "Hard",
+        "viewProfile": "View Profile"
+    },
     "timeline": {
-        "title": "Timeline",
+        "label": "Career",
+        "title": "Experience",
+        "sub": "Where I've worked and what I built.",
         "current": "Actual",
         "entries": {
             "0": {
@@ -30,7 +86,10 @@
                     "Specialized consultancy for large clients, designing and building custom mobile solutions.",
                     "- Cross-platform apps with Flutter/Dart, React Native/Expo/TypeScript.",
                     "- Native Android with Kotlin, Java, Jetpack Compose.",
-                    "- AWS (S3, Amplify, AppSync, Cognito), Firebase, Datadog integrations.",
+                    "- AWS SDKs: S3, Amplify, AppSync, Cognito.",
+                    "- Firebase SDKs: Firestore, Crashlytics, Remote Config.",
+                    "- Tracking and monitoring with Datadog and Google Analytics.",
+                    "- Anti-tampering and integrity-check SDK integration.",
                     "- Agile, Kanban and Waterfall methodologies."
                 ]
             },
@@ -46,6 +105,38 @@
                     "- Cross-platform apps with Flutter and Dart, UI/UX design included.",
                     "- RESTful APIs with Node.js and Express, MongoDB management.",
                     "- AdMob integration within mobile environments."
+                ]
+            }
+        }
+    },
+    "achievements": {
+        "label": "Milestones",
+        "title": "Achievements",
+        "sub": "Certifications, education, and milestones along the way.",
+        "entries": {
+            "5": {
+                "details": [
+                    "Cisco certification covering enterprise switching, routing, and wireless network essentials."
+                ]
+            },
+            "6": {
+                "details": [
+                    "Cisco certification covering enterprise networking, security, and automation."
+                ]
+            },
+            "7": {
+                "details": [
+                    "Anthropic partner badge for building with Claude Code."
+                ]
+            },
+            "8": {
+                "details": [
+                    "English proficiency program completed."
+                ]
+            },
+            "9": {
+                "details": [
+                    "Comprehensive Flutter and Dart application development course."
                 ]
             },
             "3": {
@@ -66,6 +157,8 @@
         }
     },
     "contact": {
+        "label": "Get In Touch",
+        "sub": "I'm currently looking for new opportunities. Have a question, a project idea, or just want to say hi?",
         "title": "Contact Me",
         "name": {
             "label": "Name",
@@ -87,6 +180,141 @@
         "or": "or"
     },
     "footer": {
-        "rights": "All rights reserved."
+        "credit": "Designed and developed by",
+        "rights": "all rights reserved"
+    },
+    "caseStudies": {
+        "back": "Back to Portfolio",
+        "notFound": {
+            "title": "Case study not found",
+            "sub": "This project doesn't have a case study yet.",
+            "cta": "Back home"
+        },
+        "meta": {
+            "role": "Role",
+            "stack": "Stack",
+            "links": "Links",
+            "live": "Live",
+            "code": "Source"
+        },
+        "zigbee-mesh-health": {
+            "subtitle": "A passive LQI and routing-health monitor for Zigbee2MQTT that flags degrading devices before they fail.",
+            "summary": "Case study of Zigbee Mesh Health, a passive LQI and routing-health monitor for Zigbee2MQTT that flags degrading devices before they fail.",
+            "role": "Solo developer",
+            "coverCaption": "Zigbee Mesh Health as a Home Assistant add-on with an LQI dashboard.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "Zigbee Mesh Health is a self-hosted service that watches the link quality of every device on a Zigbee2MQTT network. It subscribes to the MQTT broker, stores the linkquality values devices already publish, records bridge events, and serves a dashboard with per-device LQI trends, alert states, a network map and an event log. It is built for Zigbee2MQTT users who want to catch a degrading device before it drops offline, without adding traffic to the mesh."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "The service is written in JavaScript and runs on Node, talking to the Zigbee2MQTT broker over MQTT and persisting samples in SQLite. It ships as a Home Assistant add-on or a plain Docker image.",
+                    "callout": "The codebase follows an onion-style layering of domain <- application <- infrastructure <- composition, and dependencies only point inward. The domain layer holds pure business rules with no Node, Prisma, MQTT or Express dependency, and a test scans src/**/*.ts to fail the build if that dependency rule is ever broken."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "The monitor collects data through three separate channels so continuous tracking stays cheap and only the map uses an active scan.",
+                    "bullets": [
+                        "Passive LQI: subscribes to the Zigbee2MQTT base topic and extracts the linkquality that devices already report, adding zero extra radio traffic.",
+                        "Networkmap: publishes a raw networkmap request once a day by default and renders the last snapshot as a graph colour-coded by LQI.",
+                        "Bridge events: listens to device joins, leaves and announces, route and delivery failures, restarts and version changes, and shows them in a filterable event log.",
+                        "Alerting combines a trend rule against the 7-day baseline with an absolute LQI floor and a 24-hour route and delivery failure count."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "The network map runs an active scan that interrogates every router and can take minutes, so hammering it would degrade the very network being monitored.",
+                    "bullets": [
+                        "The scan is hard-capped: one scheduled run per day, no retry on timeout, and manual refreshes are rate-limited to one per hour.",
+                        "Raw LQI samples are rolled up into daily minimum, maximum and average before deletion so the SQLite file stays bounded.",
+                        "Log-based events only appear when Zigbee2MQTT is configured to publish its log over MQTT, and debug lines are ignored to avoid flooding the log."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "Zigbee Mesh Health is released as an open source, MIT-licensed project and is packaged both as a Home Assistant add-on with sidebar ingress and as a Docker image. It has a bilingual Italian and English interface and a test suite that runs against the compiled build. It is the tool I use to keep my own Zigbee mesh healthy."
+                }
+            }
+        },
+        "hass-llm-watchdog": {
+            "subtitle": "Monitor the health of major AI and LLM providers directly from Home Assistant.",
+            "summary": "Case study of LLM Watchdog, a Home Assistant custom integration that monitors the availability of major AI and LLM providers.",
+            "role": "Solo developer",
+            "coverCaption": "LLM Watchdog provider and summary sensors in Home Assistant.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "LLM Watchdog is a Home Assistant custom integration that monitors the availability of major AI and LLM providers and exposes each one as a standard sensor entity. It is meant for people who depend on providers such as OpenAI, Anthropic or Google Gemini and want a real-time picture of outages inside their smart home dashboard. Status changes can drive automations and notifications the same way any other Home Assistant sensor does."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "It is a Python custom component installed through HACS or manually, using Home Assistant's coordinator pattern for polling and pytest-homeassistant-custom-component for its test suite.",
+                    "callout": "The integration pairs passive status-page polling, which needs no API key, with optional active API probes. The probes only call free metadata endpoints such as GET /v1/models and never completion or generation endpoints, so active monitoring carries no token costs."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "Each enabled provider gets its own sensor plus a summary sensor, and the integration merges two independent signals into one state.",
+                    "bullets": [
+                        "Passive status comes from the provider's public status page, while active status comes from an API probe when a key is configured.",
+                        "A provider is healthy only when the status page is green and the probe succeeds, degraded on a minor incident or a slow probe, and down on a major outage or a failed probe.",
+                        "The summary sensor reports the worst status across all monitored providers so a single state can trigger an automation.",
+                        "The polling interval defaults to five minutes with a minimum of one, and ten providers are supported including OpenAI, Anthropic, Mistral, Cohere, Groq and Perplexity."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "The design has to stay useful whether or not the user supplies API keys, since not every provider exposes a status page.",
+                    "bullets": [
+                        "Active probes count as API requests against a plan's rate limits even though they cost no tokens, so keys are entirely optional.",
+                        "Providers that only work through an API key are reported as unavailable until a key is configured, instead of guessing a status.",
+                        "Supported providers are declared in a shared providers.json, and adding one is a documented pull request template rather than a code change in the integration."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "LLM Watchdog is released as an open source Home Assistant integration published through HACS, with sensor, configuration and automation documentation in the repository. Its status logic and probe handling are covered by a pytest suite. It is the integration I run to know when the AI services my automations depend on go down."
+                }
+            }
+        },
+        "sossoldi": {
+            "subtitle": "A free and open source wealth management and net worth tracking app built with Flutter.",
+            "summary": "Case study of Sossoldi, a free and open source Flutter app for tracking net worth, expenses and investments.",
+            "role": "Contributor",
+            "coverCaption": "Sossoldi tracking accounts, movements and net worth across platforms.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "Sossoldi is a free and open source personal finance app for tracking net worth, expenses and investments. It started as an attempt to replace the spreadsheet used by the Mr. Rip blog with something easier for people who are not comfortable with Google Sheets or Excel. It is aimed at anyone who wants to keep accounts, spending and investments in one place."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "Sossoldi is built with Flutter and Dart, using a single codebase that targets Android, iOS, Windows, macOS and Linux. Data is stored locally on the device.",
+                    "callout": "Choosing Flutter lets one codebase cover both mobile and desktop, which matters because the app is meant to be a local-first replacement for a spreadsheet rather than a server-backed service. Local storage is the default, with sharing data across platforms an explicit option rather than a requirement."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "The project is being built in phases instead of all at once, starting from a small set of core features and expanding from there.",
+                    "bullets": [
+                        "Phase 1 covers an expenses tracker including recurrent expenses, an income tracker, bank account balances without API integrations, basic statistics and local-only data storage.",
+                        "The Phase 1 screens are the Dashboard, the Movements page, basic settings and a basic onboarding flow.",
+                        "Later features include graphs and reports, investment tracking for stocks, bonds, crypto and private equity, tax tracking, multi-currency net worth, import and export, and linking banks that support the OpenBanking PSD2 API."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "The full feature list is large, so the main decision is to ship a stable core before layering on the rest.",
+                    "bullets": [
+                        "Phase 1 deliberately excludes bank API integration and multi-currency net worth to keep the first release focused.",
+                        "Data is kept local by default, which keeps the app usable offline and avoids depending on a backend for core tracking.",
+                        "Design, UX research and information architecture are documented publicly so contributors can pick up work from the issue tracker."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "Sossoldi is open source under the MIT license and is distributed on the App Store, Google Play and F-Droid. Development is active with a stable release in progress and contributions welcome. It is the app I contribute to for tracking net worth the way Mr. Rip's spreadsheet does."
+                }
+            }
+        }
     }
 }

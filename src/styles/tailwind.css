@@ -1,40 +1,57 @@
 @import "tailwindcss" source("../**/*.{tsx,ts}");
 
 @theme {
-    --font-satoshi: 'Satoshi', sans-serif;
+    --font-head: 'Space Grotesk', sans-serif;
+    --font-body: 'Parkinsans', sans-serif;
+
     --animate-fade-up: fade-up 0.6s ease-out both;
     --animate-fade-in: fade-in 0.5s ease-out both;
     --animate-slide-in-left: slide-in-left 0.6s ease-out both;
 
     --color-main:    var(--c-bg);
+    --color-main-blur: var(--c-bg-blur);
     --color-surface: var(--c-surface);
     --color-subtle:  var(--c-border);
+    --color-strong:  var(--c-border-strong);
     --color-fg:      var(--c-text);
     --color-muted:   var(--c-muted);
     --color-accent:  var(--c-accent);
-    --color-main-blur: var(--c-bg-blur);
+    --color-accent-contrast: var(--c-accent-contrast);
+    --color-accent-soft: var(--c-accent-soft);
 }
 
 /* ── Light tokens ─────────────────────────────── */
 :root {
-    --c-bg:       oklch(0.99 0.003 275);
-    --c-bg-blur:  oklch(0.99 0.003 275 / 0.85);
-    --c-surface:  oklch(0.96 0.006 275);
-    --c-border:   oklch(0.87 0.012 275);
-    --c-text:     oklch(0.12 0.015 275);
-    --c-muted:    oklch(0.38 0.025 275);
-    --c-accent:   oklch(0.52 0.22 275);
+    --c-bg:       #fafafa;
+    --c-bg-blur:  rgb(250 250 250 / 0.85);
+    --c-surface:  #ffffff;
+    --c-border:   rgb(0 0 0 / 0.10);
+    --c-border-strong: rgb(0 0 0 / 0.18);
+    --c-text:     #0b0b0c;
+    --c-muted:    #52525b;
+    --c-accent:   #059669;
+    --c-accent-contrast: #00140a;
+    --c-accent-soft:     rgb(5 150 105 / 0.12);
+    --c-glow-green:      rgb(5 150 105 / 0.10);
+    --c-glow-blue:       rgb(0 102 255 / 0.10);
+    --c-dot:             rgb(0 0 0 / 0.07);
 }
 
 /* ── Dark tokens ──────────────────────────────── */
 .dark {
-    --c-bg:       oklch(0.10 0.015 275);
-    --c-bg-blur:  oklch(0.10 0.015 275 / 0.85);
-    --c-surface:  oklch(0.14 0.016 275);
-    --c-border:   oklch(0.23 0.022 275);
-    --c-text:     oklch(0.90 0.010 275);
-    --c-muted:    oklch(0.68 0.025 280);
-    --c-accent:   oklch(0.65 0.18  275);
+    --c-bg:       #0a0a0a;
+    --c-bg-blur:  rgb(10 10 10 / 0.80);
+    --c-surface:  #111111;
+    --c-border:   rgb(255 255 255 / 0.08);
+    --c-border-strong: rgb(255 255 255 / 0.16);
+    --c-text:     #fafafa;
+    --c-muted:    #a1a1aa;
+    --c-accent:   #00c758;
+    --c-accent-contrast: #00140a;
+    --c-accent-soft:     rgb(0 199 88 / 0.15);
+    --c-glow-green:      rgb(0 199 88 / 0.12);
+    --c-glow-blue:       rgb(0 102 255 / 0.12);
+    --c-dot:             rgb(255 255 255 / 0.06);
 }
 
 @keyframes fade-up {
@@ -54,10 +71,62 @@
 
 html, body {
     scroll-behavior: smooth;
+    font-family: var(--font-body);
     background-color: var(--c-bg);
+    background-image: radial-gradient(circle, var(--c-dot) 1px, transparent 1px);
+    background-size: 22px 22px;
     color: var(--c-text);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-@variant dark (&:where(.dark, .dark *));
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(120px);
+    opacity: 0.12;
+}
 
+body::before {
+    top: -200px;
+    left: -200px;
+    background: radial-gradient(circle, var(--c-glow-green), transparent 70%);
+}
+
+body::after {
+    bottom: -200px;
+    right: -200px;
+    background: radial-gradient(circle, var(--c-glow-blue), transparent 70%);
+}
+
+/* Sticky nav is h-16 (4rem); keep anchor targets clear of it. */
+section[id] {
+    scroll-margin-top: 5rem;
+}
+
+/* Reduced motion: reveal animations resolve instantly, no smooth scrolling. */
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --animate-fade-up: none;
+        --animate-fade-in: none;
+        --animate-slide-in-left: none;
+    }
+
+    .animate-fade-up,
+    .animate-fade-in,
+    .animate-slide-in-left {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+    html, body {
+        scroll-behavior: auto;
+    }
+}
+
+@variant dark (&:where(.dark, .dark *));

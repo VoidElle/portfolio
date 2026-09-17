@@ -11,15 +11,32 @@ import hassLlmWatchdogImage from "../assets/projects/hassLlmWatchdog.webp";
 import hassOpenIalarmMkImage from "../assets/projects/hassOpenIalarmMk.webp";
 import openIalarmMkLocalApiImage from "../assets/projects/openIalarmMkLocalApi.webp";
 import whatIDidImage from "../assets/projects/whatIDid.webp";
+import zigbeeMeshHealthImage from "../assets/projects/zigbeeMeshHealth.png";
 
 export default [
+    {
+        id: 14,
+        title: "Zigbee Mesh Health",
+        imgUrl: zigbeeMeshHealthImage,
+        imgContain: true,
+        stack: ["JavaScript", "Zigbee2MQTT"],
+        link: "https://github.com/VoidElle/zigbee-mesh-health",
+        caseStudy: "zigbee-mesh-health"
+    },
+    {
+        id: 13,
+        title: "Jira Standup Skill",
+        stack: ["MCP", "AI"],
+        link: "https://github.com/VoidElle/jira-standup-skill"
+    },
     {
         id: 12,
         title: "Hass LLM Watchdog",
         imgUrl: hassLlmWatchdogImage,
         imgContain: true,
         stack: ["Python", "Home Assistant"],
-        link: "https://github.com/VoidElle/hass-llm-watchdog"
+        link: "https://github.com/VoidElle/hass-llm-watchdog",
+        caseStudy: "hass-llm-watchdog"
     },
     {
         id: 11,
@@ -96,7 +113,9 @@ export default [
         title: "Sossoldi",
         imgUrl: sossoldiImage,
         stack: ["Flutter", "Dart", "Android", "iOS"],
-        link: "https://rip-comm.github.io/sossoldi/"
+        link: "https://rip-comm.github.io/sossoldi/",
+        source: "https://github.com/RIP-Comm/sossoldi",
+        caseStudy: "sossoldi"
     },
     {
         id: 0,

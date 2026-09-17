@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LangContext';
 
@@ -11,27 +11,81 @@ interface NavProps {
     MoonIcon: React.FC<React.SVGProps<SVGSVGElement>>;
 }
 
+const NAV_LINKS = [
+    { id: 'hero', key: 'nav.home' },
+    { id: 'projects', key: 'nav.projects' },
+    { id: 'skills', key: 'nav.skills' },
+    { id: 'stats', key: 'nav.stats' },
+    { id: 'achievements', key: 'nav.achievements' },
+    { id: 'contact', key: 'nav.contact' },
+] as const;
+
 const Nav: React.FC<NavProps> = ({ theme, lang, onThemeToggle, onLangToggle, SunIcon, MoonIcon }) => {
     const { t } = useLang();
+    const [active, setActive] = useState<string>('hero');
+    const [menuOpen, setMenuOpen] = useState<boolean>(false);
+
+    useEffect(() => {
+        const sections = document.querySelectorAll('section[id]');
+        if (sections.length === 0) return;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActive(entry.target.id);
+                    }
+                });
+            },
+            { rootMargin: '-40% 0px -55% 0px' }
+        );
+
+        sections.forEach((section) => observer.observe(section));
+        return () => observer.disconnect();
+    }, []);
+
+    useEffect(() => {
+        document.body.style.overflow = menuOpen ? 'hidden' : '';
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [menuOpen]);
+
+    const handleAnchorClick = () => setMenuOpen(false);
 
     return (
-        <nav className="sticky top-0 z-30 bg-main-blur backdrop-blur-md border-b border-subtle">
-            <div className="max-w-5xl w-11/12 mx-auto flex items-center justify-between h-12">
-                <Link to="/" className="font-semibold text-fg text-sm tracking-tight hover:text-accent transition-colors">
-                    Luca Del Corona
-                </Link>
-                <div className="flex items-center gap-6">
-                    <div className="hidden md:flex gap-5 text-sm font-medium text-muted">
-                        <a href="#portfolio" className="hover:text-fg transition-colors">{t('portfolio.title')}</a>
-                        <a href="#timeline" className="hover:text-fg transition-colors">{t('timeline.title')}</a>
-                        <a href="#contact" className="hover:text-fg transition-colors">{t('contact.title')}</a>
+        <>
+            <nav className="sticky top-0 z-30 h-16 border-b border-subtle bg-main-blur backdrop-blur-md">
+                <div className="max-w-[860px] w-11/12 mx-auto h-full flex items-center justify-between">
+                    <Link
+                        to="/"
+                        className="font-head font-bold text-xl tracking-tight text-fg hover:opacity-90 transition-opacity"
+                    >
+                        Luca<span className="text-accent">.</span>
+                    </Link>
+
+                    <div className="hidden md:flex gap-1">
+                        {NAV_LINKS.map(({ id, key }) => (
+                            <a
+                                key={id}
+                                href={`#${id}`}
+                                className={`px-3.5 py-1.5 rounded-full text-sm font-medium transition-colors ${
+                                    active === id
+                                        ? 'text-fg bg-fg/5'
+                                        : 'text-muted hover:text-fg hover:bg-fg/5'
+                                }`}
+                            >
+                                {t(key)}
+                            </a>
+                        ))}
                     </div>
+
                     <div className="flex items-center gap-2">
                         <button
                             type="button"
                             onClick={onLangToggle}
                             aria-label={lang === 'en' ? 'Passa alla lingua italiana' : 'Switch to English'}
-                            className="h-8 w-8 flex items-center justify-center text-xs font-semibold rounded-md border border-subtle text-fg hover:border-accent hover:text-accent transition-colors"
+                            className="h-8 w-8 flex items-center justify-center text-xs font-semibold rounded-lg border border-subtle text-fg hover:border-strong hover:text-accent transition-colors"
                         >
                             {lang === 'en' ? 'IT' : 'EN'}
                         </button>
@@ -39,19 +93,51 @@ const Nav: React.FC<NavProps> = ({ theme, lang, onThemeToggle, onLangToggle, Sun
                             type="button"
                             onClick={onThemeToggle}
                             aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-                            className="h-8 w-8 flex items-center justify-center rounded-md border border-subtle text-fg hover:border-accent hover:text-accent transition-colors"
+                            className="h-8 w-8 flex items-center justify-center rounded-lg border border-subtle text-fg hover:border-strong hover:text-accent transition-colors"
                         >
                             {theme === 'dark'
                                 ? <SunIcon className="w-4 h-4" />
                                 : <MoonIcon className="w-4 h-4" />
                             }
                         </button>
+                        <button
+                            type="button"
+                            onClick={() => setMenuOpen(true)}
+                            aria-label="Open menu"
+                            className="md:hidden h-8 w-8 flex items-center justify-center rounded-lg border border-subtle text-fg hover:border-strong hover:text-accent transition-colors"
+                        >
+                            <i className="fas fa-bars" aria-hidden="true" />
+                        </button>
                     </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+
+            {menuOpen && (
+                <div className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-6 bg-main/95 backdrop-blur-md md:hidden">
+                    <button
+                        type="button"
+                        onClick={() => setMenuOpen(false)}
+                        aria-label="Close menu"
+                        className="absolute top-5 right-6 text-xl text-muted hover:text-fg transition-colors"
+                    >
+                        <i className="fas fa-times" aria-hidden="true" />
+                    </button>
+                    {NAV_LINKS.map(({ id, key }) => (
+                        <a
+                            key={id}
+                            href={`#${id}`}
+                            onClick={handleAnchorClick}
+                            className={`font-head text-2xl font-semibold transition-colors ${
+                                active === id ? 'text-fg' : 'text-muted hover:text-fg'
+                            }`}
+                        >
+                            {t(key)}
+                        </a>
+                    ))}
+                </div>
+            )}
+        </>
     );
 };
 
 export default Nav;
-

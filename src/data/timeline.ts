@@ -25,6 +25,8 @@ export default [
             "AWS",
             "Firebase",
             "Datadog",
+            "Google Analytics",
+            "Anti-tampering",
             "Agile",
             "Kanban"
         ]
@@ -69,61 +71,6 @@ export default [
             "UI/UX Design",
             "Microservices",
             "AdMob"
-        ]
-    },
-    {
-        id: 3,
-        year: '2019',
-        type: 'education',
-        title: 'Cisco Networking Academy',
-        duration: '3 years',
-        details: [
-            "Computer systems and telecommunications networks.",
-            "- Enterprise networking: static/dynamic routing, IPv4/IPv6, subnetting, switching.",
-            "- IP services, QoS, redundancy, access security, automation, virtualization, wireless LANs."
-        ],
-        chips: [
-            "Enterprise Networks",
-            "Static Routing",
-            "Dynamic Routing",
-            "IPv4",
-            "IPv6",
-            "Subnetting",
-            "Switching",
-            "QoS",
-            "Automation",
-            "Virtualization",
-            "Wireless LANs"
-        ]
-    },
-    {
-        id: 4,
-        year: '2017',
-        type: 'education',
-        title: 'ITI Galileo Galilei',
-        duration: '5 years',
-        details: [
-            "Computer Science Diploma.",
-            "- Languages: C, C++, Java, JavaScript, PHP, SQL. Web: HTML, CSS, RESTful APIs.",
-            "- Databases: MySQL, MariaDB. Methodologies: Agile, SCRUM.",
-            "- Tools: Git, GitHub, Docker, AWS EC2."
-        ],
-        chips: [
-            "C",
-            "C++",
-            "Java",
-            "JavaScript",
-            "PHP",
-            "SQL",
-            "HTML",
-            "CSS",
-            "MySQL",
-            "MariaDB",
-            "Agile",
-            "SCRUM",
-            "Git",
-            "Docker",
-            "AWS EC2"
         ]
     }
 ]

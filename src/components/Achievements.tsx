@@ -1,51 +1,48 @@
 import React from 'react';
 
-import timeline from "../data/timeline";
-import AccordionItem from "./AccordionItem";
+import { achievements } from '../data/achievements';
+import AccordionItem from './AccordionItem';
+import { useInView } from '../hooks/useInView';
 import { useLang } from '../context/LangContext';
 
-const DOT_COLORS = ['#22c55e', '#a855f7', '#3b82f6', '#f59e0b'];
-
-const Timeline: React.FC = () => {
+const Achievements: React.FC = () => {
     const { t } = useLang();
-
-    const work = timeline.filter((item) => item.type === 'work');
+    const [ref, inView] = useInView<HTMLDivElement>();
 
     return (
-        <section id="timeline" className="py-20 border-t border-subtle">
+        <section id="achievements" className="py-20 border-t border-subtle">
             <div className="max-w-2xl mx-auto">
                 <p className="text-xs font-semibold tracking-[0.12em] uppercase text-accent mb-3">
-                    {t('timeline.label')}
+                    {t('achievements.label')}
                 </p>
                 <h2 className="font-head text-2xl md:text-4xl font-bold tracking-tight text-fg mb-2">
-                    {t('timeline.title')}
+                    {t('achievements.title')}
                 </h2>
                 <p className="text-sm md:text-base text-muted leading-relaxed max-w-[520px] mb-10">
-                    {t('timeline.sub')}
+                    {t('achievements.sub')}
                 </p>
 
-                <div className="flex flex-col gap-1">
-                    {work.map((item, index) => {
-                        const duration = item.duration === 'Actual' ? t('timeline.current') : item.duration;
-                        const details: string[] = t(`timeline.entries.${item.id}.details`);
+                <div ref={ref} className={`flex flex-col gap-1 ${inView ? 'animate-fade-up' : 'opacity-0'}`}>
+                    {achievements.map((item) => {
+                        const details: string[] = t(item.detailsKey);
 
                         return (
                             <AccordionItem
-                                key={`timeline-${item.id}`}
-                                id={`timeline-${item.id}`}
+                                key={`ach-${item.id}`}
+                                id={`ach-${item.id}`}
                                 title={item.title}
-                                subtitle={`${item.year} · ${duration}`}
-                                dotColor={DOT_COLORS[index % DOT_COLORS.length]}
+                                subtitle={item.year ? `${item.subtitle} · ${item.year}` : item.subtitle}
+                                dotColor={item.dotColor}
                             >
                                 <ul className="space-y-1">
                                     {details.map((line, i) =>
                                         line.startsWith('- ') ? (
-                                            <li key={`timeline-${item.id}-detail-${i}`} className="flex gap-2">
+                                            <li key={`ach-${item.id}-detail-${i}`} className="flex gap-2">
                                                 <span aria-hidden="true">•</span>
                                                 <span>{line.slice(2)}</span>
                                             </li>
                                         ) : (
-                                            <li key={`timeline-${item.id}-detail-${i}`}>{line}</li>
+                                            <li key={`ach-${item.id}-detail-${i}`}>{line}</li>
                                         )
                                     )}
                                 </ul>
@@ -53,7 +50,7 @@ const Timeline: React.FC = () => {
                                 <div className="flex flex-wrap gap-1.5 mt-3">
                                     {item.chips.map((chip) => (
                                         <span
-                                            key={`timeline-${item.id}-chip-${chip}`}
+                                            key={`ach-${item.id}-chip-${chip}`}
                                             className="rounded-full border border-subtle text-muted text-xs px-3 py-1"
                                         >
                                             {chip}
@@ -69,4 +66,4 @@ const Timeline: React.FC = () => {
     );
 };
 
-export default Timeline;
+export default Achievements;
