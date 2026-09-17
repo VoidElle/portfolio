@@ -128,7 +128,7 @@ const CaseStudy = () => {
                     ))}
 
                     {links.length > 0 && (
-                        <div className="flex flex-wrap gap-3 mt-4">
+                        <div className="flex flex-wrap justify-end gap-3 mt-4">
                             {links.map((link) => (
                                 <a
                                     key={`footer-${link.href}-${link.label}`}

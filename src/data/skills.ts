@@ -11,7 +11,7 @@ export interface SkillGroup {
     items: SkillItem[];
 }
 
-export const coreSkills = ["Flutter", "Java", "TypeScript"];
+export const coreSkills = ["Flutter", "Dart", "Expo", "React Native", "TypeScript", "AWS"];
 
 export const skills: SkillGroup[] = [
     {
@@ -19,9 +19,9 @@ export const skills: SkillGroup[] = [
         labelKey: "languages",
         icon: "fas fa-code",
         items: [
-            { label: "Dart" },
+            { label: "Dart", core: true },
             { label: "Kotlin" },
-            { label: "Java", core: true },
+            { label: "Java" },
             { label: "TypeScript", core: true },
             { label: "JavaScript" },
             { label: "Python" },
@@ -40,8 +40,8 @@ export const skills: SkillGroup[] = [
         items: [
             { label: "Flutter", core: true },
             { label: "React" },
-            { label: "React Native" },
-            { label: "Expo" },
+            { label: "React Native", core: true },
+            { label: "Expo", core: true },
             { label: "Next.js" },
             { label: "Node.js" },
             { label: "Express" },
@@ -57,7 +57,7 @@ export const skills: SkillGroup[] = [
         items: [
             { label: "Android" },
             { label: "Firebase" },
-            { label: "AWS" },
+            { label: "AWS", core: true },
             { label: "Docker" },
             { label: "Git" },
             { label: "PostgreSQL" },

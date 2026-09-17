@@ -79,7 +79,7 @@
         "label": "Career",
         "title": "Experience",
         "sub": "Where I've worked and what I built.",
-        "current": "Actual",
+        "current": "Present",
         "entries": {
             "0": {
                 "details": [
@@ -117,6 +117,7 @@
             "education": "Education",
             "certifications": "Certifications"
         },
+        "viewCertificate": "View Certificate",
         "entries": {
             "5": {
                 "details": [
@@ -131,6 +132,26 @@
             "7": {
                 "details": [
                     "Anthropic partner badge for building with Claude Code."
+                ]
+            },
+            "10": {
+                "details": [
+                    "Overview of programming languages in cloud environments (DELMOFORM)."
+                ]
+            },
+            "11": {
+                "details": [
+                    "IELTS Academic certification, overall band score 7.5."
+                ]
+            },
+            "12": {
+                "details": [
+                    "Complete Symfony web development guide, from beginner to advanced."
+                ]
+            },
+            "13": {
+                "details": [
+                    "Complete guide to Git and GitHub, from fundamentals to mastery."
                 ]
             },
             "8": {

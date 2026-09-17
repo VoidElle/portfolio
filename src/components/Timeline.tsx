@@ -8,7 +8,9 @@ import { useLang } from '../context/LangContext';
 const DOT_COLORS = ['var(--c-swatch-green)', 'var(--c-swatch-purple)', 'var(--c-swatch-blue)', 'var(--c-swatch-amber)'];
 
 const Timeline: React.FC = () => {
-    const { t } = useLang();
+    const { t, lang } = useLang();
+    const dateFormatter = new Intl.DateTimeFormat(lang, { month: 'long', year: 'numeric', timeZone: 'UTC' });
+    const formatDate = (date: string) => dateFormatter.format(new Date(`${date}-01T00:00:00Z`));
 
     const work = timeline.filter((item) => item.type === 'work');
 
@@ -27,7 +29,7 @@ const Timeline: React.FC = () => {
 
                 <div className="flex flex-col gap-1">
                     {work.map((item, index) => {
-                        const duration = item.duration === 'Actual' ? t('timeline.current') : item.duration;
+                        const dateRange = `${formatDate(item.startDate)} – ${item.endDate ? formatDate(item.endDate) : t('timeline.current')}`;
                         const details: string[] = t(`timeline.entries.${item.id}.details`);
 
                         return (
@@ -35,7 +37,7 @@ const Timeline: React.FC = () => {
                                 key={`timeline-${item.id}`}
                                 id={`timeline-${item.id}`}
                                 title={item.title}
-                                subtitle={`${item.year} · ${duration}`}
+                                subtitle={dateRange}
                                 dotColor={DOT_COLORS[index % DOT_COLORS.length]}
                             >
                                 <ul className="space-y-1">

@@ -9,7 +9,9 @@ import { useLang } from '../context/LangContext';
 const GROUP_ORDER: Achievement['group'][] = ['education', 'certifications'];
 
 const Achievements: React.FC = () => {
-    const { t } = useLang();
+    const { t, lang } = useLang();
+    const dateFormatter = new Intl.DateTimeFormat(lang, { month: 'long', year: 'numeric', timeZone: 'UTC' });
+    const formatDate = (date: string) => dateFormatter.format(new Date(`${date}-01T00:00:00Z`));
     const [ref, inView] = useInView<HTMLDivElement>();
 
     const groups = GROUP_ORDER.map((group) => ({
@@ -44,7 +46,11 @@ const Achievements: React.FC = () => {
                                         key={`ach-${item.id}`}
                                         id={`ach-${item.id}`}
                                         title={item.title}
-                                        subtitle={item.year ? `${item.subtitle} · ${item.year}` : item.subtitle}
+                                        subtitle={item.startDate && item.endDate
+                                            ? `${item.subtitle} · ${formatDate(item.startDate)} – ${formatDate(item.endDate)}`
+                                            : item.issuedDate
+                                                ? `${item.subtitle} · ${formatDate(item.issuedDate)}`
+                                                : item.subtitle}
                                         dotColor={item.dotColor}
                                     >
                                         <ul className="space-y-1">
@@ -60,7 +66,7 @@ const Achievements: React.FC = () => {
                                             )}
                                         </ul>
 
-                                        <div className="flex flex-wrap gap-1.5 mt-3">
+                                        <div className="flex flex-wrap items-center gap-1.5 mt-3">
                                             {item.chips.map((chip) => (
                                                 <span
                                                     key={`ach-${item.id}-chip-${chip}`}
@@ -70,6 +76,17 @@ const Achievements: React.FC = () => {
                                                     {chip}
                                                 </span>
                                             ))}
+                                            {item.certificateUrl && (
+                                                <a
+                                                    href={item.certificateUrl}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="inline-flex items-center gap-1.5 rounded-full border border-accent/40 bg-accent-soft text-accent text-xs font-semibold px-3 py-1 ml-auto transition-[color,border-color,transform] active:scale-[0.97] hover:text-fg hover:border-strong"
+                                                >
+                                                    <i className="fas fa-certificate shrink-0" aria-hidden="true" />
+                                                    {t('achievements.viewCertificate')}
+                                                </a>
+                                            )}
                                         </div>
                                     </AccordionItem>
                                 );

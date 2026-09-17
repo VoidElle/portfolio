@@ -18,12 +18,12 @@ const Intro: React.FC = () => {
         <section id="hero" className="pt-14 pb-20">
             <div className="relative rounded-2xl border border-subtle bg-surface transition-colors hover:border-strong animate-fade-up">
                 <div className="relative h-40 rounded-t-2xl overflow-hidden cover-intro">
-                    <div
-                        className="absolute inset-0"
-                        style={{
-                            background:
-                                'radial-gradient(ellipse at 60% 40%, rgb(0 199 88 / 0.35) 0%, transparent 65%), radial-gradient(ellipse at 20% 70%, rgb(0 102 255 / 0.2) 0%, transparent 50%)',
-                        }}
+                    <img
+                        src={SITE.heroBackground}
+                        alt=""
+                        width={1400}
+                        height={350}
+                        className="absolute inset-0 h-full w-full object-cover"
                     />
                 </div>
 

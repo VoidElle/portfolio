@@ -1,10 +1,10 @@
 export default [
     {
         id: 0,
-        year: '2024',
+        startDate: '2024-01',
+        endDate: null,
         type: 'work',
         title: 'Avvale - Software Engineer',
-        duration: 'Actual',
         details: [
             "Specialized consultancy for large clients, designing and building custom mobile solutions.",
             "- Cross-platform apps with Flutter/Dart, React Native/Expo/TypeScript.",
@@ -33,10 +33,10 @@ export default [
     },
     {
         id: 1,
-        year: '2022',
+        startDate: '2022-09',
+        endDate: '2024-01',
         type: 'work',
-        title: 'Avvale - Junior Consultant',
-        duration: '1 year 5 months',
+        title: 'Avvale - Junior Software Engineer',
         details: [
             "- RESTful API and web interface development with PHP, Symfony and Twig.",
             "- Management and maintenance of PostgreSQL and MongoDB databases."
@@ -52,10 +52,10 @@ export default [
     },
     {
         id: 2,
-        year: '2020',
+        startDate: '2020-01',
+        endDate: '2022-07',
         type: 'work',
         title: 'Infinity Solutions - Full Stack Developer',
-        duration: '2 years 7 months',
         details: [
             "Design, development and maintenance of hybrid mobile apps and microservices.",
             "- Cross-platform apps with Flutter and Dart, UI/UX design included.",

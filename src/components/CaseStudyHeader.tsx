@@ -53,18 +53,22 @@ const CaseStudyHeader: React.FC<Props> = ({
                             {item}
                         </span>
                     ))}
-                    {links.map((link) => (
-                        <a
-                            key={`${link.href}-${link.label}`}
-                            href={link.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={linkClass}
-                        >
-                            <i className={link.icon} aria-hidden="true" />
-                            {link.label}
-                        </a>
-                    ))}
+                    {links.length > 0 && (
+                        <div className="ml-auto flex flex-wrap justify-end gap-2">
+                            {links.map((link) => (
+                                <a
+                                    key={`${link.href}-${link.label}`}
+                                    href={link.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={linkClass}
+                                >
+                                    <i className={link.icon} aria-hidden="true" />
+                                    {link.label}
+                                </a>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </header>
 

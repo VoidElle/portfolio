@@ -1,3 +1,5 @@
+import heroBackground from '../assets/heroCodeBackground.jpeg';
+
 export interface SocialLink {
     id: string;
     labelKey: string;
@@ -7,6 +9,7 @@ export interface SocialLink {
 
 export const SITE = {
     name: "Luca Del Corona",
+    heroBackground,
     avatar: "https://avatars.githubusercontent.com/u/26171008?s=200&v=4", // GitHub profile picture (VoidElle); null -> gradient initials fallback
     resumeUrl: null as string | null,       // download link; hide button when null
     email: "info@lucadelcorona.com",

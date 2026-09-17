@@ -79,7 +79,7 @@
         "label": "Carriera",
         "title": "Esperienze",
         "sub": "Dove ho lavorato e cosa ho costruito.",
-        "current": "Attuale",
+        "current": "Presente",
         "entries": {
             "0": {
                 "details": [
@@ -117,6 +117,7 @@
             "education": "Formazione",
             "certifications": "Certificazioni"
         },
+        "viewCertificate": "Vedi Certificato",
         "entries": {
             "5": {
                 "details": [
@@ -131,6 +132,26 @@
             "7": {
                 "details": [
                     "Badge partner Anthropic per lo sviluppo con Claude Code."
+                ]
+            },
+            "10": {
+                "details": [
+                    "Panoramica dei linguaggi di programmazione in ambienti cloud (DELMOFORM)."
+                ]
+            },
+            "11": {
+                "details": [
+                    "Certificazione IELTS Academic, punteggio complessivo 7.5."
+                ]
+            },
+            "12": {
+                "details": [
+                    "Guida completa allo sviluppo web con Symfony, da principiante ad avanzato."
+                ]
+            },
+            "13": {
+                "details": [
+                    "Guida completa a Git e GitHub, dai fondamenti alla padronanza."
                 ]
             },
             "8": {
