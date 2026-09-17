@@ -200,7 +200,7 @@
         "zigbee-mesh-health": {
             "subtitle": "A passive LQI and routing-health monitor for Zigbee2MQTT that flags degrading devices before they fail.",
             "summary": "Case study of Zigbee Mesh Health, a passive LQI and routing-health monitor for Zigbee2MQTT that flags degrading devices before they fail.",
-            "role": "Solo developer",
+            "role": "",
             "coverCaption": "Zigbee Mesh Health as a Home Assistant add-on with an LQI dashboard.",
             "sections": {
                 "overview": {
@@ -240,7 +240,7 @@
         "hass-llm-watchdog": {
             "subtitle": "Monitor the health of major AI and LLM providers directly from Home Assistant.",
             "summary": "Case study of LLM Watchdog, a Home Assistant custom integration that monitors the availability of major AI and LLM providers.",
-            "role": "Solo developer",
+            "role": "",
             "coverCaption": "LLM Watchdog provider and summary sensors in Home Assistant.",
             "sections": {
                 "overview": {
@@ -313,6 +313,485 @@
                 "outcome": {
                     "title": "05. Outcome",
                     "body": "Sossoldi is open source under the MIT license and is distributed on the App Store, Google Play and F-Droid. Development is active with a stable release in progress and contributions welcome. It is the app I contribute to for tracking net worth the way Mr. Rip's spreadsheet does."
+                }
+            }
+        },
+        "jira-standup-skill": {
+            "subtitle": "An AI agent skill that turns yesterday's Jira activity into a ready-to-paste standup summary, through an MCP connector.",
+            "summary": "Case study of Jira Standup Skill, an AI agent skill that turns Jira activity into a standup summary over MCP.",
+            "role": "",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "Jira Standup Skill is an AI agent skill that turns yesterday's Jira activity into a ready-to-paste standup summary. It runs wherever an MCP-capable agent runs, so there is no desktop app to install and no stored credentials. It was inspired by What I Did, a Tauri desktop app that does the same job, and reimplements the same logic as an agent skill instead."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "The skill is a set of Markdown instructions with supporting scripts, distributed through the skills CLI. The same package installs into Claude Code, Cursor, Codex, Windsurf, Cline and 60+ other agents, and it talks to Jira through a connected Atlassian MCP server.",
+                    "callout": "No credentials are stored anywhere. The skill relies on the Jira access the agent already has through MCP, and if no Jira MCP tool is connected it says so and stops rather than inventing ticket detail a tool never returned."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "The skill resolves the target window, queries Jira, and shapes the result into a standup-ready summary.",
+                    "bullets": [
+                        "Target window: yesterday on a weekday, or last Friday when today is Saturday, Sunday or Monday.",
+                        "It queries the connected Jira/Atlassian MCP tool for issues touched or logged work on that day.",
+                        "Results are grouped by project, one line per issue, describing what actually happened.",
+                        "It reports status changes, comments and worklogs rather than just repeating ticket titles."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "The hard part is behaving predictably across many different agents that each load skills differently.",
+                    "bullets": [
+                        "Natural-language triggering is not guaranteed, so the explicit /jira-standup-summary invocation is the reliable path.",
+                        "Skill lists are usually loaded once at startup, so a new install needs a fresh session before it is picked up.",
+                        "Some agents ship their own behaviour for generic phrases like 'what did I do yesterday', so Jira-specific phrasing is recommended."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "Jira Standup Skill is open source and installs with a single command against the agent of your choice. It turns the repetitive scan-and-summarize step of standup prep into one prompt, using whatever Jira access the agent already has."
+                }
+            }
+        },
+        "hass-open-ialarm-mk": {
+            "subtitle": "A Home Assistant integration for iAlarm MK alarm panels, communicating entirely over the local network.",
+            "summary": "Case study of Hass Open iAlarm MK, a Home Assistant integration for iAlarm MK alarm panels over a local TCP connection.",
+            "role": "",
+            "coverCaption": "Open iAlarm MK panel entities and zones in Home Assistant.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "Open iAlarm MK is a Home Assistant integration for local control and monitoring of iAlarm MK alarm panels. It talks directly to the panel over TCP on the local network, with no cloud service and no P2P relay in between. Support has been confirmed on MK7 panels, while other MK variants may work but are untested."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "It is a Python custom component installed through HACS or manually, depending on the open-ialarm-mk-local-api library from PyPI. The repository ships its own test workflow.",
+                    "callout": "Keeping everything local was the point. The integration never depends on a vendor cloud, so the panel keeps working in Home Assistant even when the manufacturer's service does not."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "The integration exposes the panel as entities and keeps their state in sync with the hardware.",
+                    "bullets": [
+                        "An alarm control panel entity supports arm away, arm stay, arm partial, disarm and cancel alarm.",
+                        "Every zone is reported with its state, including open, bypassed, low battery and signal loss.",
+                        "Network information such as name, MAC and IP is exposed for diagnostics.",
+                        "It uses a local push plus polling model to keep entity state current."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "Panel firmware varies a lot, which makes compatibility a moving target.",
+                    "bullets": [
+                        "Confirmed working on firmware V1.0.9F_SIA_TCP, while V1.05F_SIA_TCP and V1.13F are not compatible.",
+                        "The general rule is that firmware exposing port 8000 should work, but it has to be verified per panel.",
+                        "Because there is no cloud fallback, connection drops have to be handled locally with reconnection and keepalive."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "Open iAlarm MK is an open source integration delivered through HACS, confirmed on MK7 panels and built on top of the companion local API library. It is how I bring my alarm system into Home Assistant without giving up local control."
+                }
+            }
+        },
+        "open-ialarm-mk-local-api": {
+            "subtitle": "An asynchronous Python library for iAlarm MK alarm panels over the local Meian binary protocol.",
+            "summary": "Case study of Open iAlarm MK Local API, an async Python library that talks to iAlarm MK panels over the local Meian protocol.",
+            "role": "",
+            "coverCaption": "Open iAlarm-MK Local API powering fully local panel control.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "Open iAlarm MK Local API is an asynchronous Python library for iAlarm MK alarm panels, speaking the Meian binary protocol directly over TCP. It is the library that powers my Home Assistant integration, published on PyPI so anyone can build on it. It targets Python 3.11 and above."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "The library is built on asyncio for non-blocking communication, uses typed dataclasses for its data models, and is covered by a GitHub Actions test workflow.",
+                    "callout": "Large MK7 responses, over 1024 bytes, do not arrive in a single read. The library uses a framed two-phase read so those responses are always reassembled in full, with TCP keep-alive to avoid idle drops."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "It gives full local control of the panel through a small async client.",
+                    "bullets": [
+                        "Arm away, arm stay, arm partial, disarm and cancel alarm are all exposed.",
+                        "All zones can be read with their status, including open, bypassed, low battery and signal loss.",
+                        "Network information such as name, MAC and IP can be read for diagnostics.",
+                        "An internal asyncio.Lock serialises commands, making it safe for a Home Assistant coordinator, and an application-level keepalive polls status every 30 seconds."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "Talking to a real panel over a binary protocol means handling partial reads, dropped connections and concurrency.",
+                    "bullets": [
+                        "The two-phase read handles responses larger than a single TCP frame.",
+                        "Each command retries once on a connection drop and the socket is closed cleanly on failure.",
+                        "Ports differ by model, MK7 uses 8000 while MK2 uses 18034, so connection setup has to account for both."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "Open iAlarm MK Local API is published on PyPI and is the foundation of the matching Home Assistant integration. It has a test suite and full documentation, and it is the layer that makes fully local panel control possible."
+                }
+            }
+        },
+        "what-i-did": {
+            "subtitle": "A lightweight desktop app that pulls your previous working day of Jira activity and turns it into a clean standup summary.",
+            "summary": "Case study of What I Did, a Tauri desktop app that turns yesterday's Jira activity into a ready-to-paste standup summary.",
+            "role": "",
+            "coverCaption": "What I Did grouping the previous day's Jira issues into a collapsible activity feed.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "What I Did is a desktop app that fetches your Jira activity from the previous working day and turns it into a standup summary you can paste without opening a browser tab. It started from a simple problem: blanking on what I actually did the day before, and remembering even less on a Monday. Open the app, see what you touched yesterday, copy the summary, done."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "It is built with Tauri 2, React, TypeScript, Vite and Bun, and ships installers for macOS, Windows and Linux.",
+                    "callout": "All credentials are stored locally through Tauri's encrypted store. There is no analytics, no telemetry and no cloud sync, so Jira credentials never leave the machine."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "The app fetches activity, renders it, and reduces it to a shareable summary.",
+                    "bullets": [
+                        "It fetches all Jira issues you touched yesterday within the configured time window.",
+                        "Issues are grouped by project into collapsible sections, with inline rich text rendered from Atlassian Document Format.",
+                        "Status changes, comments, attachments and worklogs appear inside each issue card, with image attachments previewed inline.",
+                        "One click generates a standup-ready bullet list to the clipboard, and the smart window skips weekends so Monday shows Friday's activity."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "Real Jira setups are not uniform, and the app has to stay useful across them.",
+                    "bullets": [
+                        "Multiple Jira instances can be connected at once, each with its own credentials, and one broken connection does not hide the rest.",
+                        "Atlassian Document Format has to be rendered inline rather than shown as raw markup.",
+                        "macOS blocks the non-notarized build on first launch, so the README documents the workaround."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "What I Did is open source under the MIT license with releases for macOS, Windows and Linux. It removes the repetitive scan-and-summarize step from every standup, and it directly inspired the Jira Standup Skill."
+                }
+            }
+        },
+        "gymnalyzer": {
+            "subtitle": "An AI-powered web app that analyzes a training program and returns the fixes that actually matter.",
+            "summary": "Case study of Gymnalyzer, an AI-powered web app that analyzes a workout program for imbalances, recovery and volume.",
+            "role": "",
+            "coverCaption": "Gymnalyzer scoring a program on balance, recovery and volume.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "Gymnalyzer is an AI-powered web app that analyzes a weekly training program and finds what is hard to see on paper: muscle imbalances, insufficient recovery, undertrained groups and volume that does not match the goal. Instead of generic advice it returns a ranked list of concrete fixes. It is aimed at lifters who follow a self-written or copied split."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "It is built as a Next.js application in TypeScript and Tailwind CSS, with Prisma and PostgreSQL for persistence and an AI analysis layer on top.",
+                    "callout": "The analysis is deliberately concrete. Rather than rating a program in the abstract, it maps weekly sets per muscle against evidence-based targets so every recommendation can be traced to a number."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "A program goes in, a structured analysis comes out in seconds.",
+                    "bullets": [
+                        "You paste a weekly split and state the training goal; any format is accepted.",
+                        "The app evaluates muscle coverage, weekly volume, recovery and imbalances.",
+                        "It produces an overall program score plus per-dimension scores for balance, recovery and volume.",
+                        "It lists recovery conflicts, such as back-to-back sessions hitting the same muscle, and a ranked set of priority fixes."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "The value depends on the analysis being specific and trustworthy rather than a generic checklist.",
+                    "bullets": [
+                        "Free-form programs have to be parsed reliably before they can be scored.",
+                        "Targets are anchored to evidence-based weekly set ranges rather than arbitrary thresholds.",
+                        "Recommendations are ranked by impact so the most important fix is not buried under minor ones."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "Gymnalyzer is live at gymnalyzer.com with a waitlist ahead of launch. It turns an opaque training program into a scored, prioritized list of changes, which is exactly the feedback a spreadsheet cannot give."
+                }
+            }
+        },
+        "open-tecnosystemi": {
+            "subtitle": "A Home Assistant integration that manages Tecnosystemi Pico and Polaris 5X devices over the local network.",
+            "summary": "Case study of Open Tecnosystemi, a Home Assistant integration for Tecnosystemi Pico and Polaris 5X devices.",
+            "role": "",
+            "coverCaption": "Tecnosystemi Pico and Polaris devices managed from Home Assistant.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "Open Tecnosystemi is a Home Assistant integration for managing Tecnosystemi devices. It covers two device families: Pico, the local UDP-based ventilation and air quality units, and Polaris 5X, the local TCP-based HVAC zone controllers. Both communicate entirely over the local network with no cloud connectivity."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "It is a Python custom component available in the HACS Default repository, so it installs without a custom repository. It builds on two of my libraries, open-pico-local-api and open-polaris-local-api.",
+                    "callout": "The integration's main job is to hide two very different local protocols behind one consistent Home Assistant experience, UDP for Pico and TCP for Polaris, so the user never has to think about which is which."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "The integration presents both device families as standard Home Assistant entities.",
+                    "bullets": [
+                        "After install, you add it from Devices & Services and pick the device family to set up.",
+                        "Pico devices expose ventilation and air quality controls such as modes and fan speed.",
+                        "Polaris 5X devices expose HVAC control at both control-unit and zone level.",
+                        "All communication stays on the local network, with no cloud round-trip."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "Supporting two device families at once raises the bar for consistency and maintenance.",
+                    "bullets": [
+                        "Pico speaks UDP while Polaris speaks TCP, so transport, discovery and error handling differ per family.",
+                        "Both underlying libraries evolve independently, so the integration has to stay aligned with their releases.",
+                        "Being in the HACS Default repository means meeting community quality and review standards."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "Open Tecnosystemi is open source, published in HACS Default, and covered by tests. It gives Tecnosystemi owners local control from Home Assistant without depending on the manufacturer's cloud."
+                }
+            }
+        },
+        "open-pico-local-api": {
+            "subtitle": "An asynchronous Python library for Tecnosystemi Pico ventilation and air quality devices.",
+            "summary": "Case study of Open Pico Local API, an async Python library for local control of Tecnosystemi Pico devices.",
+            "role": "",
+            "coverCaption": "Open Pico Local API controlling Tecnosystemi Pico devices locally.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "Open Pico Local API is an asynchronous Python library for Tecnosystemi Pico IoT devices, the UDP-based ventilation and air quality units. It provides local control and monitoring over the local network, with no cloud involved. It targets Python 3.11 and above and is published on PyPI."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "The library uses asyncio for non-blocking UDP communication, exposes type-safe Python enums, supports async context managers, and is covered by a GitHub Actions test workflow.",
+                    "callout": "A shared transport manager lets one UDP transport serve multiple devices at once, with automatic IDP synchronisation and range allocation so many units can be controlled reliably in parallel."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "It supports both single-device and multi-device orchestration.",
+                    "bullets": [
+                        "A single client can turn a unit on, read its status and change its operating mode.",
+                        "Fan speed, humidity and LED settings can all be adjusted.",
+                        "Multiple devices can be controlled concurrently with asyncio.gather.",
+                        "An async context manager handles connection setup and teardown automatically."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "UDP is fast but unforgiving, and the protocol needs careful bookkeeping.",
+                    "bullets": [
+                        "IDP synchronisation has to be recovered gracefully when communication drifts.",
+                        "Automatic reconnection and configurable retries keep long-running control stable.",
+                        "Multiple devices share one transport, so range allocation has to avoid collisions."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "Open Pico Local API is published on PyPI with documentation, examples and tests, and it powers the Pico side of my Home Assistant integration. It is what makes local, cloud-free control of Pico units practical in Python."
+                }
+            }
+        },
+        "open-polaris-local-api": {
+            "subtitle": "An asynchronous Python library for Tecnosystemi Polaris 5X HVAC control units.",
+            "summary": "Case study of Open Polaris Local API, an async Python library for local control of Tecnosystemi Polaris 5X HVAC systems.",
+            "role": "",
+            "coverCaption": "Open Polaris Local API controlling Polaris 5X HVAC zones locally.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "Open Polaris Local API is an asynchronous Python library for Tecnosystemi Polaris 5X HVAC Control Unit devices. It provides local control and monitoring of the system and its zones over the local network, with no cloud dependency. It targets Python 3.11 and above and is published on PyPI."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "The library uses asyncio with short-lived TCP connections per command, mirroring the official app, and exposes type-safe dataclasses such as PolarisDevice and PolarisZone.",
+                    "callout": "It polls a compact stato_r response by default and transparently falls back to the full stato response on older firmware, and it understands both the local TCP snake_case format and the cloud API PascalCase format."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "It covers control-unit and zone-level operation, plus automatic discovery.",
+                    "bullets": [
+                        "At control-unit level it manages power, cooling mode and operating mode.",
+                        "At zone level it manages temperature setpoint, on/off, chrono mode, fan speed and shutter.",
+                        "A subnet scan finds all Polaris devices on the LAN without knowing their IPs in advance.",
+                        "Error bitmasks are decoded into human-readable error strings for both the control unit and zones."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "The protocol was reverse-engineered, so robust fallbacks matter more than usual.",
+                    "bullets": [
+                        "Older firmware does not answer the compact stato_r call, so the library falls back to the full response automatically.",
+                        "Auto-discovery has to identify devices positively by validating the Polaris protocol response, not just an open port.",
+                        "Transient timeouts are handled with configurable retry attempts and delays."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "Open Polaris Local API is published on PyPI with documentation, examples and tests, and it powers the Polaris side of my Home Assistant integration. It is what makes local control of Polaris 5X HVAC systems possible without going through the cloud."
+                }
+            }
+        },
+        "black-theory": {
+            "subtitle": "A responsible-disclosure security research project on a QR-code based access-control system.",
+            "summary": "Case study of Black Theory, a responsible-disclosure security research project on a QR-code based access-control system.",
+            "role": "Security researcher",
+            "coverCaption": "Black Theory, a responsible disclosure project on an access-control system.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "Black Theory is a security research project that documents vulnerabilities found in the QR-code based access system used to enter a gym chain's facilities. It exists purely for education, auditing and security analysis, and the goal was to get the issues fixed rather than to enable abuse. The project documents the analysis, the responsible disclosure process and the eventual fix."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "The proof-of-concept was built as a cross-platform mobile app in Flutter and Dart, with the analysis focused on the REST endpoints the official app talks to.",
+                    "callout": "The repository is published only after the vendor confirmed the fix, and it is explicit that the material is for authorized, controlled use only. It documents the flaw classes at a level suitable for remediation, not a step-by-step exploitation guide."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "The research followed the data the official app relies on, from the QR code to the subscription check.",
+                    "bullets": [
+                        "The QR code carries a client identifier, a centre identifier and a generation timestamp.",
+                        "The official app checks subscription validity through a vendor endpoint before granting entry.",
+                        "The analysis identified hard-coded shared credentials used across all users of the system.",
+                        "Findings were classified with standard CWE identifiers to make remediation concrete."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "The hardest part was the disclosure process itself, not the finding.",
+                    "bullets": [
+                        "Initial contact took months to establish before a formal report could be sent.",
+                        "The vulnerability was reported privately and the vendor acknowledged and fixed it before publication.",
+                        "The repository only became public after the fix shipped, so no one could use it against the live system."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "The vulnerability was fixed in production and the Black Theory repository was made public on the same day, March 25, 2026. The API endpoints it referenced are no longer available, which is exactly the outcome responsible disclosure aims for."
+                }
+            }
+        },
+        "open-pico-app": {
+            "subtitle": "A multiplatform mobile app for managing Tecnosystemi Pico devices, and the groundwork for a Home Assistant integration.",
+            "summary": "Case study of Open Pico, a multiplatform mobile app for managing Tecnosystemi Pico devices.",
+            "role": "",
+            "coverCaption": "Open Pico managing Tecnosystemi Pico devices on mobile.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "Open Pico is a multiplatform mobile app for managing Tecnosystemi Pico devices. It provides monitoring, control and automation for the units in an intuitive interface, taking inspiration from the official mobile application. Building it was a key step towards the Home Assistant integration that followed."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "It is built with Flutter and Dart for Android and iOS, sharing one codebase across platforms. Only Pico devices are supported, and the APIs allow a single valid token at a time, so it is single-user.",
+                    "callout": "The most complex part was the token architecture, reverse-engineered from the official app. Tokens are stateful: an encrypted {session}_{counter} payload with AES-256-CBC, a key derived by hashing a device identifier and salt with SHA-256, and a counter that must be incremented and re-encrypted on every request."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "The app exposes day-to-day control of Pico units from a phone.",
+                    "bullets": [
+                        "It manages device operating modes and parameters from a single interface.",
+                        "Token handling decrypts, increments and re-encrypts the session on every request.",
+                        "The incrementing counter also acts as replay protection and enforces request ordering.",
+                        "It was tested against a PICO PRO PLUS 30, and most features should work across Pico models."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "The authentication scheme is unconventional and unforgiving.",
+                    "bullets": [
+                        "Any successful authentication, from the app or the API, invalidates other tokens, enforcing single-session access.",
+                        "The counter must be maintained correctly on every call or requests are rejected.",
+                        "Keeping full compatibility with the official app's cryptographic protocol was a hard requirement."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "Open Pico is open source and was tested on real hardware. Its reverse-engineered token implementation became the reference that made the Home Assistant integration possible, turning a closed device cloud into local control."
+                }
+            }
+        },
+        "alphonse-club": {
+            "subtitle": "A full-stack CRM for a private social club, covering members, events and communications.",
+            "summary": "Case study of Alphonse Club, a full-stack CRM for a private social club built with Next.js and Supabase.",
+            "role": "",
+            "coverCaption": "Alphonse Club, a full-stack CRM for a private social club.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "Alphonse Club is a full-stack CRM for a private social club. It centralises member records, events and communications into one admin interface, replacing the spread of manual tools a club typically runs on. The goal was to give club administrators a single, dependable place to run day-to-day operations."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "It is a Next.js and React application written in TypeScript with Tailwind CSS, using Supabase for its database and data layer and Clerk for authentication and session management.",
+                    "callout": "Authentication and data are handled by managed services, Supabase and Clerk, so the effort goes into the club's own domain logic instead of rebuilding identity and database plumbing."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "The CRM gives administrators a single place to manage the club.",
+                    "bullets": [
+                        "Member records are centralised, so the club has one authoritative source of truth.",
+                        "Events can be organised and tracked from the same interface.",
+                        "Communications with members are managed alongside their records.",
+                        "Admin access is gated through role-based authentication."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "A small club still needs proper access control and careful data handling.",
+                    "bullets": [
+                        "Authentication and roles must separate administrators from ordinary members.",
+                        "Member data is personal, so data handling stays within managed, access-controlled services.",
+                        "The interface has to stay simple enough for non-technical administrators."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "The club has since closed and the CRM has been decommissioned, so the site is no longer online. It remains a complete example of a full-stack system that centralised members, events and communications instead of relying on a patchwork of tools."
+                }
+            }
+        },
+        "portfolio": {
+            "subtitle": "This site: a React and Tailwind single-page portfolio with data-driven content and case study pages.",
+            "summary": "Case study of this portfolio, a React and Tailwind single-page site with data-driven content and case study pages.",
+            "role": "",
+            "coverCaption": "The portfolio, a single scrollable page with dedicated case study routes.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "This portfolio is a single-page application that presents my work, skills and background, with dedicated case study pages for selected projects. The content lives in typed data files rather than in the components, so the site is easy to extend without touching layout code. It is also the project I use to keep current with the React ecosystem."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "It is built with React 19, TypeScript, Vite and Tailwind CSS 4, with React Router for routing and a small i18n layer for English and Italian. It is deployed on Vercel.",
+                    "callout": "Visual theming runs through design tokens defined once in Tailwind's @theme, with a dark variant flipping them. Components use semantic utilities such as bg-surface and text-muted instead of raw colour values, so dark mode and restyling stay in one place."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "Content and layout are deliberately separated.",
+                    "bullets": [
+                        "Every editable piece of content lives in src/data, from projects and timeline entries to case studies.",
+                        "Case studies are resolved from a slug through a getCaseStudy lookup and rendered at /projects/:slug.",
+                        "A single layout route owns the theme state and the shared nav and content wrapper.",
+                        "Vercel rewrites all paths to the SPA root so deep links to case studies work."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "Keeping a small site both easy to edit and correct over time took some deliberate choices.",
+                    "bullets": [
+                        "Moving content out of components means updates are data edits, not JSX edits.",
+                        "English and Italian translations are kept in sync in parallel language files.",
+                        "Accessibility is handled with focus management and semantic structure on the case study pages."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "The portfolio is live and open source. It is a small but complete example of a data-driven React site with i18n, dark mode and deep-linked case study pages, and it doubles as the site you are reading now."
                 }
             }
         }

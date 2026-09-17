@@ -10,7 +10,7 @@ interface Props {
     imgUrl?: string;
     imgContain?: boolean;
     stack: string[];
-    link: string;
+    link?: string;
     source?: string;
     caseStudy?: string;
     animDelay?: number;
@@ -19,11 +19,11 @@ interface Props {
 const PortfolioItem: React.FC<Props> = ({ title, description, imgUrl, imgContain = false, stack, link, source, caseStudy, animDelay = 0 }) => {
     const { t } = useLang();
     const [ref, inView] = useInView<HTMLDivElement>();
-    const isGithub = link.includes('github.com');
+    const isGithub = link?.includes('github.com') ?? false;
 
     const links: { href: string; label: string; icon: string }[] = [];
-    if (!isGithub) links.push({ href: link, label: t('projects.live'), icon: 'fas fa-external-link-alt' });
-    if (isGithub) links.push({ href: link, label: t('projects.code'), icon: 'fab fa-github' });
+    if (link && !isGithub) links.push({ href: link, label: t('projects.live'), icon: 'fas fa-external-link-alt' });
+    if (link && isGithub) links.push({ href: link, label: t('projects.code'), icon: 'fab fa-github' });
     if (source && source !== link) links.push({ href: source, label: t('projects.code'), icon: 'fab fa-github' });
 
     return (

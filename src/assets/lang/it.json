@@ -200,7 +200,7 @@
         "zigbee-mesh-health": {
             "subtitle": "Un monitor passivo di LQI e salute del routing per Zigbee2MQTT che segnala i dispositivi in degrado prima che smettano di funzionare.",
             "summary": "Case study di Zigbee Mesh Health, un monitor passivo di LQI e salute del routing per Zigbee2MQTT che segnala i dispositivi in degrado prima che smettano di funzionare.",
-            "role": "Sviluppatore unico",
+            "role": "",
             "coverCaption": "Zigbee Mesh Health come add-on di Home Assistant con dashboard LQI.",
             "sections": {
                 "overview": {
@@ -240,7 +240,7 @@
         "hass-llm-watchdog": {
             "subtitle": "Monitora la salute dei principali provider AI e LLM direttamente da Home Assistant.",
             "summary": "Case study di LLM Watchdog, una custom integration di Home Assistant che monitora la disponibilità dei principali provider AI e LLM.",
-            "role": "Sviluppatore unico",
+            "role": "",
             "coverCaption": "Sensori per provider e sensore di riepilogo di LLM Watchdog in Home Assistant.",
             "sections": {
                 "overview": {
@@ -313,6 +313,485 @@
                 "outcome": {
                     "title": "05. Outcome",
                     "body": "Sossoldi è open source con licenza MIT ed è distribuita su App Store, Google Play e F-Droid. Lo sviluppo è attivo con una release stabile in corso e i contributi sono benvenuti. È l'app a cui collaboro per monitorare il patrimonio netto come fa il foglio di calcolo di Mr. Rip."
+                }
+            }
+        },
+        "jira-standup-skill": {
+            "subtitle": "Una skill per agenti AI che trasforma l'attività Jira di ieri in un riepilogo standup pronto da incollare, tramite un connettore MCP.",
+            "summary": "Case study di Jira Standup Skill, una skill per agenti AI che trasforma l'attività Jira in un riepilogo standup tramite MCP.",
+            "role": "",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "Jira Standup Skill è una skill per agenti AI che trasforma l'attività Jira di ieri in un riepilogo standup pronto da incollare. Funziona ovunque giri un agente compatibile con MCP, quindi non c'è nessuna app desktop da installare e nessuna credenziale salvata. È ispirata a What I Did, un'app desktop Tauri che fa la stessa cosa, e ne reimplementa la logica come skill per agenti."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "La skill è un insieme di istruzioni Markdown con script di supporto, distribuita tramite la CLI skills. Lo stesso pacchetto si installa in Claude Code, Cursor, Codex, Windsurf, Cline e oltre 60 altri agenti, e comunica con Jira attraverso un server MCP Atlassian collegato.",
+                    "callout": "Nessuna credenziale viene salvata. La skill si affida all'accesso a Jira che l'agente ha già tramite MCP, e se nessun tool MCP di Jira è collegato lo dichiara e si ferma, invece di inventare dettagli sui ticket che nessun tool ha restituito."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "La skill determina la finestra temporale, interroga Jira e trasforma il risultato in un riepilogo pronto per lo standup.",
+                    "bullets": [
+                        "Finestra temporale: ieri nei giorni feriali, oppure venerdì quando oggi è sabato, domenica o lunedì.",
+                        "Interroga il tool MCP Jira/Atlassian collegato per le issue toccate o su cui è stato registrato lavoro in quel giorno.",
+                        "I risultati sono raggruppati per progetto, una riga per issue, descrivendo cosa è successo davvero.",
+                        "Riporta cambi di stato, commenti e worklog invece di limitarsi a ripetere i titoli dei ticket."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "La parte difficile è comportarsi in modo prevedibile su agenti diversi, che caricano le skill in modi diversi.",
+                    "bullets": [
+                        "L'attivazione in linguaggio naturale non è garantita, quindi l'invocazione esplicita /jira-standup-summary è la strada affidabile.",
+                        "Le liste di skill vengono di solito caricate all'avvio, quindi una nuova installazione richiede una sessione nuova per essere rilevata.",
+                        "Alcuni agenti hanno un comportamento proprio per frasi generiche come 'what did I do yesterday', quindi è consigliata una formulazione specifica per Jira."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "Jira Standup Skill è open source e si installa con un solo comando sull'agente scelto. Trasforma il ripetitivo passaggio di scansione e riepilogo dello standup in un unico prompt, usando l'accesso a Jira che l'agente ha già."
+                }
+            }
+        },
+        "hass-open-ialarm-mk": {
+            "subtitle": "Un'integrazione di Home Assistant per le centrali iAlarm MK, che comunica interamente sulla rete locale.",
+            "summary": "Case study di Hass Open iAlarm MK, un'integrazione di Home Assistant per le centrali iAlarm MK su connessione TCP locale.",
+            "role": "",
+            "coverCaption": "Entità e zone della centrale Open iAlarm MK in Home Assistant.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "Open iAlarm MK è un'integrazione di Home Assistant per il controllo e il monitoraggio locale delle centrali iAlarm MK. Comunica direttamente con la centrale via TCP sulla rete locale, senza servizi cloud e senza relay P2P. Il supporto è confermato sulle centrali MK7, mentre altre varianti MK potrebbero funzionare ma non sono state testate."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "È una custom component Python installabile tramite HACS o manualmente, che dipende dalla libreria open-ialarm-mk-local-api da PyPI. Il repository include un proprio workflow di test.",
+                    "callout": "Mantenere tutto locale era l'obiettivo. L'integrazione non dipende mai dal cloud del produttore, così la centrale continua a funzionare in Home Assistant anche quando il servizio del produttore no."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "L'integrazione espone la centrale come entità e ne mantiene lo stato sincronizzato con l'hardware.",
+                    "bullets": [
+                        "Un'entità alarm control panel supporta arm away, arm stay, arm partial, disarm e cancel alarm.",
+                        "Ogni zona viene riportata con il suo stato, tra cui open, bypassed, batteria scarica e perdita di segnale.",
+                        "Le informazioni di rete come nome, MAC e IP sono esposte per la diagnostica.",
+                        "Usa un modello local push più polling per mantenere aggiornato lo stato delle entità."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "Il firmware delle centrali varia molto, il che rende la compatibilità un obiettivo mobile.",
+                    "bullets": [
+                        "Confermato funzionante sul firmware V1.0.9F_SIA_TCP, mentre V1.05F_SIA_TCP e V1.13F non sono compatibili.",
+                        "La regola generale è che un firmware che espone la porta 8000 dovrebbe funzionare, ma va verificato centrale per centrale.",
+                        "Dato che non c'è fallback cloud, le cadute di connessione vanno gestite localmente con riconnessione e keepalive."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "Open iAlarm MK è un'integrazione open source distribuita tramite HACS, confermata sulle centrali MK7 e costruita sopra la libreria API locale complementare. È il modo in cui porto il mio sistema di allarme in Home Assistant senza rinunciare al controllo locale."
+                }
+            }
+        },
+        "open-ialarm-mk-local-api": {
+            "subtitle": "Una libreria Python asincrona per le centrali iAlarm MK tramite il protocollo binario Meian locale.",
+            "summary": "Case study di Open iAlarm MK Local API, una libreria Python async che comunica con le centrali iAlarm MK tramite il protocollo Meian locale.",
+            "role": "",
+            "coverCaption": "Open iAlarm-MK Local API alla base del controllo locale della centrale.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "Open iAlarm MK Local API è una libreria Python asincrona per le centrali iAlarm MK, che parla direttamente il protocollo binario Meian su TCP. È la libreria che alimenta la mia integrazione di Home Assistant, pubblicata su PyPI perché chiunque possa costruirci sopra. Supporta Python 3.11 e versioni successive."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "La libreria è costruita su asyncio per la comunicazione non bloccante, usa dataclass tipizzate per i modelli dati ed è coperta da un workflow di test su GitHub Actions.",
+                    "callout": "Le risposte grandi delle MK7, oltre 1024 byte, non arrivano in una singola lettura. La libreria usa una lettura in due fasi con framing, così quelle risposte vengono sempre riassemblate per intero, con TCP keep-alive per evitare le cadute per inattività."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "Offre il pieno controllo locale della centrale tramite un piccolo client async.",
+                    "bullets": [
+                        "Arm away, arm stay, arm partial, disarm e cancel alarm sono tutti esposti.",
+                        "Tutte le zone possono essere lette con il loro stato, tra cui open, bypassed, batteria scarica e perdita di segnale.",
+                        "Le informazioni di rete come nome, MAC e IP possono essere lette per la diagnostica.",
+                        "Un asyncio.Lock interno serializza i comandi, rendendola sicura per un coordinator di Home Assistant, e un keepalive a livello applicativo interroga lo stato ogni 30 secondi."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "Comunicare con una centrale reale tramite un protocollo binario significa gestire letture parziali, connessioni cadute e concorrenza.",
+                    "bullets": [
+                        "La lettura in due fasi gestisce risposte più grandi di un singolo frame TCP.",
+                        "Ogni comando ritenta una volta in caso di caduta della connessione e il socket viene chiuso in modo pulito in caso di errore.",
+                        "Le porte variano per modello, MK7 usa 8000 mentre MK2 usa 18034, quindi la connessione deve tener conto di entrambe."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "Open iAlarm MK Local API è pubblicata su PyPI ed è la base dell'integrazione di Home Assistant corrispondente. Ha una suite di test e documentazione completa, ed è il layer che rende possibile il controllo locale completo della centrale."
+                }
+            }
+        },
+        "what-i-did": {
+            "subtitle": "Un'app desktop leggera che recupera l'attività Jira del giorno lavorativo precedente e la trasforma in un riepilogo standup.",
+            "summary": "Case study di What I Did, un'app desktop Tauri che trasforma l'attività Jira di ieri in un riepilogo standup pronto da incollare.",
+            "role": "",
+            "coverCaption": "What I Did che raggruppa le issue Jira del giorno precedente in un feed di attività comprimibile.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "What I Did è un'app desktop che recupera la tua attività Jira del giorno lavorativo precedente e la trasforma in un riepilogo standup da incollare senza aprire una scheda del browser. È nata da un problema semplice: rimanere a vuoto su cosa avevo fatto il giorno prima, e ricordare ancora meno il lunedì. Apri l'app, vedi cosa hai toccato ieri, copi il riepilogo, fatto."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "È costruita con Tauri 2, React, TypeScript, Vite e Bun, e distribuisce installer per macOS, Windows e Linux.",
+                    "callout": "Tutte le credenziali sono salvate localmente tramite lo store cifrato di Tauri. Non ci sono analytics, telemetria o sincronizzazione cloud, quindi le credenziali Jira non lasciano mai la macchina."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "L'app recupera l'attività, la mostra e la riduce a un riepilogo condivisibile.",
+                    "bullets": [
+                        "Recupera tutte le issue Jira toccate ieri nella finestra temporale configurata.",
+                        "Le issue sono raggruppate per progetto in sezioni comprimibili, con testo formattato renderizzato inline dal formato Atlassian Document Format.",
+                        "Cambi di stato, commenti, allegati e worklog compaiono dentro ogni card, con le immagini allegate mostrate inline.",
+                        "Un clic genera una lista puntata pronta per lo standup negli appunti, e la finestra smart salta i weekend così il lunedì mostra l'attività del venerdì."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "I setup Jira reali non sono uniformi, e l'app deve restare utile in tutti.",
+                    "bullets": [
+                        "Più istanze Jira possono essere collegate insieme, ognuna con le proprie credenziali, e una connessione rotta non nasconde le altre.",
+                        "Il formato Atlassian Document Format va renderizzato inline invece di essere mostrato come markup grezzo.",
+                        "macOS blocca la build non notarizzata al primo avvio, quindi il README documenta la soluzione."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "What I Did è open source con licenza MIT e ha release per macOS, Windows e Linux. Elimina il ripetitivo passaggio di scansione e riepilogo da ogni standup, e ha ispirato direttamente Jira Standup Skill."
+                }
+            }
+        },
+        "gymnalyzer": {
+            "subtitle": "Un'app web basata sull'AI che analizza un programma di allenamento e restituisce le correzioni che contano davvero.",
+            "summary": "Case study di Gymnalyzer, un'app web basata sull'AI che analizza un programma di allenamento per squilibri, recupero e volume.",
+            "role": "",
+            "coverCaption": "Gymnalyzer che valuta un programma su equilibrio, recupero e volume.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "Gymnalyzer è un'app web basata sull'AI che analizza un programma di allenamento settimanale e trova ciò che è difficile vedere sulla carta: squilibri muscolari, recupero insufficiente, gruppi poco allenati e volume che non corrisponde all'obiettivo. Invece di consigli generici restituisce una lista di correzioni concrete ordinate per impatto. Si rivolge a chi segue una scheda scritta da sé o copiata."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "È costruita come applicazione Next.js in TypeScript e Tailwind CSS, con Prisma e PostgreSQL per la persistenza e un layer di analisi AI sopra.",
+                    "callout": "L'analisi è volutamente concreta. Invece di valutare un programma in astratto, mappa le serie settimanali per muscolo rispetto a target basati sull'evidenza, così ogni raccomandazione può essere ricondotta a un numero."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "Un programma entra, un'analisi strutturata esce in pochi secondi.",
+                    "bullets": [
+                        "Incolli una split settimanale e indichi l'obiettivo di allenamento; qualsiasi formato è accettato.",
+                        "L'app valuta copertura muscolare, volume settimanale, recupero e squilibri.",
+                        "Produce un punteggio complessivo del programma più punteggi per dimensione di equilibrio, recupero e volume.",
+                        "Elenca i conflitti di recupero, come sessioni consecutive sullo stesso muscolo, e una serie di correzioni prioritarie ordinate."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "Il valore dipende dal fatto che l'analisi sia specifica e affidabile, non una checklist generica.",
+                    "bullets": [
+                        "I programmi in formato libero vanno interpretati in modo affidabile prima di poter essere valutati.",
+                        "I target sono ancorati a intervalli di serie settimanali basati sull'evidenza, non a soglie arbitrarie.",
+                        "Le raccomandazioni sono ordinate per impatto, così la correzione più importante non finisce sepolta sotto quelle minori."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "Gymnalyzer è online su gymnalyzer.com con una waitlist in attesa del lancio. Trasforma un programma opaco in una lista di modifiche valutata e prioritizzata, esattamente il feedback che un foglio di calcolo non può dare."
+                }
+            }
+        },
+        "open-tecnosystemi": {
+            "subtitle": "Un'integrazione di Home Assistant che gestisce i dispositivi Tecnosystemi Pico e Polaris 5X sulla rete locale.",
+            "summary": "Case study di Open Tecnosystemi, un'integrazione di Home Assistant per i dispositivi Tecnosystemi Pico e Polaris 5X.",
+            "role": "",
+            "coverCaption": "Dispositivi Tecnosystemi Pico e Polaris gestiti da Home Assistant.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "Open Tecnosystemi è un'integrazione di Home Assistant per la gestione dei dispositivi Tecnosystemi. Copre due famiglie di dispositivi: Pico, le unità di ventilazione e qualità dell'aria basate su UDP locale, e Polaris 5X, i controller di zona HVAC basati su TCP locale. Entrambe comunicano interamente sulla rete locale senza connettività cloud."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "È una custom component Python disponibile nel repository HACS Default, quindi si installa senza repository personalizzato. Si basa su due mie librerie, open-pico-local-api e open-polaris-local-api.",
+                    "callout": "Il compito principale dell'integrazione è nascondere due protocolli locali molto diversi dietro un'unica esperienza Home Assistant coerente, UDP per Pico e TCP per Polaris, così l'utente non deve mai pensare a quale sia quale."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "L'integrazione presenta entrambe le famiglie di dispositivi come entità standard di Home Assistant.",
+                    "bullets": [
+                        "Dopo l'installazione la aggiungi da Dispositivi e servizi e scegli la famiglia di dispositivi da configurare.",
+                        "I dispositivi Pico espongono controlli di ventilazione e qualità dell'aria come modalità e velocità della ventola.",
+                        "I dispositivi Polaris 5X espongono il controllo HVAC sia a livello di unità centrale sia di zona.",
+                        "Tutta la comunicazione resta sulla rete locale, senza passaggi dal cloud."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "Supportare due famiglie di dispositivi insieme alza l'asticella su coerenza e manutenzione.",
+                    "bullets": [
+                        "Pico parla UDP mentre Polaris parla TCP, quindi trasporto, discovery e gestione degli errori differiscono per famiglia.",
+                        "Entrambe le librerie sottostanti evolvono in modo indipendente, quindi l'integrazione deve restare allineata alle loro release.",
+                        "Essere nel repository HACS Default significa rispettare gli standard di qualità e review della community."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "Open Tecnosystemi è open source, pubblicata in HACS Default e coperta da test. Dà ai proprietari di dispositivi Tecnosystemi il controllo locale da Home Assistant senza dipendere dal cloud del produttore."
+                }
+            }
+        },
+        "open-pico-local-api": {
+            "subtitle": "Una libreria Python asincrona per i dispositivi Tecnosystemi Pico di ventilazione e qualità dell'aria.",
+            "summary": "Case study di Open Pico Local API, una libreria Python async per il controllo locale dei dispositivi Tecnosystemi Pico.",
+            "role": "",
+            "coverCaption": "Open Pico Local API che controlla localmente i dispositivi Tecnosystemi Pico.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "Open Pico Local API è una libreria Python asincrona per i dispositivi IoT Tecnosystemi Pico, le unità di ventilazione e qualità dell'aria basate su UDP. Offre controllo e monitoraggio locale sulla rete locale, senza cloud. Supporta Python 3.11 e versioni successive ed è pubblicata su PyPI."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "La libreria usa asyncio per la comunicazione UDP non bloccante, espone enum Python tipizzati, supporta gli async context manager ed è coperta da un workflow di test su GitHub Actions.",
+                    "callout": "Un gestore di trasporto condiviso permette a un solo trasporto UDP di servire più dispositivi insieme, con sincronizzazione IDP automatica e allocazione degli intervalli, così molte unità possono essere controllate in parallelo in modo affidabile."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "Supporta sia l'orchestrazione di un singolo dispositivo sia di più dispositivi.",
+                    "bullets": [
+                        "Un singolo client può accendere un'unità, leggerne lo stato e cambiarne la modalità operativa.",
+                        "Velocità della ventola, umidità e impostazioni LED possono essere regolate.",
+                        "Più dispositivi possono essere controllati in modo concorrente con asyncio.gather.",
+                        "Un async context manager gestisce automaticamente apertura e chiusura della connessione."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "UDP è veloce ma severo, e il protocollo richiede una contabilità attenta.",
+                    "bullets": [
+                        "La sincronizzazione IDP deve essere recuperata con grazia quando la comunicazione va alla deriva.",
+                        "La riconnessione automatica e i retry configurabili mantengono stabile il controllo di lunga durata.",
+                        "Più dispositivi condividono un solo trasporto, quindi l'allocazione degli intervalli deve evitare collisioni."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "Open Pico Local API è pubblicata su PyPI con documentazione, esempi e test, e alimenta il lato Pico della mia integrazione di Home Assistant. È ciò che rende pratico in Python il controllo locale e senza cloud delle unità Pico."
+                }
+            }
+        },
+        "open-polaris-local-api": {
+            "subtitle": "Una libreria Python asincrona per le unità di controllo Tecnosystemi Polaris 5X.",
+            "summary": "Case study di Open Polaris Local API, una libreria Python async per il controllo locale dei sistemi HVAC Tecnosystemi Polaris 5X.",
+            "role": "",
+            "coverCaption": "Open Polaris Local API che controlla localmente le zone HVAC Polaris 5X.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "Open Polaris Local API è una libreria Python asincrona per i dispositivi Tecnosystemi Polaris 5X HVAC Control Unit. Offre controllo e monitoraggio locale del sistema e delle sue zone sulla rete locale, senza dipendenze cloud. Supporta Python 3.11 e versioni successive ed è pubblicata su PyPI."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "La libreria usa asyncio con connessioni TCP di breve durata per comando, come l'app ufficiale, ed espone dataclass tipizzate come PolarisDevice e PolarisZone.",
+                    "callout": "Interroga una risposta compatta stato_r per impostazione predefinita e passa in modo trasparente alla risposta completa stato sui firmware più vecchi, e comprende sia il formato locale TCP snake_case sia il formato cloud API PascalCase."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "Copre il funzionamento a livello di unità centrale e di zona, più la scoperta automatica.",
+                    "bullets": [
+                        "A livello di unità centrale gestisce accensione, modalità di raffreddamento e modalità operativa.",
+                        "A livello di zona gestisce setpoint di temperatura, on/off, modalità chrono, velocità della ventola e serranda.",
+                        "Una scansione della subnet trova tutti i dispositivi Polaris sulla LAN senza conoscerne in anticipo gli IP.",
+                        "Le maschere di errore vengono decodificate in stringhe leggibili sia per l'unità centrale sia per le zone."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "Il protocollo è stato reverse-engineered, quindi i fallback robusti contano più del solito.",
+                    "bullets": [
+                        "I firmware più vecchi non rispondono alla chiamata compatta stato_r, quindi la libreria ripiega automaticamente sulla risposta completa.",
+                        "L'auto-discovery deve identificare i dispositivi in modo positivo validando la risposta del protocollo Polaris, non solo una porta aperta.",
+                        "I timeout transitori sono gestiti con tentativi e ritardi configurabili."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "Open Polaris Local API è pubblicata su PyPI con documentazione, esempi e test, e alimenta il lato Polaris della mia integrazione di Home Assistant. È ciò che rende possibile il controllo locale dei sistemi HVAC Polaris 5X senza passare dal cloud."
+                }
+            }
+        },
+        "black-theory": {
+            "subtitle": "Un progetto di ricerca sulla sicurezza in responsible disclosure su un sistema di controllo accessi basato su QR code.",
+            "summary": "Case study di Black Theory, un progetto di ricerca sulla sicurezza in responsible disclosure su un sistema di controllo accessi basato su QR code.",
+            "role": "Ricercatore di sicurezza",
+            "coverCaption": "Black Theory, un progetto di responsible disclosure su un sistema di controllo accessi.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "Black Theory è un progetto di ricerca sulla sicurezza che documenta vulnerabilità trovate nel sistema di accesso basato su QR code usato per entrare nelle strutture di una catena di palestre. Esiste puramente per educazione, auditing e analisi di sicurezza, e l'obiettivo era far correggere i problemi anziché abilitare abusi. Il progetto documenta l'analisi, il processo di responsible disclosure e la correzione finale."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "Il proof-of-concept è stato costruito come app mobile cross-platform in Flutter e Dart, con l'analisi focalizzata sugli endpoint REST con cui comunica l'app ufficiale.",
+                    "callout": "Il repository viene pubblicato solo dopo che il vendor ha confermato la correzione, ed è esplicito che il materiale è solo per uso autorizzato e controllato. Documenta le classi di difetto a un livello adatto alla remediation, non come guida passo-passo allo sfruttamento."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "La ricerca ha seguito i dati su cui si basa l'app ufficiale, dal QR code al controllo dell'abbonamento.",
+                    "bullets": [
+                        "Il QR code contiene un identificatore del cliente, uno del centro e un timestamp di generazione.",
+                        "L'app ufficiale verifica la validità dell'abbonamento tramite un endpoint del vendor prima di concedere l'ingresso.",
+                        "L'analisi ha identificato credenziali condivise hard-coded usate da tutti gli utenti del sistema.",
+                        "I risultati sono stati classificati con identificatori CWE standard per rendere concreta la remediation."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "La parte più difficile è stato il processo di disclosure, non il trovare il problema.",
+                    "bullets": [
+                        "Il primo contatto ha richiesto mesi prima di poter inviare una segnalazione formale.",
+                        "La vulnerabilità è stata segnalata in privato e il vendor l'ha riconosciuta e corretta prima della pubblicazione.",
+                        "Il repository è diventato pubblico solo dopo il rilascio della correzione, così nessuno ha potuto usarlo contro il sistema in produzione."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "La vulnerabilità è stata corretta in produzione e il repository Black Theory è diventato pubblico lo stesso giorno, il 25 marzo 2026. Gli endpoint API a cui faceva riferimento non sono più disponibili, che è esattamente il risultato che la responsible disclosure vuole ottenere."
+                }
+            }
+        },
+        "open-pico-app": {
+            "subtitle": "Un'app mobile multipiattaforma per gestire i dispositivi Tecnosystemi Pico, e la base per un'integrazione di Home Assistant.",
+            "summary": "Case study di Open Pico, un'app mobile multipiattaforma per gestire i dispositivi Tecnosystemi Pico.",
+            "role": "",
+            "coverCaption": "Open Pico che gestisce i dispositivi Tecnosystemi Pico su mobile.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "Open Pico è un'app mobile multipiattaforma per gestire i dispositivi Tecnosystemi Pico. Offre monitoraggio, controllo e automazione delle unità in un'interfaccia intuitiva, prendendo ispirazione dall'app mobile ufficiale. Costruirla è stato un passo chiave verso l'integrazione di Home Assistant che è seguita."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "È costruita con Flutter e Dart per Android e iOS, condividendo un unico codebase tra le piattaforme. Sono supportati solo i dispositivi Pico, e le API ammettono un solo token valido alla volta, quindi è single-user.",
+                    "callout": "La parte più complessa è stata l'architettura dei token, reverse-engineered dall'app ufficiale. I token sono stateful: un payload cifrato {session}_{counter} con AES-256-CBC, una chiave derivata hashing di un identificatore del dispositivo e un salt con SHA-256, e un contatore che deve essere incrementato e ri-cifrato a ogni richiesta."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "L'app espone il controllo quotidiano delle unità Pico da un telefono.",
+                    "bullets": [
+                        "Gestisce modalità operative e parametri dei dispositivi da un'unica interfaccia.",
+                        "La gestione dei token decifra, incrementa e ri-cifra la sessione a ogni richiesta.",
+                        "Il contatore incrementale funge anche da protezione anti-replay e impone l'ordine delle richieste.",
+                        "È stata testata con un PICO PRO PLUS 30, e la maggior parte delle funzionalità dovrebbe funzionare su tutti i modelli Pico."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "Lo schema di autenticazione è non convenzionale e severo.",
+                    "bullets": [
+                        "Qualsiasi autenticazione riuscita, dall'app o dall'API, invalida gli altri token, imponendo l'accesso a sessione singola.",
+                        "Il contatore deve essere mantenuto correttamente a ogni chiamata, altrimenti le richieste vengono rifiutate.",
+                        "Mantenere la piena compatibilità con il protocollo crittografico dell'app ufficiale era un requisito imprescindibile."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "Open Pico è open source ed è stata testata su hardware reale. La sua implementazione dei token reverse-engineered è diventata il riferimento che ha reso possibile l'integrazione di Home Assistant, trasformando un cloud chiuso del dispositivo in controllo locale."
+                }
+            }
+        },
+        "alphonse-club": {
+            "subtitle": "Un CRM full-stack per un circolo privato, che copre soci, eventi e comunicazioni.",
+            "summary": "Case study di Alphonse Club, un CRM full-stack per un circolo privato costruito con Next.js e Supabase.",
+            "role": "",
+            "coverCaption": "Alphonse Club, un CRM full-stack per un circolo privato.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "Alphonse Club è un CRM full-stack per un circolo privato. Centralizza anagrafiche dei soci, eventi e comunicazioni in un'unica interfaccia di amministrazione, sostituendo la dispersione di strumenti manuali su cui tipicamente si appoggia un circolo. L'obiettivo era dare agli amministratori un unico posto affidabile da cui gestire le operazioni quotidiane."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "È un'applicazione Next.js e React scritta in TypeScript con Tailwind CSS, che usa Supabase per database e layer dati e Clerk per autenticazione e gestione delle sessioni.",
+                    "callout": "Autenticazione e dati sono gestiti da servizi managed, Supabase e Clerk, così lo sforzo va sulla logica di dominio del circolo invece di ricostruire identità e infrastruttura del database."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "Il CRM dà agli amministratori un unico posto per gestire il circolo.",
+                    "bullets": [
+                        "Le anagrafiche dei soci sono centralizzate, così il circolo ha un'unica fonte autorevole di verità.",
+                        "Gli eventi possono essere organizzati e tracciati dalla stessa interfaccia.",
+                        "Le comunicazioni con i soci sono gestite insieme ai loro dati.",
+                        "L'accesso amministrativo è protetto da autenticazione basata sui ruoli."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "Un circolo piccolo ha comunque bisogno di un controllo degli accessi adeguato e di una gestione attenta dei dati.",
+                    "bullets": [
+                        "Autenticazione e ruoli devono separare gli amministratori dai soci ordinari.",
+                        "I dati dei soci sono personali, quindi restano all'interno di servizi managed e ad accesso controllato.",
+                        "L'interfaccia deve restare abbastanza semplice per amministratori non tecnici."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "Il circolo ha poi chiuso e il CRM è stato dismesso, quindi il sito non è più online. Resta un esempio completo di sistema full-stack che centralizzava soci, eventi e comunicazioni al posto di un insieme disomogeneo di strumenti."
+                }
+            }
+        },
+        "portfolio": {
+            "subtitle": "Questo sito: un portfolio single-page in React e Tailwind con contenuti guidati dai dati e pagine case study.",
+            "summary": "Case study di questo portfolio, un sito single-page in React e Tailwind con contenuti guidati dai dati e pagine case study.",
+            "role": "",
+            "coverCaption": "Il portfolio, una singola pagina scrollabile con route dedicate ai case study.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "Questo portfolio è una single-page application che presenta il mio lavoro, le mie competenze e il mio percorso, con pagine case study dedicate per alcuni progetti. I contenuti vivono in file dati tipizzati invece che nei componenti, così il sito è facile da estendere senza toccare il codice di layout. È anche il progetto che uso per restare aggiornato con l'ecosistema React."
+                },
+                "stack": {
+                    "title": "02. Tech Stack",
+                    "body": "È costruito con React 19, TypeScript, Vite e Tailwind CSS 4, con React Router per il routing e un piccolo layer i18n per inglese e italiano. È distribuito su Vercel.",
+                    "callout": "Il tema visivo passa attraverso design token definiti una volta in @theme di Tailwind, con una variante dark che li ribalta. I componenti usano utility semantiche come bg-surface e text-muted invece di valori di colore grezzi, così dark mode e restyling restano in un unico posto."
+                },
+                "how-it-works": {
+                    "title": "03. How It Works",
+                    "body": "Contenuti e layout sono deliberatamente separati.",
+                    "bullets": [
+                        "Ogni contenuto modificabile vive in src/data, dai progetti alle voci della timeline ai case study.",
+                        "I case study sono risolti da uno slug tramite una lookup getCaseStudy e renderizzati su /projects/:slug.",
+                        "Una singola layout route possiede lo stato del tema e il nav e wrapper dei contenuti condivisi.",
+                        "Vercel riscrive tutti i percorsi alla radice della SPA, così i deep link ai case study funzionano."
+                    ]
+                },
+                "challenges": {
+                    "title": "04. Challenges & Decisions",
+                    "body": "Mantenere un sito piccolo sia facile da modificare sia corretto nel tempo ha richiesto scelte deliberate.",
+                    "bullets": [
+                        "Spostare i contenuti fuori dai componenti significa che gli aggiornamenti sono modifiche ai dati, non al JSX.",
+                        "Le traduzioni inglese e italiano sono mantenute in sync in file di lingua paralleli.",
+                        "L'accessibilità è gestita con la gestione del focus e una struttura semantica nelle pagine case study."
+                    ]
+                },
+                "outcome": {
+                    "title": "05. Outcome",
+                    "body": "Il portfolio è online e open source. È un esempio piccolo ma completo di sito React guidato dai dati con i18n, dark mode e pagine case study con deep link, e funge anche da sito che stai leggendo."
                 }
             }
         }

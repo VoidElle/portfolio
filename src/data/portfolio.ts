@@ -13,7 +13,18 @@ import openIalarmMkLocalApiImage from "../assets/projects/openIalarmMkLocalApi.w
 import whatIDidImage from "../assets/projects/whatIDid.webp";
 import zigbeeMeshHealthImage from "../assets/projects/zigbeeMeshHealth.png";
 
-export default [
+export interface Project {
+    id: number;
+    title: string;
+    imgUrl?: string;
+    imgContain?: boolean;
+    stack: string[];
+    link?: string;
+    source?: string;
+    caseStudy?: string;
+}
+
+const portfolio: Project[] = [
     {
         id: 14,
         title: "Zigbee Mesh Health",
@@ -27,7 +38,8 @@ export default [
         id: 13,
         title: "Jira Standup Skill",
         stack: ["MCP", "AI"],
-        link: "https://github.com/VoidElle/jira-standup-skill"
+        link: "https://github.com/VoidElle/jira-standup-skill",
+        caseStudy: "jira-standup-skill"
     },
     {
         id: 12,
@@ -43,70 +55,79 @@ export default [
         title: "Hass Open iAlarm MK",
         imgUrl: hassOpenIalarmMkImage,
         stack: ["Python", "Home Assistant"],
-        link: "https://github.com/VoidElle/hass-open-ialarm-mk"
+        link: "https://github.com/VoidElle/hass-open-ialarm-mk",
+        caseStudy: "hass-open-ialarm-mk"
     },
     {
         id: 10,
         title: "Open iAlarm MK Local API",
         imgUrl: openIalarmMkLocalApiImage,
         stack: ["Python", "TCP"],
-        link: "https://github.com/VoidElle/open-ialarm-mk-local-api"
+        link: "https://github.com/VoidElle/open-ialarm-mk-local-api",
+        caseStudy: "open-ialarm-mk-local-api"
     },
     {
         id: 9,
         title: "What I Did",
         imgUrl: whatIDidImage,
         stack: ["TypeScript", "Tauri"],
-        link: "https://github.com/VoidElle/what-i-did"
+        link: "https://github.com/VoidElle/what-i-did",
+        caseStudy: "what-i-did"
     },
     {
         id: 8,
         title: "Gymnalyzer",
         imgUrl: gymnalyzerImage,
         stack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL"],
-        link: "https://www.gymnalyzer.com"
+        link: "https://www.gymnalyzer.com",
+        caseStudy: "gymnalyzer"
     },
     {
         id: 7,
         title: "Open Tecnosystemi",
         imgUrl: openTecnosystemi,
         stack: ["Python", "Home assistant"],
-        link: "https://github.com/VoidElle/hass-open-tecnosystemi"
+        link: "https://github.com/VoidElle/hass-open-tecnosystemi",
+        caseStudy: "open-tecnosystemi"
     },
     {
         id: 6,
         title: "Open Pico Local API",
         imgUrl: openPicoLocalApi,
         stack: ["Python", "UDP"],
-        link: "https://github.com/VoidElle/open-pico-local-api"
+        link: "https://github.com/VoidElle/open-pico-local-api",
+        caseStudy: "open-pico-local-api"
     },
     {
         id: 5,
         title: "Open Polaris Local API",
         imgUrl: openPolarisLocalApi,
         stack: ["Python", "TCP"],
-        link: "https://github.com/VoidElle/open-polaris-local-api"
+        link: "https://github.com/VoidElle/open-polaris-local-api",
+        caseStudy: "open-polaris-local-api"
     },
     {
         id: 4,
         title: "Black Theory",
         imgUrl: blackTheoryImage,
         stack: ["Flutter", "Dart", "Android", "iOS"],
-        link: "https://github.com/VoidElle/black-theory"
+        link: "https://github.com/VoidElle/black-theory",
+        caseStudy: "black-theory"
     },
     {
         id: 3,
         title: "Open Pico App",
         imgUrl: openPicoApp,
         stack: ["Flutter", "Dart", "Android", "iOS"],
-        link: "https://github.com/VoidElle/open-pico-app"
+        link: "https://github.com/VoidElle/open-pico-app",
+        caseStudy: "open-pico-app"
     },
     {
         id: 2,
         title: "Alphonse Club",
         imgUrl: alphonseClubImage,
         stack: ["Next.js", "React", "Typescript", "Tailwind CSS", "Supabase", "Clerk"],
-        link: "https://www.alphonseclub.com/"
+        caseStudy: "alphonse-club"
     },
     {
         id: 1,
@@ -122,6 +143,9 @@ export default [
         title: "Portfolio",
         imgUrl: portfolioImage,
         stack: ["React", "Javascript", "Tailwind CSS"],
-        link: "https://github.com/VoidElle/Portfolio"
+        link: "https://github.com/VoidElle/Portfolio",
+        caseStudy: "portfolio"
     },
-]
+];
+
+export default portfolio;
