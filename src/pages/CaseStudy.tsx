@@ -67,6 +67,7 @@ const CaseStudy = () => {
     }
 
     const fallbackImg = portfolio.find((project) => project.id === study.projectId)?.imgUrl;
+    const fallbackImgDark = portfolio.find((project) => project.id === study.projectId)?.imgDarkUrl;
 
     const links: CaseStudyLink[] = [];
     if (study.liveUrl) {
@@ -110,6 +111,8 @@ const CaseStudy = () => {
                         stack={study.stack}
                         links={links}
                         coverImg={study.coverImg ?? fallbackImg}
+                        coverImgDark={study.coverImgDark ?? fallbackImgDark}
+                        coverContain={study.coverContain}
                         coverCaption={
                             study.coverCaptionKey
                                 ? (t(study.coverCaptionKey) as string)

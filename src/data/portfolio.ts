@@ -13,11 +13,13 @@ import openIalarmMkLocalApiImage from "../assets/projects/openIalarmMkLocalApi.w
 import whatIDidImage from "../assets/projects/whatIDid.webp";
 import zigbeeMeshHealthImage from "../assets/projects/zigbeeMeshHealth.png";
 import jiraStandupSkillImage from "../assets/projects/jiraStandupSkill.svg";
+import avvaleLogomark from "../assets/projects/avvaleLogomark.png";
 
 export interface Project {
     id: number;
     title: string;
     imgUrl?: string;
+    imgDarkUrl?: string;
     imgContain?: boolean;
     stack: string[];
     link?: string;
@@ -26,6 +28,14 @@ export interface Project {
 }
 
 const portfolio: Project[] = [
+    {
+        id: 15,
+        title: "Avvale Projects",
+        imgUrl: avvaleLogomark,
+        imgContain: true,
+        stack: ["Flutter", "Dart", "React Native", "Expo", "TypeScript", "Kotlin", "Java", "Jetpack Compose", "Firebase", "Android", "iOS"],
+        caseStudy: "avvale-projects"
+    },
     {
         id: 14,
         title: "Zigbee Mesh Health",

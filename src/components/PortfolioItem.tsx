@@ -8,6 +8,7 @@ interface Props {
     title: string;
     description: string;
     imgUrl?: string;
+    imgDarkUrl?: string;
     imgContain?: boolean;
     stack: string[];
     link?: string;
@@ -16,7 +17,7 @@ interface Props {
     animDelay?: number;
 }
 
-const PortfolioItem: React.FC<Props> = ({ title, description, imgUrl, imgContain = false, stack, link, source, caseStudy, animDelay = 0 }) => {
+const PortfolioItem: React.FC<Props> = ({ title, description, imgUrl, imgDarkUrl, imgContain = false, stack, link, source, caseStudy, animDelay = 0 }) => {
     const { t } = useLang();
     const [ref, inView] = useInView<HTMLDivElement>();
     const isGithub = link?.includes('github.com') ?? false;
@@ -34,12 +35,22 @@ const PortfolioItem: React.FC<Props> = ({ title, description, imgUrl, imgContain
         >
             <div className="overflow-hidden">
                 {imgUrl ? (
-                    <img
-                        src={imgUrl}
-                        alt={title}
-                        loading="lazy"
-                        className={`w-full h-48 transition-transform duration-200 ease-out group-hover-hover:scale-105 ${imgContain ? 'object-contain p-6' : 'object-cover'}`}
-                    />
+                    <>
+                        <img
+                            src={imgUrl}
+                            alt={title}
+                            loading="lazy"
+                            className={`w-full h-48 transition-transform duration-200 ease-out group-hover-hover:scale-105 ${imgContain ? 'object-contain p-6' : 'object-cover'} ${imgDarkUrl ? 'dark:hidden' : ''}`}
+                        />
+                        {imgDarkUrl && (
+                            <img
+                                src={imgDarkUrl}
+                                alt={title}
+                                loading="lazy"
+                                className={`hidden dark:block w-full h-48 transition-transform duration-200 ease-out group-hover-hover:scale-105 ${imgContain ? 'object-contain p-6' : 'object-cover'}`}
+                            />
+                        )}
+                    </>
                 ) : (
                     <div
                         aria-hidden="true"

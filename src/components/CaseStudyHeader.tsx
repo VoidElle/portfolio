@@ -14,6 +14,8 @@ interface Props {
     stack: string[];
     links: CaseStudyLink[];
     coverImg?: string;
+    coverImgDark?: string;
+    coverContain?: boolean;
     coverCaption?: string;
     titleRef?: React.Ref<HTMLHeadingElement>;
 }
@@ -29,6 +31,8 @@ const CaseStudyHeader: React.FC<Props> = ({
     stack,
     links,
     coverImg,
+    coverImgDark,
+    coverContain = false,
     coverCaption,
     titleRef,
 }) => {
@@ -77,8 +81,15 @@ const CaseStudyHeader: React.FC<Props> = ({
                     <img
                         src={coverImg}
                         alt={title}
-                        className="w-full h-auto rounded-xl border border-subtle mb-2"
+                        className={`${coverContain ? 'block mx-auto h-40 w-auto object-contain' : 'w-full h-auto rounded-xl border border-subtle'} mb-2 ${coverImgDark ? 'dark:hidden' : ''}`}
                     />
+                    {coverImgDark && (
+                        <img
+                            src={coverImgDark}
+                            alt={title}
+                            className={`hidden dark:block ${coverContain ? 'mx-auto h-40 w-auto object-contain' : 'w-full h-auto rounded-xl border border-subtle'} mb-2`}
+                        />
+                    )}
                     {coverCaption && (
                         <p className="text-xs text-muted mb-12">{coverCaption}</p>
                     )}

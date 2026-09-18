@@ -30,6 +30,7 @@
     "portfolio": {
         "title": "Portfolio",
         "projects": {
+            "15": { "description": "Confidential enterprise mobile apps I built for several clients at Avvale, across cross-platform and native projects. Names and details stay under NDA" },
             "14": { "description": "Passive LQI and routing-health monitor for Zigbee2MQTT that flags degrading devices before they fail, without extra radio traffic" },
             "13": { "description": "AI skill that turns yesterday's Jira activity into a ready-to-paste standup summary via MCP" },
             "12": { "description": "Home Assistant integration that monitors the uptime and health of major AI/LLM provider APIs in real time" },
@@ -221,6 +222,106 @@
             "links": "Links",
             "live": "Live",
             "code": "Source"
+        },
+        "avvale-projects": {
+            "subtitle": "The mobile apps I designed and shipped for enterprise clients at Avvale, described in general terms because every engagement is under NDA.",
+            "summary": "An anonymised case study of the enterprise mobile apps I delivered at Avvale, across cross-platform and native projects.",
+            "role": "Software Engineer, cross-platform and native mobile",
+            "coverCaption": "Avvale, the consultancy where these enterprise mobile apps were built.",
+            "sections": {
+                "overview": {
+                    "title": "01. Project Overview",
+                    "body": "These are the mobile apps I built at Avvale, a consultancy that works with large enterprise clients in several industries. Every engagement is covered by a non-disclosure agreement, so this page is about the engineering rather than the clients: the platforms involved, how the projects were run, and the problems we had to solve. The work ranged from a single app to product suites with several modules, and from greenfield builds to keeping long-running apps alive."
+                },
+                "stack": {
+                    "title": "02. Tech Stack and Delivery Model",
+                    "body": "The technology depended on what each client already had in place. Sometimes the right answer was a single cross-platform codebase, sometimes a fully native Android app, and the integrations had to slot into whatever backend and cloud stack the client was running.",
+                    "callout": "**Cross-platform:** Flutter and Dart, or React Native with Expo and TypeScript. **Native:** Kotlin, Java and Jetpack Compose on Android, with an iOS counterpart when needed. **Backend and cloud:** REST and GraphQL, AWS (S3, Amplify, AppSync, Cognito), Firebase, plus Google Analytics, Datadog and anti-tampering protections. **Process:** agile and Kanban, with waterfall on a few engagements."
+                },
+                "insurance-app": {
+                    "title": "03. Insurance Customer App",
+                    "body": "A self-service app for the customers of an insurance provider. People could get a quote, buy a policy and manage it later without calling anyone, all from their phone. I built it in **Flutter** and **Dart**, shipping one codebase to both platforms.",
+                    "bullets": [
+                        "Instant quotes across several insurance lines, with offers generated on the server.",
+                        "A full product catalogue and a way to find the nearest agencies and partner service centres.",
+                        "Buying saved quotes and renewing expiring policies end to end, with secure payments and a payment history.",
+                        "An insurance certificate linked to Apple Wallet and Google Wallet and shown as a scannable QR code.",
+                        "A policy dashboard for reviewing details, downloading documents and keeping an eye on deadlines."
+                    ]
+                },
+                "home-charging": {
+                    "title": "04. Home EV Charging Suite",
+                    "body": "A companion app for private and business EV chargers. Drivers could set up their wallbox and control charging from their phone. It ran on **React Native** and **Expo** with **TypeScript**, backed by **Firebase**.",
+                    "bullets": [
+                        "A guided setup that ends with a personal charging profile.",
+                        "Pairing the wallbox over the local connection.",
+                        "Starting, monitoring and stopping charging sessions, with scheduling around off-peak tariffs.",
+                        "Checking on a charging session remotely while away from the car."
+                    ]
+                },
+                "charging-network": {
+                    "title": "05. Public Charging Network App",
+                    "body": "A second charging product, this time for public infrastructure: finding a charge point, booking it and paying for it across a nationwide network. I built this one natively on Android with **Java**, **Kotlin** and **Jetpack Compose**.",
+                    "bullets": [
+                        "A map of nearby charge points, searchable by availability, power output, connector type and network.",
+                        "Live availability, opening hours and location details, with reviews from other drivers.",
+                        "Booking a point and starting the session remotely where the hardware supports it.",
+                        "In-app payments and a complete charging history.",
+                        "Roadside assistance for drivers who run out of charge."
+                    ]
+                },
+                "field-tool": {
+                    "title": "06. Power Upgrade Tool for Technicians",
+                    "body": "A technician-only tool for performing a power upgrade on certain wallbox models. It is deliberately restricted to trained staff, because getting the procedure wrong can damage the hardware. Like the home charging app, it was built with **React Native**, **Expo** and **TypeScript**, with **Firebase**.",
+                    "bullets": [
+                        "A step-by-step upgrade flow with safety checks and clear warnings.",
+                        "Connecting to the device, updating its parameters and verifying the result afterwards.",
+                        "Distributed to authorised internal users instead of the public stores."
+                    ]
+                },
+                "device-test": {
+                    "title": "07. Manufacturing Device Test App",
+                    "body": "An internal app used on a production line. Every unit has to prove it works before it leaves the factory, so the app connects to the device under test and runs through a fixed set of checks. It is native Android, written in **Java**, **Kotlin** and **Jetpack Compose**.",
+                    "bullets": [
+                        "Connecting to the device hotspot over Wi-Fi Direct, with no external network.",
+                        "Running an automated functional test and reporting pass or fail per unit.",
+                        "Designed for fast, repetitive use on the factory floor."
+                    ]
+                },
+                "dashboards": {
+                    "title": "08. Enterprise Dashboards and Alerts",
+                    "body": "An app that brings business intelligence dashboards to mobile and pushes operational alerts to the people who need them. Built in **Flutter** and **Dart**, with **Firebase** behind it.",
+                    "bullets": [
+                        "Analytics dashboards embedded and rendered natively in the app.",
+                        "Push notifications for faults and anomalies, so problems surface straight away.",
+                        "Read-only views kept simple for a quick check on the move."
+                    ]
+                },
+                "document-workflow": {
+                    "title": "09. Enterprise Document Workflow",
+                    "body": "A mobile workspace for an enterprise content platform. It takes document-heavy processes that normally live on a desktop and makes them work on a phone or tablet. Again built with **Flutter** and **Dart**, with **Firebase**.",
+                    "bullets": [
+                        "Browsing corporate documents and tracking their deadlines.",
+                        "Reviewing, approving and digitally signing documents.",
+                        "Messaging colleagues about the document in front of you.",
+                        "Viewing and editing your own profile details."
+                    ]
+                },
+                "challenges": {
+                    "title": "10. Challenges and Decisions",
+                    "body": "With several clients, the difficult part was rarely any single feature. It was consistency, the constraints each client imposed, and building enough trust to make the right technical calls.",
+                    "bullets": [
+                        "Reusing architecture and conventions across very different codebases, so delivery stayed quick without forcing one template onto every client.",
+                        "Working within enterprise constraints: SSO and identity, locked-down environments, data protection and anti-tampering requirements.",
+                        "Keeping apps usable when connectivity drops, whether that is on the road, on the factory floor or out in the field.",
+                        "Wiring up analytics and monitoring, and adapting release pipelines for clients with formal change control."
+                    ]
+                },
+                "outcome": {
+                    "title": "11. Outcome",
+                    "body": "Taken together, these engagements cover a fairly wide slice of mobile work: insurance, e-mobility, industrial tooling and enterprise software. I cannot show names, screenshots or store links because of the NDA, but the range of platforms and problems is the point."
+                }
+            }
         },
         "zigbee-mesh-health": {
             "subtitle": "A passive LQI and routing-health monitor for Zigbee2MQTT that flags degrading devices before they fail.",

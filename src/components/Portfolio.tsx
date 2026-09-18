@@ -24,6 +24,7 @@ const Portfolio: React.FC = () => {
                     <PortfolioItem
                         key={`portfolio-${project.id}`}
                         imgUrl={project.imgUrl}
+                        imgDarkUrl={project.imgDarkUrl}
                         imgContain={project.imgContain}
                         title={project.title}
                         description={t(`portfolio.projects.${project.id}.description`)}

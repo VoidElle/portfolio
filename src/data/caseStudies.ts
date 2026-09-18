@@ -12,6 +12,8 @@ import blackTheoryImage from "../assets/projects/blackTheory.webp";
 import openPicoAppImage from "../assets/projects/openPicoApp.webp";
 import alphonseClubImage from "../assets/projects/alphonseClub.webp";
 import portfolioImage from "../assets/portfolio.webp";
+import avvaleLogoLight from "../assets/projects/avvaleLogoLight.png";
+import avvaleLogoDark from "../assets/projects/avvaleLogoDark.png";
 
 export interface CaseStudySection {
     id: string;
@@ -29,6 +31,8 @@ export interface CaseStudy {
     roleKey: string;
     stack: string[];
     coverImg?: string;
+    coverImgDark?: string;
+    coverContain?: boolean;
     coverCaptionKey?: string;
     liveUrl?: string;
     sourceUrl?: string;
@@ -36,6 +40,83 @@ export interface CaseStudy {
 }
 
 export const caseStudies: CaseStudy[] = [
+    {
+        slug: "avvale-projects",
+        projectId: 15,
+        title: "Avvale Projects",
+        subtitleKey: "caseStudies.avvale-projects.subtitle",
+        roleKey: "caseStudies.avvale-projects.role",
+        stack: ["Flutter", "Dart", "React Native", "Expo", "TypeScript", "Kotlin", "Java", "Jetpack Compose", "Firebase", "Android", "iOS"],
+        coverImg: avvaleLogoLight,
+        coverImgDark: avvaleLogoDark,
+        coverCaptionKey: "caseStudies.avvale-projects.coverCaption",
+        sections: [
+            {
+                id: "overview",
+                titleKey: "caseStudies.avvale-projects.sections.overview.title",
+                bodyKey: "caseStudies.avvale-projects.sections.overview.body"
+            },
+            {
+                id: "stack",
+                titleKey: "caseStudies.avvale-projects.sections.stack.title",
+                bodyKey: "caseStudies.avvale-projects.sections.stack.body",
+                calloutKey: "caseStudies.avvale-projects.sections.stack.callout"
+            },
+            {
+                id: "insurance-app",
+                titleKey: "caseStudies.avvale-projects.sections.insurance-app.title",
+                bodyKey: "caseStudies.avvale-projects.sections.insurance-app.body",
+                bulletsKey: "caseStudies.avvale-projects.sections.insurance-app.bullets"
+            },
+            {
+                id: "home-charging",
+                titleKey: "caseStudies.avvale-projects.sections.home-charging.title",
+                bodyKey: "caseStudies.avvale-projects.sections.home-charging.body",
+                bulletsKey: "caseStudies.avvale-projects.sections.home-charging.bullets"
+            },
+            {
+                id: "charging-network",
+                titleKey: "caseStudies.avvale-projects.sections.charging-network.title",
+                bodyKey: "caseStudies.avvale-projects.sections.charging-network.body",
+                bulletsKey: "caseStudies.avvale-projects.sections.charging-network.bullets"
+            },
+            {
+                id: "field-tool",
+                titleKey: "caseStudies.avvale-projects.sections.field-tool.title",
+                bodyKey: "caseStudies.avvale-projects.sections.field-tool.body",
+                bulletsKey: "caseStudies.avvale-projects.sections.field-tool.bullets"
+            },
+            {
+                id: "device-test",
+                titleKey: "caseStudies.avvale-projects.sections.device-test.title",
+                bodyKey: "caseStudies.avvale-projects.sections.device-test.body",
+                bulletsKey: "caseStudies.avvale-projects.sections.device-test.bullets"
+            },
+            {
+                id: "dashboards",
+                titleKey: "caseStudies.avvale-projects.sections.dashboards.title",
+                bodyKey: "caseStudies.avvale-projects.sections.dashboards.body",
+                bulletsKey: "caseStudies.avvale-projects.sections.dashboards.bullets"
+            },
+            {
+                id: "document-workflow",
+                titleKey: "caseStudies.avvale-projects.sections.document-workflow.title",
+                bodyKey: "caseStudies.avvale-projects.sections.document-workflow.body",
+                bulletsKey: "caseStudies.avvale-projects.sections.document-workflow.bullets"
+            },
+            {
+                id: "challenges",
+                titleKey: "caseStudies.avvale-projects.sections.challenges.title",
+                bodyKey: "caseStudies.avvale-projects.sections.challenges.body",
+                bulletsKey: "caseStudies.avvale-projects.sections.challenges.bullets"
+            },
+            {
+                id: "outcome",
+                titleKey: "caseStudies.avvale-projects.sections.outcome.title",
+                bodyKey: "caseStudies.avvale-projects.sections.outcome.body"
+            }
+        ]
+    },
     {
         slug: "zigbee-mesh-health",
         projectId: 14,

@@ -30,6 +30,7 @@
     "portfolio": {
         "title": "Portfolio",
         "projects": {
+            "15": { "description": "App mobile enterprise riservate che ho realizzato per diversi clienti in Avvale, tra progetti cross-platform e nativi. Nomi e dettagli restano coperti da NDA" },
             "14": { "description": "Monitor passivo di LQI e salute del routing per Zigbee2MQTT che segnala i dispositivi in degrado prima che smettano di funzionare, senza traffico radio aggiuntivo" },
             "13": { "description": "Skill AI che trasforma l'attività Jira del giorno precedente in un riassunto standup pronto da incollare tramite MCP" },
             "12": { "description": "Integrazione per Home Assistant che monitora in tempo reale l'uptime e lo stato delle principali API AI/LLM" },
@@ -221,6 +222,106 @@
             "links": "Link",
             "live": "Live",
             "code": "Sorgente"
+        },
+        "avvale-projects": {
+            "subtitle": "Le app mobile che ho progettato e rilasciato per clienti enterprise in Avvale, raccontate in termini generali perché ogni incarico è coperto da NDA.",
+            "summary": "Un case study anonimizzato delle app mobile enterprise che ho realizzato in Avvale, tra progetti cross-platform e nativi.",
+            "role": "Software Engineer, mobile cross-platform e nativo",
+            "coverCaption": "Avvale, la società di consulenza dove sono state realizzate queste app mobile enterprise.",
+            "sections": {
+                "overview": {
+                    "title": "01. Panoramica del progetto",
+                    "body": "Queste sono le app mobile che ho realizzato in Avvale, una società di consulenza che lavora con grandi clienti enterprise in diversi settori. Ogni incarico è coperto da accordi di riservatezza, quindi qui racconto l'engineering e non i clienti: le piattaforme coinvolte, come erano organizzati i progetti e quali problemi abbiamo dovuto risolvere. Il lavoro è andato dalla singola app a suite di prodotto con più moduli, da progetti da zero alla manutenzione di app di lungo corso."
+                },
+                "stack": {
+                    "title": "02. Stack tecnico e modello di delivery",
+                    "body": "La tecnologia dipendeva da ciò che ogni cliente aveva già in casa. A volte la scelta giusta era un'unica codebase cross-platform, a volte un'app Android completamente nativa, e le integrazioni dovevano inserirsi nello stack backend e cloud già in uso.",
+                    "callout": "**Cross-platform:** Flutter e Dart, oppure React Native con Expo e TypeScript. **Nativo:** Kotlin, Java e Jetpack Compose su Android, con la controparte iOS quando serviva. **Backend e cloud:** REST e GraphQL, AWS (S3, Amplify, AppSync, Cognito), Firebase, oltre a Google Analytics, Datadog e protezioni anti-tampering. **Processo:** agile e Kanban, con waterfall su alcuni incarichi."
+                },
+                "insurance-app": {
+                    "title": "03. App cliente per assicurazioni",
+                    "body": "Un'app self-service per i clienti di una compagnia assicurativa. Si poteva ottenere un preventivo, acquistare una polizza e gestirla in seguito senza chiamare nessuno, tutto dal telefono. L'ho realizzata in **Flutter** e **Dart**, con un'unica codebase per entrambe le piattaforme.",
+                    "bullets": [
+                        "Preventivi immediati su più linee assicurative, con offerte generate lato server.",
+                        "Un catalogo prodotti completo e la ricerca delle agenzie e dei centri convenzionati più vicini.",
+                        "Acquisto dei preventivi salvati e rinnovo delle polizze in scadenza, con pagamenti sicuri e storico dei pagamenti.",
+                        "Il certificato assicurativo collegato ad Apple Wallet e Google Wallet e mostrato come QR code.",
+                        "Una dashboard delle polizze per consultare i dettagli, scaricare i documenti e tenere d'occhio le scadenze."
+                    ]
+                },
+                "home-charging": {
+                    "title": "04. Suite di ricarica EV domestica",
+                    "body": "Un'app companion per wallbox private e aziendali. Il driver poteva configurare la propria wallbox e controllare la ricarica dal telefono. Girava su **React Native** ed **Expo** con **TypeScript**, con **Firebase** come backend.",
+                    "bullets": [
+                        "Una configurazione guidata che si chiude con un profilo di ricarica personale.",
+                        "Associazione della wallbox tramite la connessione locale.",
+                        "Avvio, monitoraggio e arresto delle sessioni, con pianificazione nelle fasce a costo ridotto.",
+                        "Controllo da remoto della sessione mentre si è lontani dall'auto."
+                    ]
+                },
+                "charging-network": {
+                    "title": "05. App per rete di ricarica pubblica",
+                    "body": "Un secondo prodotto di ricarica, questa volta per l'infrastruttura pubblica: trovare un punto, prenotarlo e pagare su una rete nazionale. Questa l'ho sviluppata in modo nativo su Android con **Java**, **Kotlin** e **Jetpack Compose**.",
+                    "bullets": [
+                        "Una mappa dei punti di ricarica vicini, con ricerca per disponibilità, potenza, tipo di presa e circuito.",
+                        "Disponibilità in tempo reale, orari, dettagli sulla posizione e recensioni degli altri driver.",
+                        "Prenotazione del punto e avvio della sessione da remoto dove l'hardware lo consente.",
+                        "Pagamenti in-app e storico completo delle ricariche.",
+                        "Soccorso stradale per chi resta senza carica."
+                    ]
+                },
+                "field-tool": {
+                    "title": "06. Strumento di power upgrade per tecnici",
+                    "body": "Uno strumento riservato ai tecnici per eseguire il power upgrade di alcuni modelli di wallbox. L'accesso è limitato a personale formato, perché un errore nella procedura può danneggiare l'hardware. Come l'app di ricarica domestica, è stata realizzata con **React Native**, **Expo** e **TypeScript**, con **Firebase**.",
+                    "bullets": [
+                        "Un flusso di upgrade passo passo, con controlli di sicurezza e avvisi chiari.",
+                        "Connessione al dispositivo, aggiornamento dei parametri e verifica del risultato.",
+                        "Distribuzione agli utenti interni autorizzati, non agli store pubblici."
+                    ]
+                },
+                "device-test": {
+                    "title": "07. App di collaudo in produzione",
+                    "body": "Un'app interna usata su una linea di produzione. Ogni unità deve dimostrare di funzionare prima di lasciare la fabbrica, quindi l'app si collega al dispositivo in collaudo ed esegue una serie fissa di controlli. È nativa Android, scritta in **Java**, **Kotlin** e **Jetpack Compose**.",
+                    "bullets": [
+                        "Connessione all'hotspot del dispositivo tramite Wi-Fi Direct, senza rete esterna.",
+                        "Esecuzione di un test funzionale automatizzato con esito pass o fail per ogni unità.",
+                        "Pensata per un uso rapido e ripetitivo in fabbrica."
+                    ]
+                },
+                "dashboards": {
+                    "title": "08. Dashboard e avvisi enterprise",
+                    "body": "Un'app che porta le dashboard di business intelligence su mobile e invia avvisi operativi alle persone che devono intervenire. Realizzata in **Flutter** e **Dart**, con **Firebase** dietro.",
+                    "bullets": [
+                        "Dashboard analitiche integrate e renderizzate in modo nativo nell'app.",
+                        "Push notification per guasti e anomalie, così i problemi emergono subito.",
+                        "Viste in sola lettura, tenute semplici per un controllo veloce in movimento."
+                    ]
+                },
+                "document-workflow": {
+                    "title": "09. Workflow documentale enterprise",
+                    "body": "Un workspace mobile per una piattaforma di gestione contenuti enterprise. Porta sul telefono o sul tablet processi documentali che di solito vivono sul desktop. Anche in questo caso **Flutter** e **Dart**, con **Firebase**.",
+                    "bullets": [
+                        "Consultazione dei documenti aziendali e monitoraggio delle scadenze.",
+                        "Revisione, approvazione e firma digitale dei documenti.",
+                        "Messaggistica con i colleghi sul documento che si sta guardando.",
+                        "Consultazione e modifica dei propri dati di profilo."
+                    ]
+                },
+                "challenges": {
+                    "title": "10. Sfide e decisioni",
+                    "body": "Con più clienti, la parte difficile raramente era una singola funzionalità. Era la coerenza, i vincoli imposti da ogni cliente e la fiducia necessaria per prendere le decisioni tecniche giuste.",
+                    "bullets": [
+                        "Riuso di architettura e convenzioni su codebase molto diverse, per consegnare in fretta senza imporre un unico template a ogni cliente.",
+                        "Lavorare dentro i vincoli enterprise: SSO e identità, ambienti blindati, protezione dei dati e requisiti anti-tampering.",
+                        "Mantenere le app utilizzabili quando la connessione cala, in viaggio, in fabbrica o sul campo.",
+                        "Integrare analytics e monitoraggio e adattare le pipeline di rilascio per clienti con change control formale."
+                    ]
+                },
+                "outcome": {
+                    "title": "11. Risultato",
+                    "body": "Nel complesso questi incarichi coprono una fetta piuttosto ampia del lavoro mobile: assicurazioni, e-mobility, strumenti industriali e software enterprise. Per via dell'NDA non posso mostrare nomi, screenshot o link agli store, ma l'ampiezza di piattaforme e problemi è il punto."
+                }
+            }
         },
         "zigbee-mesh-health": {
             "subtitle": "Un monitor passivo di LQI e salute del routing per Zigbee2MQTT che segnala i dispositivi in degrado prima che smettano di funzionare.",
