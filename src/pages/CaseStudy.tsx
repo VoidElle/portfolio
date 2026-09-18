@@ -14,7 +14,7 @@ const CaseStudy = () => {
     const { slug = '' } = useParams();
     const { t } = useLang();
     const study = getCaseStudy(slug);
-    const [ref, inView] = useInView<HTMLElement>();
+    const [ref, inView] = useInView<HTMLElement>(0);
     const headingRef = useRef<HTMLHeadingElement>(null);
 
     const pageTitle = study
