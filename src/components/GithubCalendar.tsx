@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 
 import type { GithubContribution } from '../hooks/useGithubContributions';
-import { useLang } from '../context/LangContext';
+import { useLang } from '../context/useLang';
 
 interface GithubCalendarProps {
     contributions: GithubContribution[];

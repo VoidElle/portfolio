@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLang } from '../context/LangContext';
+import { useLang } from '../context/useLang';
 import { SITE } from '../data/site';
 
 const initials = SITE.name
@@ -49,13 +49,6 @@ const Intro: React.FC = () => {
                         <h1 className="font-head text-2xl font-bold tracking-tight text-fg leading-tight">
                             {SITE.name}
                         </h1>
-                        <span
-                            className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-accent text-accent-contrast text-[0.65rem] font-bold"
-                            title="Verified"
-                            aria-hidden="true"
-                        >
-                            &#10003;
-                        </span>
                     </div>
 
                     <p

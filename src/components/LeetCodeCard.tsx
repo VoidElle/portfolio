@@ -2,7 +2,7 @@ import React from 'react';
 
 import { LEETCODE_URL, LEETCODE_USERNAME } from '../data/stats';
 import { useLeetCode } from '../hooks/useLeetCode';
-import { useLang } from '../context/LangContext';
+import { useLang } from '../context/useLang';
 
 const DIFFICULTIES = [
     { key: 'easy', color: 'var(--c-swatch-green)' },

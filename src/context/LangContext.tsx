@@ -1,9 +1,7 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import en from '../assets/lang/en.json';
-
-export type Lang = 'en' | 'it';
-
-type Translations = typeof en;
+import type { Lang, Translations } from './useLang';
+import { LangContext } from './useLang';
 
 const translations: Partial<Record<Lang, Translations>> = { en };
 
@@ -16,18 +14,6 @@ async function loadLang(lang: Lang): Promise<Translations> {
     }
     return translations[lang]!;
 }
-
-interface LangContextType {
-    lang: Lang;
-    setLang: (lang: Lang) => void;
-    t: (key: string) => any;
-}
-
-const LangContext = createContext<LangContextType>({
-    lang: 'en',
-    setLang: () => {},
-    t: (key) => key,
-});
 
 export const LangProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [lang, setLangState] = useState<Lang>(() => {
@@ -71,5 +57,3 @@ export const LangProvider: React.FC<{ children: React.ReactNode }> = ({ children
         </LangContext.Provider>
     );
 };
-
-export const useLang = () => useContext(LangContext);

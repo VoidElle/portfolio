@@ -3,7 +3,7 @@ import React from 'react';
 import { skills, coreSkills } from '../data/skills';
 import { getTechIcon } from '../data/techIcons';
 import { useInView } from '../hooks/useInView';
-import { useLang } from '../context/LangContext';
+import { useLang } from '../context/useLang';
 
 const Skills: React.FC = () => {
     const { t } = useLang();

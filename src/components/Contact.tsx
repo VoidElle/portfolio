@@ -1,7 +1,7 @@
 import React from 'react';
 import { useContactForm } from "../hooks/useContactForm";
 import { useInView } from "../hooks/useInView";
-import { useLang } from '../context/LangContext';
+import { useLang } from '../context/useLang';
 
 const inputClass = "bg-main border border-subtle rounded-lg px-3.5 py-2.5 text-sm text-fg placeholder:text-muted focus:outline-none focus:border-accent transition-colors";
 

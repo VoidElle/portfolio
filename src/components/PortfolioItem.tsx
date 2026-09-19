@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useInView } from '../hooks/useInView';
-import { useLang } from '../context/LangContext';
+import { useLang } from '../context/useLang';
 import { getTechIcon } from '../data/techIcons';
 
 interface Props {

@@ -4,7 +4,7 @@ import { achievements, type Achievement } from '../data/achievements';
 import { getTechIcon } from '../data/techIcons';
 import AccordionItem from './AccordionItem';
 import { useInView } from '../hooks/useInView';
-import { useLang } from '../context/LangContext';
+import { useLang } from '../context/useLang';
 
 const GROUP_ORDER: Achievement['group'][] = ['education', 'certifications'];
 

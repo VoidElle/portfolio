@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 
 import { getCaseStudy } from '../data/caseStudies';
 import portfolio from '../data/portfolio';
-import { useLang } from '../context/LangContext';
+import { useLang } from '../context/useLang';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { useInView } from '../hooks/useInView';
 import CaseStudyHeader, { type CaseStudyLink } from '../components/CaseStudyHeader';

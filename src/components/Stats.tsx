@@ -3,7 +3,7 @@ import React from 'react';
 import { COMPETITIVE_PROFILES, GITHUB_USERNAME, LEETCODE_USERNAME } from '../data/stats';
 import { useGithubContributions } from '../hooks/useGithubContributions';
 import { useInView } from '../hooks/useInView';
-import { useLang } from '../context/LangContext';
+import { useLang } from '../context/useLang';
 import GithubCalendar from './GithubCalendar';
 import LeetCodeCard from './LeetCodeCard';
 import CompetitiveCard from './CompetitiveCard';

@@ -3,7 +3,7 @@ import React from 'react';
 import timeline from "../data/timeline";
 import { getTechIcon } from '../data/techIcons';
 import AccordionItem from "./AccordionItem";
-import { useLang } from '../context/LangContext';
+import { useLang } from '../context/useLang';
 
 const DOT_COLORS = ['var(--c-swatch-green)', 'var(--c-swatch-purple)', 'var(--c-swatch-blue)', 'var(--c-swatch-amber)'];
 

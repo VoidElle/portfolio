@@ -2,7 +2,7 @@ import React from 'react';
 
 import portfolio from "../data/portfolio";
 import PortfolioItem from "./PortfolioItem";
-import { useLang } from '../context/LangContext';
+import { useLang } from '../context/useLang';
 
 const Portfolio: React.FC = () => {
     const { t } = useLang();

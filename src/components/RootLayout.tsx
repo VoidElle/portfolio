@@ -5,7 +5,7 @@ import SunIcon from '../assets/sun.svg?react';
 import MoonIcon from '../assets/moon.svg?react';
 
 import Nav from './Nav';
-import { useLang } from '../context/LangContext';
+import { useLang } from '../context/useLang';
 
 type Theme = 'dark' | 'light';
 

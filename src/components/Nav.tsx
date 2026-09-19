@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useLang } from '../context/LangContext';
+import { useLang } from '../context/useLang';
 
 interface NavProps {
     theme: 'dark' | 'light' | null;

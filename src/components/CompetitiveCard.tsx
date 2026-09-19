@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { COMPETITIVE_PROFILES } from '../data/stats';
-import { useLang } from '../context/LangContext';
+import { useLang } from '../context/useLang';
 
 const CompetitiveCard: React.FC = () => {
     const { t } = useLang();
