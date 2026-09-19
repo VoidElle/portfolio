@@ -227,7 +227,7 @@
             "subtitle": "Le app mobile che ho progettato e rilasciato per clienti enterprise in Avvale, raccontate in termini generali perché ogni incarico è coperto da NDA.",
             "summary": "Un case study anonimizzato delle app mobile enterprise che ho realizzato in Avvale, tra progetti cross-platform e nativi.",
             "role": "Software Engineer, mobile cross-platform e nativo",
-            "coverCaption": "Avvale, la società di consulenza dove sono state realizzate queste app mobile enterprise.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Panoramica del progetto",
@@ -327,7 +327,7 @@
             "subtitle": "Un monitor passivo di LQI e salute del routing per Zigbee2MQTT che segnala i dispositivi in degrado prima che smettano di funzionare.",
             "summary": "Case study di Zigbee Mesh Health, un monitor passivo di LQI e salute del routing per Zigbee2MQTT che segnala i dispositivi in degrado prima che smettano di funzionare.",
             "role": "",
-            "coverCaption": "Zigbee Mesh Health come add-on di Home Assistant con dashboard LQI.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -367,7 +367,7 @@
             "subtitle": "Monitora la salute dei principali provider AI e LLM direttamente da Home Assistant.",
             "summary": "Case study di LLM Watchdog, una custom integration di Home Assistant che monitora la disponibilità dei principali provider AI e LLM.",
             "role": "",
-            "coverCaption": "Sensori per provider e sensore di riepilogo di LLM Watchdog in Home Assistant.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -407,7 +407,7 @@
             "subtitle": "Un'app gratuita e open source per la gestione patrimoniale e il monitoraggio del patrimonio netto, realizzata con Flutter.",
             "summary": "Case study di Sossoldi, un'app Flutter gratuita e open source per monitorare patrimonio netto, spese e investimenti.",
             "role": "Collaboratore",
-            "coverCaption": "Sossoldi tiene traccia di conti, movimenti e patrimonio netto su più piattaforme.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -485,7 +485,7 @@
             "subtitle": "Un'integrazione di Home Assistant per le centrali iAlarm MK, che comunica interamente sulla rete locale.",
             "summary": "Case study di Hass Open iAlarm MK, un'integrazione di Home Assistant per le centrali iAlarm MK su connessione TCP locale.",
             "role": "",
-            "coverCaption": "Entità e zone della centrale Open iAlarm MK in Home Assistant.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -525,7 +525,7 @@
             "subtitle": "Una libreria Python asincrona per le centrali iAlarm MK tramite il protocollo binario Meian locale.",
             "summary": "Case study di Open iAlarm MK Local API, una libreria Python async che comunica con le centrali iAlarm MK tramite il protocollo Meian locale.",
             "role": "",
-            "coverCaption": "Open iAlarm-MK Local API alla base del controllo locale della centrale.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -565,7 +565,7 @@
             "subtitle": "Un'app desktop leggera che recupera l'attività Jira del giorno lavorativo precedente e la trasforma in un riepilogo standup.",
             "summary": "Case study di What I Did, un'app desktop Tauri che trasforma l'attività Jira di ieri in un riepilogo standup pronto da incollare.",
             "role": "",
-            "coverCaption": "What I Did che raggruppa le issue Jira del giorno precedente in un feed di attività comprimibile.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -605,7 +605,7 @@
             "subtitle": "Un'app web basata sull'AI che analizza un programma di allenamento e restituisce le correzioni che contano davvero.",
             "summary": "Case study di Gymnalyzer, un'app web basata sull'AI che analizza un programma di allenamento per squilibri, recupero e volume.",
             "role": "",
-            "coverCaption": "Gymnalyzer che valuta un programma su equilibrio, recupero e volume.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -645,7 +645,7 @@
             "subtitle": "Un'integrazione di Home Assistant che gestisce i dispositivi Tecnosystemi Pico e Polaris 5X sulla rete locale.",
             "summary": "Case study di Open Tecnosystemi, un'integrazione di Home Assistant per i dispositivi Tecnosystemi Pico e Polaris 5X.",
             "role": "",
-            "coverCaption": "Dispositivi Tecnosystemi Pico e Polaris gestiti da Home Assistant.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -685,7 +685,7 @@
             "subtitle": "Una libreria Python asincrona per i dispositivi Tecnosystemi Pico di ventilazione e qualità dell'aria.",
             "summary": "Case study di Open Pico Local API, una libreria Python async per il controllo locale dei dispositivi Tecnosystemi Pico.",
             "role": "",
-            "coverCaption": "Open Pico Local API che controlla localmente i dispositivi Tecnosystemi Pico.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -725,7 +725,7 @@
             "subtitle": "Una libreria Python asincrona per le unità di controllo Tecnosystemi Polaris 5X.",
             "summary": "Case study di Open Polaris Local API, una libreria Python async per il controllo locale dei sistemi HVAC Tecnosystemi Polaris 5X.",
             "role": "",
-            "coverCaption": "Open Polaris Local API che controlla localmente le zone HVAC Polaris 5X.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -765,7 +765,7 @@
             "subtitle": "Un progetto di ricerca sulla sicurezza in responsible disclosure su un sistema di controllo accessi basato su QR code.",
             "summary": "Case study di Black Theory, un progetto di ricerca sulla sicurezza in responsible disclosure su un sistema di controllo accessi basato su QR code.",
             "role": "Ricercatore di sicurezza",
-            "coverCaption": "Black Theory, un progetto di responsible disclosure su un sistema di controllo accessi.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -805,7 +805,7 @@
             "subtitle": "Un'app mobile multipiattaforma per gestire i dispositivi Tecnosystemi Pico, e la base per un'integrazione di Home Assistant.",
             "summary": "Case study di Open Pico, un'app mobile multipiattaforma per gestire i dispositivi Tecnosystemi Pico.",
             "role": "",
-            "coverCaption": "Open Pico che gestisce i dispositivi Tecnosystemi Pico su mobile.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -845,7 +845,7 @@
             "subtitle": "Un CRM full-stack per un circolo privato, che copre soci, eventi e comunicazioni.",
             "summary": "Case study di Alphonse Club, un CRM full-stack per un circolo privato costruito con Next.js e Supabase.",
             "role": "",
-            "coverCaption": "Alphonse Club, un CRM full-stack per un circolo privato.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -885,7 +885,7 @@
             "subtitle": "Questo sito: un portfolio single-page in React e Tailwind con contenuti guidati dai dati e pagine case study.",
             "summary": "Case study di questo portfolio, un sito single-page in React e Tailwind con contenuti guidati dai dati e pagine case study.",
             "role": "",
-            "coverCaption": "Il portfolio, una singola pagina scrollabile con route dedicate ai case study.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",

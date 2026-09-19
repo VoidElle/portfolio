@@ -227,7 +227,7 @@
             "subtitle": "The mobile apps I designed and shipped for enterprise clients at Avvale, described in general terms because every engagement is under NDA.",
             "summary": "An anonymised case study of the enterprise mobile apps I delivered at Avvale, across cross-platform and native projects.",
             "role": "Software Engineer, cross-platform and native mobile",
-            "coverCaption": "Avvale, the consultancy where these enterprise mobile apps were built.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -327,7 +327,7 @@
             "subtitle": "A passive LQI and routing-health monitor for Zigbee2MQTT that flags degrading devices before they fail.",
             "summary": "Case study of Zigbee Mesh Health, a passive LQI and routing-health monitor for Zigbee2MQTT that flags degrading devices before they fail.",
             "role": "",
-            "coverCaption": "Zigbee Mesh Health as a Home Assistant add-on with an LQI dashboard.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -367,7 +367,7 @@
             "subtitle": "Monitor the health of major AI and LLM providers directly from Home Assistant.",
             "summary": "Case study of LLM Watchdog, a Home Assistant custom integration that monitors the availability of major AI and LLM providers.",
             "role": "",
-            "coverCaption": "LLM Watchdog provider and summary sensors in Home Assistant.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -407,7 +407,7 @@
             "subtitle": "A free and open source wealth management and net worth tracking app built with Flutter.",
             "summary": "Case study of Sossoldi, a free and open source Flutter app for tracking net worth, expenses and investments.",
             "role": "Contributor",
-            "coverCaption": "Sossoldi tracking accounts, movements and net worth across platforms.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -485,7 +485,7 @@
             "subtitle": "A Home Assistant integration for iAlarm MK alarm panels, communicating entirely over the local network.",
             "summary": "Case study of Hass Open iAlarm MK, a Home Assistant integration for iAlarm MK alarm panels over a local TCP connection.",
             "role": "",
-            "coverCaption": "Open iAlarm MK panel entities and zones in Home Assistant.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -525,7 +525,7 @@
             "subtitle": "An asynchronous Python library for iAlarm MK alarm panels over the local Meian binary protocol.",
             "summary": "Case study of Open iAlarm MK Local API, an async Python library that talks to iAlarm MK panels over the local Meian protocol.",
             "role": "",
-            "coverCaption": "Open iAlarm-MK Local API powering fully local panel control.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -565,7 +565,7 @@
             "subtitle": "A lightweight desktop app that pulls your previous working day of Jira activity and turns it into a clean standup summary.",
             "summary": "Case study of What I Did, a Tauri desktop app that turns yesterday's Jira activity into a ready-to-paste standup summary.",
             "role": "",
-            "coverCaption": "What I Did grouping the previous day's Jira issues into a collapsible activity feed.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -605,7 +605,7 @@
             "subtitle": "An AI-powered web app that analyzes a training program and returns the fixes that actually matter.",
             "summary": "Case study of Gymnalyzer, an AI-powered web app that analyzes a workout program for imbalances, recovery and volume.",
             "role": "",
-            "coverCaption": "Gymnalyzer scoring a program on balance, recovery and volume.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -645,7 +645,7 @@
             "subtitle": "A Home Assistant integration that manages Tecnosystemi Pico and Polaris 5X devices over the local network.",
             "summary": "Case study of Open Tecnosystemi, a Home Assistant integration for Tecnosystemi Pico and Polaris 5X devices.",
             "role": "",
-            "coverCaption": "Tecnosystemi Pico and Polaris devices managed from Home Assistant.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -685,7 +685,7 @@
             "subtitle": "An asynchronous Python library for Tecnosystemi Pico ventilation and air quality devices.",
             "summary": "Case study of Open Pico Local API, an async Python library for local control of Tecnosystemi Pico devices.",
             "role": "",
-            "coverCaption": "Open Pico Local API controlling Tecnosystemi Pico devices locally.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -725,7 +725,7 @@
             "subtitle": "An asynchronous Python library for Tecnosystemi Polaris 5X HVAC control units.",
             "summary": "Case study of Open Polaris Local API, an async Python library for local control of Tecnosystemi Polaris 5X HVAC systems.",
             "role": "",
-            "coverCaption": "Open Polaris Local API controlling Polaris 5X HVAC zones locally.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -765,7 +765,7 @@
             "subtitle": "A responsible-disclosure security research project on a QR-code based access-control system.",
             "summary": "Case study of Black Theory, a responsible-disclosure security research project on a QR-code based access-control system.",
             "role": "Security researcher",
-            "coverCaption": "Black Theory, a responsible disclosure project on an access-control system.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -805,7 +805,7 @@
             "subtitle": "A multiplatform mobile app for managing Tecnosystemi Pico devices, and the groundwork for a Home Assistant integration.",
             "summary": "Case study of Open Pico, a multiplatform mobile app for managing Tecnosystemi Pico devices.",
             "role": "",
-            "coverCaption": "Open Pico managing Tecnosystemi Pico devices on mobile.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -845,7 +845,7 @@
             "subtitle": "A full-stack CRM for a private social club, covering members, events and communications.",
             "summary": "Case study of Alphonse Club, a full-stack CRM for a private social club built with Next.js and Supabase.",
             "role": "",
-            "coverCaption": "Alphonse Club, a full-stack CRM for a private social club.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
@@ -885,7 +885,7 @@
             "subtitle": "This site: a React and Tailwind single-page portfolio with data-driven content and case study pages.",
             "summary": "Case study of this portfolio, a React and Tailwind single-page site with data-driven content and case study pages.",
             "role": "",
-            "coverCaption": "The portfolio, a single scrollable page with dedicated case study routes.",
+            "coverCaption": " ",
             "sections": {
                 "overview": {
                     "title": "01. Project Overview",
